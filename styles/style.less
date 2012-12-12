@@ -1,0 +1,75 @@
+@import "libs/normalize";
+@import "libs/mixins";
+@import "base";
+
+// Site CSS
+@images: "../images";
+
+body { 
+  font-family: IM Fell DW Pica SC, serif; 
+  .font-size(18);
+  background-color: transparent;
+  background: url("@{images}/gradient-head.png") fixed repeat-x 0 0, 
+              url("@{images}/gradient-tail.png") fixed repeat-x 0 100%,
+              url("@{images}/trees.jpg") scroll repeat 50% 0;
+  // .transition(2s);
+}
+.no-multiplebgs body { 
+  background: url("@{images}/trees.jpg") scroll repeat 50% 0;
+}
+
+h1 { .font-size(20); }
+h2 {}
+h3 {}
+p { line-height: 1.5; margin-bottom: 10px; }
+a {}
+a:hover {}
+
+#site { 
+  position: relative; 
+  z-index: 20; 
+  height: 100%; 
+}
+
+header { 
+  width: 100%; 
+  margin: 0 auto; 
+  padding-top: 100px; 
+  @media @480 { padding-top: 150px; }
+  h1 { 
+    margin: 0 auto; 
+    width: 100%;
+    height: 160px; 
+    @media @480 { height: 203px; }
+    @media @600 { width: 591px; }
+    background: url("@{images}/nessjon.png") no-repeat 50% 0; 
+    .background-size(95%);
+    .hide-text();
+  }
+  p { 
+    width: 220px;
+    margin: 0 auto; 
+    padding: 30px 0 100px;
+  }
+}
+
+// Magical media queries
+@media print {
+  @import "libs/print";
+}
+@media @480 { 
+  body { background-color: blue; }
+}
+@media @600 { 
+  body { background-color: green; }
+}
+@media @768 { 
+  body { background-color: yellow; }
+}
+@media @992 { 
+  body { background-color: orange; }
+}
+@media @1382 { 
+  body { background-color: purple; }
+}
+

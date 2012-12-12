@@ -1,0 +1,54 @@
+// Jon Suderman 2012
+// base styles -- keep this lean!
+
+// Viewport settings now also go in the CSS
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+// Use a sensible box model
+*, *:after, *:before { 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+// Make html and body behave
+html {
+  background: white;
+  font-size: 62.5%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch; 
+  -webkit-tap-highlight-color: lighten(black, 75%); 
+  -webkit-text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  color: black;
+  background-color: transparent;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+// Common media queries sizes
+// example: @media @480 { ... }
+@480: ~"only screen and (min-width: 480px)";
+@600: ~"only screen and (min-width: 600px)";
+@768: ~"only screen and (min-width: 768px)";
+@992: ~"only screen and (min-width: 992px)";
+@1382: ~"only screen and (min-width: 1382px)";
+
+// Retina media query
+@2x: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)";
+
