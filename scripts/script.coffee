@@ -3,7 +3,7 @@ Modernizr.load load: [
   'scripts/lib/jquery.min.js',
   'scripts/lib/underscore.min.js',
   'scripts/lib/mousetrap.js',
-], complete: -> app.init()
+], complete: -> jQuery app.init()
 
 # Google Analytics
 window._gaq = [["_setAccount", "UA-35747031-1"], ["_trackPageview"], ["_trackPageLoadTime"]]

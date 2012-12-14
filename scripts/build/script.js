@@ -4,7 +4,7 @@
   Modernizr.load({
     load: ['scripts/lib/jquery.min.js', 'scripts/lib/underscore.min.js', 'scripts/lib/mousetrap.js'],
     complete: function() {
-      return app.init();
+      return jQuery(app.init());
     }
   });
 

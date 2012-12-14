@@ -21,7 +21,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset=utf-8>
 <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
 <meta name=viewport content="width=device-width, initial-scale=1.0">
 
@@ -29,19 +29,47 @@
 
 <!-- Fonts and styles -->
 <link href=http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC rel=stylesheet>
-<link href=styles/build/style.css rel=stylesheet>
+<!-- <link href=styles/style.less rel=stylesheet/less> -->
+<link href=styles/style.css rel=stylesheet>
 
-<!-- Modernizr ASAP, then asynchronous scriptage! -->
-<script src=scripts/lib/modernizr.min.js></script>
-<script src=scripts/build/script.js></script>
+<!-- Modernizr ASAP -->
+<script src=scripts/libs/modernizr.min.js></script>
 
 <body>
 
-<header role=banner>
-  <h1>Janessa Sheppard &amp; Jonathan Suderman - July 6, 2013</h1>
+<div id=site>
+  <header>
+    <h1>Janessa Sheppard &amp; Jonathan Suderman - July 6, 2013</h1>
+    <p>Further details pending<br>
+       This anticipated wedding.<br>
+       Next summer, we'll see you<br>
+       At the Calgary Zoo...
+  </header>
+</div>
 
-  <p>Further details pending<br>
-     This anticipated wedding.<br>
-     Next summer, we'll see you<br>
-     At the Calgary Zoo...
-</header>
+<!-- Scripts at the bottom -->
+<script src=scripts/libs/jquery.min.js></script>
+<script src=scripts/libs/underscore.min.js></script>
+<script src=scripts/libs/mousetrap.js></script>
+
+<!--[if (lt IE 6)&!(IEMobile)]>
+<script src=scripts/libs/respond.min.js></script>
+<![endif]-->
+
+<!-- <script src="scripts/app.coffee" type="text/coffeescript"></script> -->
+<script src="scripts/app.js"></script>
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35747031-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!-- Append #!watch to URL to see live css changes -->
+<!-- <script src=scripts/libs/less.min.js></script> -->
+<!-- <script src=scripts/libs/coffee-script.min.js></script> -->
