@@ -2,20 +2,32 @@
 @import "lib/mixins";
 @import "base";
 
-// Site CSS
+// Fonts and Icons
+.font-face(IM Fell DW Pica SC, "/fonts/im-fell-dw-pica-sc/imfelldwpicasc-webfont");
+.font-face(Web Symbols Regular, "/fonts/web-symbols/websymbols-regular-webfont");
+.font-face(Modern Pictograms Normal, "/fonts/modernpics/modernpics-webfont");
+.font-face(FontAwesome, "/fonts/font-awesome/fontawesome-webfont");
+@import "../fonts/font-awesome/font-awesome";
+
+// Colors
+@base: rgb(255, 240, 219);
+@pink: rgb(235, 218, 255);
+@purple: rgb(96, 27, 178);
+@brown: rgb(178, 147, 104);
+@green: rgb(92, 191, 120);
+
+// Make it pretty!
 @images: "../../images";
 
 body { 
   font-family: IM Fell DW Pica SC, serif;
   .font-size(18);
-  background-color: transparent;
+  // background-color: transparent;
+  background: url("@{images}/trees.jpg") scroll repeat 50% 0;
   background: url("@{images}/gradient-head.png") fixed repeat-x 0 0, 
               url("@{images}/gradient-tail.png") fixed repeat-x 0 100%,
               url("@{images}/trees.jpg") scroll repeat 50% 0;
   // .transition(2s);
-}
-.no-multiplebgs body { 
-  background: url("@{images}/trees.jpg") scroll repeat 50% 0;
 }
 
 h1 { .font-size(20); }
@@ -25,8 +37,18 @@ p { line-height: 1.5; margin-bottom: 10px; }
 a {}
 a:hover {}
 
+p.one {
+  font-family: FontAwesome;
+}
+p.two {
+  font-family: Modern Pictograms Normal;
+}
+p.three {
+  font-family: Web Symbols Regular;
+}
 
 header { 
+  background-color: fadeout(@brown, 80%);
   width: 100%; 
   margin: 0 auto; 
   padding-top: 100px; 
@@ -37,8 +59,8 @@ header {
     height: 160px; 
     @media @480 { height: 203px; }
     @media @600 { width: 591px; }
-    background: url("@{images}/nessjon.png") no-repeat 50% 0; 
-    @media @2x { background-image: url("@{images}/nessjon@2x.png"); }
+    // background: url("@{images}/nessjon.png") no-repeat 50% 0; 
+    // @media @2x { background-image: url("@{images}/nessjon@2x.png"); }
     .background-size(95%);
     .hide-text();
   }
@@ -46,6 +68,27 @@ header {
     width: 220px;
     margin: 0 auto;
     padding: 30px 0 100px;
+  }
+}
+
+nav[role=navigation] {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li { 
+      display: inline-block; 
+      width: 25%;
+      a { 
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: @purple;
+        .font-size(20);
+      
+      }
+    }
+  
   }
 }
 
