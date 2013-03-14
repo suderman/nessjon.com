@@ -77,7 +77,7 @@
     },
     "\/scripts\/build\/script.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/scripts\/build\/script.js",
@@ -127,7 +127,7 @@
       "inputAbbreviatedPath" : "\/images\/body.jpg",
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/body.jpg",
-      "initialSize" : 124370,
+      "initialSize" : 128531,
       "fileType" : 4096
     },
     "\/scripts\/lib\/colorbox\/themes\/1\/loading_background.png" : {
@@ -257,23 +257,12 @@
     },
     "\/scripts\/lib\/colorbox\/themes\/3\/colorbox.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/3\/colorbox.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/images\/jj.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/jj.png",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/images\/jj.png",
-      "initialSize" : 2187,
-      "fileType" : 8192
     },
     "\/images\/dash.png" : {
       "ignoreWasSetByUser" : 0,
@@ -284,6 +273,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/dash.png",
       "initialSize" : 881,
+      "fileType" : 8192
+    },
+    "\/images\/jj.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/jj.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/images\/jj.png",
+      "initialSize" : 2187,
       "fileType" : 8192
     },
     "\/images\/three.jpg" : {
@@ -299,8 +299,8 @@
     },
     "\/styles\/build\/style.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/styles\/build\/style.css",
       "outputAbbreviatedPath" : "No Output Path",
@@ -354,8 +354,8 @@
     },
     "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/specimen_stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/specimen_stylesheet.css",
       "outputAbbreviatedPath" : "No Output Path",
@@ -383,8 +383,8 @@
     },
     "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/grid_12-825-55-15.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/grid_12-825-55-15.css",
       "outputAbbreviatedPath" : "No Output Path",
@@ -392,8 +392,8 @@
     },
     "\/scripts\/lib\/colorbox\/themes\/2\/colorbox.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/2\/colorbox.css",
       "outputAbbreviatedPath" : "No Output Path",
@@ -407,7 +407,7 @@
       "inputAbbreviatedPath" : "\/images\/grass.png",
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/grass.png",
-      "initialSize" : 12781,
+      "initialSize" : 27248,
       "fileType" : 8192
     },
     "\/template.html" : {
@@ -501,6 +501,17 @@
       "initialSize" : 1723,
       "fileType" : 8192
     },
+    "\/images\/hill.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/hill.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/hill.png",
+      "initialSize" : 346016,
+      "fileType" : 8192
+    },
     "\/images\/groom.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -509,19 +520,8 @@
       "inputAbbreviatedPath" : "\/images\/groom.png",
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/groom.png",
-      "initialSize" : 39680,
+      "initialSize" : 44076,
       "fileType" : 8192
-    },
-    "\/images\/trees.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/trees.jpg",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/images\/trees.jpg",
-      "initialSize" : 38916,
-      "fileType" : 4096
     },
     "\/scripts\/lib\/jquery.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -534,6 +534,17 @@
       "outputAbbreviatedPath" : "\/scripts\/lib\/jquery.min-ck.js",
       "fileType" : 64
     },
+    "\/images\/trees.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/trees.jpg",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/images\/trees.jpg",
+      "initialSize" : 38916,
+      "fileType" : 4096
+    },
     "\/images\/green-head.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -545,21 +556,10 @@
       "initialSize" : 1015,
       "fileType" : 8192
     },
-    "\/images\/hill.png" : {
+    "\/fonts\/im-fell-dw-pica-sc\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/hill.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/hill.png",
-      "initialSize" : 156297,
-      "fileType" : 8192
-    },
-    "\/fonts\/im-fell-dw-pica-sc\/stylesheet.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/fonts\/im-fell-dw-pica-sc\/stylesheet.css",
       "outputAbbreviatedPath" : "No Output Path",
@@ -604,9 +604,9 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/images\/archived\/nessjon@2x.png",
-      "processed" : 1,
+      "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/archived\/nessjon@2x.png",
-      "initialSize" : 68414,
+      "initialSize" : 66264,
       "fileType" : 8192
     },
     "\/scripts\/dev\/less.min.js" : {
@@ -662,21 +662,10 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/images\/archived\/nessjon.png",
-      "processed" : 1,
+      "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/archived\/nessjon.png",
-      "initialSize" : 16066,
+      "initialSize" : 14612,
       "fileType" : 8192
-    },
-    "\/scripts\/lib\/respond.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scripts\/lib\/respond.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/scripts\/lib\/respond.min-ck.js",
-      "fileType" : 64
     },
     "\/images\/one.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -686,7 +675,7 @@
       "inputAbbreviatedPath" : "\/images\/one.jpg",
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/one.jpg",
-      "initialSize" : 47747,
+      "initialSize" : 92022,
       "fileType" : 4096
     },
     "\/images\/zebra.png" : {
@@ -700,10 +689,21 @@
       "initialSize" : 2695,
       "fileType" : 8192
     },
+    "\/scripts\/lib\/respond.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scripts\/lib\/respond.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/scripts\/lib\/respond.min-ck.js",
+      "fileType" : 64
+    },
     "\/scripts\/lib\/colorbox\/themes\/5\/colorbox.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/5\/colorbox.css",
       "outputAbbreviatedPath" : "No Output Path",
@@ -751,14 +751,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/fonts\/bebas\/stylesheet.css" : {
+    "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/easytabs.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/fonts\/bebas\/stylesheet.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/easytabs.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/easytabs-ck.js",
+      "fileType" : 64
     },
     "\/images\/two.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -780,16 +782,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/easytabs.js" : {
+    "\/fonts\/bebas\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/easytabs.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/fonts\/im-fell-dw-pica-sc\/specimen_files\/easytabs-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/fonts\/bebas\/stylesheet.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/styles\/lib\/print.less" : {
       "ignoreWasSetByUser" : 0,
@@ -819,10 +819,10 @@
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
-      "outputPathIsSetByUser" : 1,
+      "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/scripts\/script.coffee",
       "checkOutputStyle" : 0,
-      "minifyOutput" : 0,
+      "minifyOutput" : 1,
       "outputAbbreviatedPath" : "\/scripts\/script.js",
       "outputStyle" : 0,
       "fileType" : 32
@@ -862,17 +862,6 @@
       "outputAbbreviatedPath" : "\/scripts\/build\/countdown-ck.js",
       "fileType" : 64
     },
-    "\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
-      "initialSize" : 166,
-      "fileType" : 8192
-    },
     "\/scripts\/lib\/colorbox\/themes\/2\/controls.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -903,13 +892,24 @@
       "inputAbbreviatedPath" : "\/images\/bride.png",
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/bride.png",
-      "initialSize" : 52336,
+      "initialSize" : 72029,
+      "fileType" : 8192
+    },
+    "\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
+      "initialSize" : 166,
       "fileType" : 8192
     },
     "\/scripts\/lib\/colorbox\/themes\/4\/colorbox.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/scripts\/lib\/colorbox\/themes\/4\/colorbox.css",
       "outputAbbreviatedPath" : "No Output Path",
@@ -943,7 +943,7 @@
       "inputAbbreviatedPath" : "\/images\/mountain.png",
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/mountain.png",
-      "initialSize" : 15134,
+      "initialSize" : 13638,
       "fileType" : 8192
     },
     "\/styles\/lib\/normalize.less" : {
@@ -960,8 +960,8 @@
       "debugStyle" : 0
     },
     "\/styles\/scratch.less" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/styles\/scratch.less",
