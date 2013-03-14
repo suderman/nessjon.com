@@ -451,13 +451,8 @@ html {
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(255, 240, 219, 0.3) 100%);
   background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(255, 240, 219, 0.3) 100%);
 }
-html.menu body {
-  margin-left: -50%;
-}
 body {
   font-family: IM Fell DW Pica SC, serif;
-  background: url("../../images/trees.jpg") scroll repeat 50% 0;
-  background: url("../../images/gradient-head.png") fixed repeat-x 0 0, url("../../images/gradient-tail.png") fixed repeat-x 0 100%, url("../../images/trees.jpg") scroll repeat 50% 0;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
@@ -480,6 +475,8 @@ body img::-moz-selection {
   background: transparent;
 }
 .container {
+  position: relative;
+  z-index: 10;
   padding: 0 15px;
   margin: 0 auto;
   overflow: hidden;
@@ -512,31 +509,37 @@ header[role=banner]:after {
   clear: both;
 }
 header[role=banner]:before {
-  width: 100%;
-  height: 100%;
   position: absolute;
   z-index: -1;
   left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
   top: 2px;
   border-top: 2px dashed #ebdaff;
 }
 header[role=banner]:after {
   position: absolute;
-  content: '-';
-  width: 100%;
-  height: 45px;
   z-index: -1;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  height: 45px;
   -webkit-opacity: 0.1;
   -moz-opacity: 0.1;
   opacity: 0.1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=10);
   filter: alpha(opacity=10);
-  background: url("../../images/zebra.png") scroll repeat 50% 0;
+  background: url("/images/zebra.png") scroll repeat 50% 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
 }
 header[role=banner] .container {
+  position: static;
   padding: 0;
 }
 header[role=banner] a {
@@ -567,7 +570,7 @@ header[role=banner] a.menu {
   height: 100%;
   height: 45px;
   line-height: 45px;
-  padding: 0 10px;
+  padding: 0 20px;
   font-size: 25px;
   font-size: 2.5rem;
 }
@@ -591,6 +594,57 @@ header[role=banner] nav[role=navigation] {
   transition: width left 1s;
   clear: both;
   overflow-y: auto;
+  overflow: visible;
+  left: auto;
+  right: 1px;
+  top: 50px;
+  border-radius: 10px;
+  width: 50%;
+  height: auto !important;
+  -webkit-box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+  color: -10px 10px 10px rgba(0, 0, 0, 0.5);
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.2s ease-in 0s;
+  -moz-transition: opacity 0.2s ease-in 0s;
+  -o-transition: opacity 0.2s ease-in 0s;
+  -ms-transition: opacity 0.2s ease-in 0s;
+  transition: opacity 0.2s ease-in 0s;
+  background: #ffffff;
+  border: 4px solid #aac9e4;
+}
+html.menu header[role=banner] nav[role=navigation] {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+}
+header[role=banner] nav[role=navigation]:before,
+header[role=banner] nav[role=navigation]:after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  right: 26px;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  border: solid transparent;
+}
+header[role=banner] nav[role=navigation]:before {
+  border-bottom-color: #aac9e4;
+  border-width: 16px;
+  margin-right: -16px;
+}
+header[role=banner] nav[role=navigation]:after {
+  border-bottom-color: #ffffff;
+  border-width: 10px;
+  margin-right: -10px;
 }
 header[role=banner] nav[role=navigation] ul {
   list-style: none;
@@ -605,6 +659,7 @@ header[role=banner] nav[role=navigation] ul li a {
   display: block;
   text-align: left;
   padding: 5px 10px;
+  padding: 6px 10%;
   text-decoration: none;
   color: #ebdaff;
   color: #224a6d;
@@ -616,6 +671,12 @@ header[role=banner] nav[role=navigation] ul li a {
   -o-transition: 0.1s linear;
   -ms-transition: 0.1s linear;
   transition: 0.1s linear;
+}
+header[role=banner] nav[role=navigation] ul li:first-child a {
+  padding-top: 15px;
+}
+header[role=banner] nav[role=navigation] ul li:last-child a {
+  padding-bottom: 15px;
 }
 header[role=banner] nav[role=navigation] > ul > li {
   white-space: nowrap;
@@ -668,34 +729,78 @@ div[role=main] {
   position: relative;
   padding-top: 45px;
   padding-bottom: 100px;
-  -webkit-transition: 0.3s opacity linear;
-  -moz-transition: 0.3s opacity linear;
-  -o-transition: 0.3s opacity linear;
-  -ms-transition: 0.3s opacity linear;
-  transition: 0.3s opacity linear;
-}
-html.menu div[role=main] {
-  background: #000000;
-  opacity: 0.8;
-  -webkit-transition: 0s;
-  -moz-transition: 0s;
-  -o-transition: 0s;
-  -ms-transition: 0s;
-  transition: 0s;
+  background: #fff0db;
 }
 div[role=main] .container {
-  min-height: 500px;
+  *zoom: 1;
 }
-div[role=main] article {
+div[role=main] .container:before,
+div[role=main] .container:after {
+  display: table;
+  content: "";
+}
+div[role=main] .container:after {
+  clear: both;
+}
+div[role=main] header {
+  position: relative;
+  z-index: 5;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQtdWNnZy1nZW5lcmF0ZWQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZGFmZiIgc3RvcC1vcGFjaXR5PSIxIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMjI0YTZkIiBzdG9wLW9wYWNpdHk9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+PC9zdmc+);
+  background-image: -moz-linear-gradient(top, #ebdaff 0%, #224a6d 100%);
+  background-image: -webkit-linear-gradient(top, #ebdaff 0%, #224a6d 100%);
+  background-image: -o-linear-gradient(top, #ebdaff 0%, #224a6d 100%);
+  background-image: linear-gradient(top, #ebdaff 0%, #224a6d 100%);
+  height: 0px;
+  padding-bottom: 95%;
+}
+.ie div[role=main] header {
+  background: url("/images/gradient.jpg") scroll repeat-x 50% 100%;
+}
+@media only screen and (min-width: 600px) {
+  div[role=main] header {
+    height: 500px;
+    padding-bottom: 0%;
+  }
+}
+div[role=main] header .container {
+  padding: 0;
+}
+div[role=main] header:after {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  z-index: 10;
+  background: url("/images/hill.png") scroll no-repeat 50% 100%, url("/images/mountain.png") fixed repeat-x 50% 0%, url("/images/grass.png") scroll repeat-x 50% 100%;
+  -webkit-background-size: 380% auto auto;
+  -moz-background-size: 380% auto auto;
+  background-size: 380% auto auto;
+}
+.ie div[role=main] header:after {
+  background: url("/images/hill.png") scroll no-repeat 50% 100%;
+}
+@media only screen and (min-width: 600px) {
+  div[role=main] header:after {
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    background-size: auto;
+  }
+}
+div[role=main] header + .container {
+  margin-top: -120px;
+}
+div[role=main] section {
   padding-top: 45px;
 }
 div.hero {
   position: relative;
   z-index: 30;
-  margin-top: -10px;
+  margin: 0;
   margin-right: -15px;
   margin-left: -15px;
-  margin-bottom: 18.5%;
   max-width: 992px;
   max-height: 430px;
   -webkit-transition: margin 0.5s;
@@ -704,7 +809,7 @@ div.hero {
   -ms-transition: margin 0.5s;
   transition: margin 0.5s;
 }
-div.hero ul {
+div.hero > ul {
   position: relative;
   margin: 0;
   padding: 0;
@@ -715,7 +820,7 @@ div.hero ul {
   -moz-perspective: 800px;
   perspective: 800px;
 }
-div.hero ul li {
+div.hero > ul > li {
   position: absolute;
   z-index: 20;
   top: 0;
@@ -731,6 +836,10 @@ div.hero ul li {
   -moz-box-shadow: 0px 15px 40px #000000, 0px -5px 40px #000000;
   box-shadow: 0px 15px 40px #000000, 0px -5px 40px #000000;
   color: 0px 15px 40px #000000 0px -5px 40px #000000;
+  -webkit-box-shadow: 0px 15px 40px #ffffff, 0px -5px 40px #ffffff;
+  -moz-box-shadow: 0px 15px 40px #ffffff, 0px -5px 40px #ffffff;
+  box-shadow: 0px 15px 40px #ffffff, 0px -5px 40px #ffffff;
+  color: 0px 15px 40px #ffffff 0px -5px 40px #ffffff;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -745,7 +854,7 @@ div.hero ul li {
   -ms-transform: rotateX(90deg);
   transform: rotateX(90deg);
 }
-div.hero ul li.active {
+div.hero > ul > li.active {
   -webkit-transform: rotateX(0deg);
   -moz-transform: rotateX(0deg);
   -o-transform: rotateX(0deg);
@@ -757,7 +866,7 @@ div.hero ul li.active {
   -ms-transition: 1.5s;
   transition: 1.5s;
 }
-div.hero ul li.previous {
+div.hero > ul > li.previous {
   -webkit-transform: rotateX(-45deg);
   -moz-transform: rotateX(-45deg);
   -o-transform: rotateX(-45deg);
@@ -769,11 +878,11 @@ div.hero ul li.previous {
   -ms-transition: 0.5s;
   transition: 0.5s;
 }
-.no-js div.hero ul li:first-child {
+.no-js div.hero > ul > li:first-child {
   left: 0;
   opacity: 1;
 }
-div.hero ul li figure {
+div.hero > ul > li > figure {
   display: block;
   position: absolute;
   z-index: 20;
@@ -781,126 +890,163 @@ div.hero ul li figure {
   height: 100%;
   overflow: hidden;
 }
-div.hero ul li figure img {
+div.hero > ul > li > figure > img {
   width: 100%;
 }
 dl.countdown {
   position: absolute;
   right: 0%;
-  top: -100%;
+  top: 100%;
   z-index: 50;
   display: block;
   width: 100%;
+  height: 30px;
   margin: 0;
   padding: 0;
-  background: #fff0db;
-  font-size: 50px;
-  font-size: 5rem;
-  -webkit-transition-property: font-size, width, height, top;
-  -moz-transition-property: font-size, width, height, top;
-  -o-transition-property: font-size, width, height, top;
-  -ms-transition-property: font-size, width, height, top;
-  transition-property: font-size, width, height, top;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  color: #ebdaff;
+  background: #b474ff;
+  text-shadow: -2px -1px 0 rgba(0, 0, 0, 0.5);
+  font-family: Times New Roman;
+  font-size: 24px;
+  font-size: 2.4rem;
+  -webkit-box-shadow: 0px 15px 40px #000000, 0px -5px 40px #000000;
+  -moz-box-shadow: 0px 15px 40px #000000, 0px -5px 40px #000000;
+  box-shadow: 0px 15px 40px #000000, 0px -5px 40px #000000;
+  color: 0px 15px 40px #000000 0px -5px 40px #000000;
 }
-.ready dl.countdown {
-  top: 100%;
-}
-dl.countdown dd {
+dl.countdown > dd {
   display: block;
   position: relative;
   margin: 0;
   padding: 0.2em;
   float: left;
   width: 33.33%;
+  height: 100%;
+  line-height: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
-dl.countdown dd:nth-child(1) {
+dl.countdown > dd:nth-child(1) {
   text-align: right;
+  bbackground: #fff0db;
 }
-dl.countdown dd:nth-child(2) {
+dl.countdown > dd:nth-child(2) {
   text-align: center;
-  background: #ffffff;
+  bbackground: #ffffff;
 }
-dl.countdown dd:nth-child(3) {
+dl.countdown > dd:nth-child(3) {
   text-align: left;
+  bbackground: #fff0db;
 }
-dl.countdown dd figure {
+dl.countdown > dd > figure {
   display: inline;
   position: relative;
   margin: 0;
   padding: 0;
-}
-dl.countdown dd figure time {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  color: #000000;
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
 }
-dl.countdown dd figcaption {
+dl.countdown > dd > figcaption {
   display: inline;
   height: 100%;
   line-height: 100%;
-  margin: 0 0 0 -8px;
-  font-size: 30%;
-  color: #000000;
+  margin: 0 0 0 5px;
+  font-size: 80%;
   text-align: center;
   text-transform: uppercase;
 }
 div.logo {
   position: relative;
-}
-div.logo img {
-  position: relative;
-  z-index: 10;
-  display: block;
-  height: auto;
-  margin-bottom: 0%;
+  z-index: -2;
+  height: 0px;
+  padding-bottom: 78.33333333333333%;
+  background: url("/images/nessjon.png") scroll no-repeat 50% 0%;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
   opacity: 0;
-  -webkit-transition-property: width, top, right, left, opacity, margin-bottom;
-  -moz-transition-property: width, top, right, left, opacity, margin-bottom;
-  -o-transition-property: width, top, right, left, opacity, margin-bottom;
-  -ms-transition-property: width, top, right, left, opacity, margin-bottom;
-  transition-property: width, top, right, left, opacity, margin-bottom;
-  -webkit-transition-duration: 1s;
-  -moz-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -webkit-transition: opacity 1s ease 0s, background-position 1s ease 0s, -webkit-background-size 1s ease 0s;
+  -moz-transition: opacity 1s ease 0s, background-position 1s ease 0s, -moz-background-size 1s ease 0s;
+  -o-transition: opacity 1s ease 0s, background-position 1s ease 0s, background-size 1s ease 0s;
+  -ms-transition: opacity 1s ease 0s, background-position 1s ease 0s, background-size 1s ease 0s;
+  transition: opacity 1s ease 0s, background-position 1s ease 0s, background-size 1s ease 0s;
 }
-.ready div.logo img {
+@media only screen and (min-width: 480px) {
+  div.logo {
+    padding-bottom: 83.33333333333334%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  div.logo {
+    height: 450px;
+    padding-bottom: 0%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  div.logo {
+    background-position: 50% 30%;
+    -webkit-background-size: 496px auto;
+    -moz-background-size: 496px auto;
+    background-size: 496px auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  div.logo {
+    background-position: 50% 90%;
+    -webkit-background-size: 496px auto;
+    -moz-background-size: 496px auto;
+    background-size: 496px auto;
+  }
+}
+.ready div.logo {
   opacity: 1;
 }
-div.logo img.main {
-  z-index: 20;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 55%;
+div.logo figure {
+  position: absolute;
+  top: 0%;
   width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 50% auto;
+  -moz-background-size: 50% auto;
+  background-size: 50% auto;
+  -webkit-transition: background-position 1s ease 0.5s;
+  -moz-transition: background-position 1s ease 0.5s;
+  -o-transition: background-position 1s ease 0.5s;
+  -ms-transition: background-position 1s ease 0.5s;
+  transition: background-position 1s ease 0.5s;
 }
-div.logo img.left {
+@media only screen and (min-width: 600px) {
+  div.logo figure {
+    -webkit-background-size: 248px auto;
+    -moz-background-size: 248px auto;
+    background-size: 248px auto;
+  }
+}
+div.logo figure.bride {
+  background-image: url("/images/bride.png");
+  background-position: -100% 100%;
+}
+.ready div.logo figure.bride {
+  background-position: 0% 100%;
+}
+div.logo figure.groom {
+  background-image: url("/images/groom.png");
+  background-position: 200% 100%;
+}
+.ready div.logo figure.groom {
+  background-position: 100% 100%;
+}
+footer[role=contentinfo] {
+  overflow: hidden;
   position: absolute;
-  top: 100%;
-  left: -100%;
-  width: 50%;
-}
-.ready div.logo img.left {
-  left: 0%;
-}
-div.logo img.right {
-  position: absolute;
-  top: 100%;
-  right: -100%;
-  width: 50%;
-}
-.ready div.logo img.right {
-  right: 0%;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  margin: 20px 0 0;
+  border-top: 1px solid rgba(255, 240, 219, 0.3);
+  background: rgba(255, 240, 219, 0.1);
 }
 @media print {
   /* Print =================================================== */
@@ -956,14 +1102,7 @@ div.logo img.right {
   }
 }
 @media only screen and (min-width: 480px) {
-  dl.countdown {
-    font-size: 70px;
-    font-size: 7rem;
-  }
-}
-.ie dl.countdown {
-  font-size: 70px;
-  font-size: 7rem;
+  
 }
 @media only screen and (min-width: 600px) {
   html.menu body {
@@ -998,48 +1137,56 @@ div.logo img.right {
     text-align: center;
     padding: 0px;
   }
+  div[role=main] section {
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+  }
+  div[role=main] section:nth-of-type(2n+1) {
+    clear: left;
+    padding-left: 0px;
+    padding-right: 20px;
+  }
   div.hero {
-    margin-bottom: 0%;
+    margin-bottom: 5%;
   }
   dl.countdown {
+    top: 0%;
     width: 15%;
     height: 100%;
-    font-size: 60px;
-    font-size: 6rem;
+    font-size: 45px;
+    font-size: 4.5rem;
+    -webkit-box-shadow: -10px 0px 40px #000000;
+    -moz-box-shadow: -10px 0px 40px #000000;
+    box-shadow: -10px 0px 40px #000000;
+    color: -10px 0px 40px #000000;
   }
-  .ready dl.countdown {
-    top: 0%;
-  }
-  dl.countdown dd {
+  dl.countdown > dd {
     float: none;
     width: 100%;
     height: 33.33%;
     padding: 0;
+    padding: 10% 0 0 0;
     line-height: 33.33%;
   }
-  dl.countdown dd figure {
+  dl.countdown > dd:nth-child(1) {
+    bbackground-color: #fff0db;
+  }
+  dl.countdown > dd:nth-child(2) {
+    bbackground-color: #fff0db;
+  }
+  dl.countdown > dd:nth-child(3) {
+    bbackground-color: #fff0db;
+  }
+  dl.countdown > dd > figure {
     display: block;
     height: auto;
     line-height: 1;
   }
-  dl.countdown dd figure time {
-    display: block;
-  }
-  dl.countdown dd figcaption {
+  dl.countdown > dd > figcaption {
     display: block;
     margin: 0;
-  }
-  div.logo img.main {
-    width: 50%;
-    margin-bottom: 0%;
-  }
-  div.logo img.left {
-    top: 0%;
-    width: 25%;
-  }
-  div.logo img.right {
-    top: 0%;
-    width: 25%;
+    font-size: 50%;
   }
 }
 .ie html.menu body {
@@ -1074,64 +1221,72 @@ div.logo img.right {
   text-align: center;
   padding: 0px;
 }
+.ie div[role=main] section {
+  float: left;
+  width: 50%;
+  padding-left: 20px;
+}
+.ie div[role=main] section:nth-of-type(2n+1) {
+  clear: left;
+  padding-left: 0px;
+  padding-right: 20px;
+}
 .ie div.hero {
-  margin-bottom: 0%;
+  margin-bottom: 5%;
 }
 .ie dl.countdown {
+  top: 0%;
   width: 15%;
   height: 100%;
-  font-size: 60px;
-  font-size: 6rem;
+  font-size: 45px;
+  font-size: 4.5rem;
+  -webkit-box-shadow: -10px 0px 40px #000000;
+  -moz-box-shadow: -10px 0px 40px #000000;
+  box-shadow: -10px 0px 40px #000000;
+  color: -10px 0px 40px #000000;
 }
-.ready .ie dl.countdown {
-  top: 0%;
-}
-.ie dl.countdown dd {
+.ie dl.countdown > dd {
   float: none;
   width: 100%;
   height: 33.33%;
   padding: 0;
+  padding: 10% 0 0 0;
   line-height: 33.33%;
 }
-.ie dl.countdown dd figure {
+.ie dl.countdown > dd:nth-child(1) {
+  bbackground-color: #fff0db;
+}
+.ie dl.countdown > dd:nth-child(2) {
+  bbackground-color: #fff0db;
+}
+.ie dl.countdown > dd:nth-child(3) {
+  bbackground-color: #fff0db;
+}
+.ie dl.countdown > dd > figure {
   display: block;
   height: auto;
   line-height: 1;
 }
-.ie dl.countdown dd figure time {
-  display: block;
-}
-.ie dl.countdown dd figcaption {
+.ie dl.countdown > dd > figcaption {
   display: block;
   margin: 0;
-}
-.ie div.logo img.main {
-  width: 50%;
-  margin-bottom: 0%;
-}
-.ie div.logo img.left {
-  top: 0%;
-  width: 25%;
-}
-.ie div.logo img.right {
-  top: 0%;
-  width: 25%;
+  font-size: 50%;
 }
 @media only screen and (min-width: 768px) {
   body {
     background-color: yellow;
   }
   dl.countdown {
-    font-size: 80px;
-    font-size: 8rem;
+    font-size: 60px;
+    font-size: 6rem;
   }
 }
 .ie body {
   background-color: yellow;
 }
 .ie dl.countdown {
-  font-size: 80px;
-  font-size: 8rem;
+  font-size: 60px;
+  font-size: 6rem;
 }
 @media only screen and (min-width: 992px) {
   body {
@@ -1148,8 +1303,8 @@ div.logo img.right {
     width: 60%;
   }
   dl.countdown {
-    font-size: 100px;
-    font-size: 10rem;
+    font-size: 70px;
+    font-size: 7rem;
   }
 }
 .ie body {
@@ -1166,8 +1321,8 @@ div.logo img.right {
   width: 60%;
 }
 .ie dl.countdown {
-  font-size: 100px;
-  font-size: 10rem;
+  font-size: 70px;
+  font-size: 7rem;
 }
 @media only screen and (min-width: 1382px) {
   body {

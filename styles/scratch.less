@@ -1,0 +1,339 @@
+<dl class="countdown" rel="2013-07-06 09:00">
+  <dd class="days">
+    <figure>
+      <time></time>
+      <s></s>
+    </figure>
+    <figcaption>Days</figcaption>
+  </dd>
+  <dd class="hours">
+    <figure>
+      <time></time>
+      <s></s>
+    </figure>
+    <figcaption>Hours</figcaption>
+  </dd>
+  <dd class="mins">
+    <figure>
+      <time></time>
+      <s></s>
+    </figure>
+    <figcaption>Mins</figcaption>
+  </dd>
+</dl>
+
+
+  app.countdown = function(){
+    $('.countdown').each(function(){
+      var $countdown = $(this);
+
+      var date = $countdown.attr('rel').split(' ')[0];
+      var time = $countdown.attr('rel').split(' ')[1];
+
+      var year = parseInt(date.split('-')[0], 10);
+      var month = parseInt(date.split('-')[1], 10) - 1;
+      var day = parseInt(date.split('-')[2], 10);
+      var hour = parseInt(time.split(':')[0], 10);
+      var minute = parseInt(time.split(':')[1], 10);
+
+      var futureTime = Date.UTC(year, month, day, hour, minute, 0);
+
+      app.updateCountdown($countdown, futureTime);
+      setInterval( function(){ app.updateCountdown($countdown, futureTime) }, 5000);
+    });
+  }
+
+  app.updateCountdown = function($countdown, futureTime){
+    var d = new Date();
+    var currentTime = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds(), d.getMilliseconds());
+
+    var daysFloat = (futureTime - currentTime)/86400000;
+    var days = parseInt(daysFloat, 10);
+    if (days < 0) days = 0;
+
+    var hoursFloat = (daysFloat - days) * 24;
+    var hours = parseInt(hoursFloat, 10);
+    if (hours < 0) hours = 0;
+
+    var minutesFloat = (hoursFloat - hours) * 60;
+    var minutes = parseInt(minutesFloat, 10);
+    if (minutes < 0) minutes = 0;
+
+    $countdown.find('.days time').text(days);
+    $countdown.find('.hours time').text(hours);
+    $countdown.find('.mins time').text(minutes);
+  }
+
+
+/* Countdown */
+dl.countdown { display:block; position:relative; width:600px; margin:0 auto; padding:0; overflow:hidden; }
+dl.countdown dd { display:block; position:relative; margin:0; padding:0 15px; float:left; }
+dl.countdown dd figure { display:block; position:relative; margin:0; padding:0; width:170px; height:150px; background:transparent url(/images/layout/countdown-base.png) left top no-repeat; }
+dl.countdown dd figure time { display:block; margin:0; padding:0; font:130px "alternate-gothic-no-2-d", sans-serif; color:#eaf4f7; text-transform:uppercase; text-align:center; width:170px; height:150px; line-height:150px; letter-spacing:0px; }
+dl.countdown dd figure s { display:block; margin:0; padding:0; position:absolute; width:170px; height:18px; left:0px; top:61px; background:transparent url(/images/layout/countdown-break.png) left top no-repeat; }
+dl.countdown dd figcaption { display:block; margin:0; width:170px; padding:25px 0 0 0; font:50px "alternate-gothic-no-2-d", sans-serif; color:#eaf4f7; text-align:center; text-transform:uppercase; }
+
+
+
+
+
+
+
+
+
+p.one {
+  font-family: FontAwesome;
+}
+p.two {
+  font-family: Modern Pictograms Normal;
+}
+p.three {
+  font-family: Web Symbols Regular;
+}
+
+section.slideshow {
+  position: relative;
+  z-index: 10;
+  // margin: 0 10px;
+  height: 50%;
+  ol { 
+    margin: 0;
+    padding: 0;
+    min-height: 400px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    .perspective(1000);
+    li {
+      position: absolute;
+      display: block;
+      background-repeat: repeat;
+      background-position: 60% 0;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      .transition(0.5s linear);
+      .transform(rotate3D(1, 1, 0, 180deg));
+      .backface-visibility(hidden);
+
+      &.active { 
+        .transform(rotate3D(0, 0, 0, 0deg));
+      }
+
+      section { 
+        position: relative;
+        color: @white;
+        font-family: BebasRegular, sans-serif;
+
+        min-width: 200px;
+        max-width: 35%;
+        height: 100%;
+        padding: 5px 20px;
+        @background-image: linear-gradient(left, fade(@black, 60%) 0%, fade(@black, 60%) 85%, fade(@black, 0%) 100%);
+        .background-image(@background-image);
+
+        h2 {
+          margin-top: 0;
+          .font-size(36);
+          line-height: 1em;
+        }
+      }
+    }
+  }
+}
+
+img { 
+  .border-radius(50%);
+  margin: 10%;
+  width: 300px; 
+  height: 300px;
+  .rotate3d(0, 0, 1, 9deg);
+  .box-shadow(1em 1em 5em fade(@black, 70%));
+      // .transform(rotate3D(1, 1, 0, 40deg));
+}
+
+header {
+  position: relative;
+  z-index: 50;
+  background: @blue;
+  h2 { 
+    margin: 0 auto; 
+    width: 100%;
+    height: 160px; 
+    @media @480 { height: 203px; }
+    @media @600 { width: 591px; }
+    .ie & { width: 591px; }
+    background: url("@{images}/nessjon.png") no-repeat 50% 0; 
+    @media @2x { background-image: url("@{images}/nessjon@2x.png"); }
+    .background-size(95%);
+    .hide-text();
+  }
+  h1 {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    top: 1em;
+    text-transform: uppercase;
+    color: @pink;
+    height: 100%;
+    padding-bottom: 1em;
+
+    width: 365px;
+    width: 100%;
+    .font-size(25);
+    @media @480 { 
+      // width: 480px;
+      .font-size(33); 
+    }
+    @media @600 { 
+      // width: 650px;
+      .font-size(40); 
+    }
+    font-weight: normal;
+    // background: @purple;
+    div { 
+      position: relative;
+      span { 
+        display: inline-block; 
+        position: relative; 
+      }
+    }
+    .janessa { 
+      left: 2.2em;
+      top: 1em;
+      span:nth-child(1) { font-size: 1.6em; top: -0.3em; letter-spacing: -0.1em; }
+      span:nth-child(2) { font-size: 0.9em; top: -0.05em; }
+      span:nth-child(8) { font-size: 0.7em; top: -0.3em; }
+    }
+    .sheppard {
+      left: 0.5em;
+      top: 1.1em;
+      span { top: 0.1em; letter-spacing: 0em; }
+      span:nth-child(1) { font-size: 1.8em; top: -0.1em; letter-spacing: -0.1em; }
+      span:nth-child(3) { font-size: 0.7em; top: 0em; }
+      span:nth-child(4) { top: 0.1em; }
+      span:nth-child(5) { top: 0.1em; letter-spacing: 0.1em; }
+      span:nth-child(6) { letter-spacing: 0.1em; }
+      span:nth-child(7) { letter-spacing: 0.1em; }
+    }
+    .jonathan { 
+      left: 8.2em;
+      top: -0.5em;
+      span:nth-child(1) { font-size: 1.6em; top: -0.3em; letter-spacing: -0.1em; }
+      span:nth-child(4) { font-size: 0.8em; top: 0.1em; }
+      span:nth-child(8) { font-size: 0.8em; top: 0.1em; }
+    }
+    .suderman { 
+      left: 8.8em;
+      top: -0.3em;
+      span:nth-child(1) { font-size: 1.8em; top: 0.1em; letter-spacing: 0em; }
+      span:nth-child(8) { font-size: 1.2em; top: -0.05em; }
+    }
+    .and { 
+      left: 5.7em;
+      top: 1.2em;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      span { font-size: 3em; }
+      &::before {
+        left: 0.5em;
+        top: 0.7em;
+        z-index: -1px;
+        width: 37%;
+        height: 0.1em;
+        position: absolute;
+        border-top: 0.1em solid;
+        content: "";
+      }
+      &::after {
+        right: 0.5em;
+        top: 0.7em;
+        z-index: -1px;
+        width: 30%;
+        height: 0.1em;
+        position: absolute;
+        border-top: 0.1em solid;
+        content: "";
+      }
+    }
+    .date { 
+      display: none;
+      left: 5.7em;
+      top: 1.2em;
+      span { font-size: 3em; }
+    }
+
+  
+  }
+  padding-bottom: 10em;
+}
+
+section.countdown {
+	height: 110px;
+  width: 658px;
+  margin: 0 auto;
+
+  figure {
+    width: 110px;
+    height: 114px;
+    background: transparent url("@{images}/dash.png") 0 0 no-repeat;
+    float: left;
+    margin-left: 20px;
+    position: relative;
+    line-height: 1;
+    &.days { width: 165px; }
+
+    div {
+      .font-size(72);
+      font-weight: bold;
+      float: left;
+      width: 55px;
+      text-align: center;
+      font-family: Times;
+      color: #555;
+      position: relative;
+      
+      span { display: block; }
+    }
+
+    figcaption {
+      position: absolute;
+      display: block;
+      bottom: 0px;
+      right: 6px;
+      .font-size(16);
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+
+
+<!-- <header role=banner id=go> -->
+<!--   <h2>Janessa Sheppard &#38; Jonathan Suderman &#45; July 6, 2013</h2> -->
+<!--   <h1> -->
+<!--     <div class=janessa> -->
+<!--       <span>J</span><span>a</span><span>n</span><span>n</span><span>e</span><span>s</span><span>s</span><span>a</span> -->
+<!--     </div> -->
+<!--     <div class=sheppard> -->
+<!--       <span>S</span><span>h</span><span>e</span><span>p</span><span>p</span><span>a</span><span>r</span><span>d</span> -->
+<!--     </div> -->
+<!--     <div class=and> -->
+<!--       <span>&#38;amp;</span> -->
+<!--     </div> -->
+<!--     <div class=jonathan> -->
+<!--       <span>J</span><span>o</span><span>n</span><span>a</span><span>t</span><span>h</span><span>a</span><span>n</span> -->
+<!--     </div> -->
+<!--     <div class=suderman> -->
+<!--       <span>S</span><span>u</span><span>d</span><span>e</span><span>r</span><span>m</span><span>a</span><span>n</span> -->
+<!--     </div> -->
+<!--     <div class=date> -->
+<!--       <span>Saturday, July 6, 2013</span> -->
+<!--     </div> -->
+<!--   </h1> -->
+<!-- </header> -->
+
+<!-- <iframe src="https://docs.google.com/forms/d/1w8xbcvWEGeme_tmat7JUrqBepIMatuOusDjDEGzuezc/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> -->
