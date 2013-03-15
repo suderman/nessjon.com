@@ -1,5 +1,4 @@
-<% extend 'layout.html' %>
-
+#{partial 'head.toffee'} 
 <!-- Styles & Scripts -->
 <link href=/styles/splash.css rel=stylesheet>
 <script src=/scripts/lib/modernizr.min.js></script>
@@ -9,12 +8,12 @@
 <body>
 
 <header role=banner>
-  <h1>Janessa Sheppard & Jonathan Suderman - July 6, 2013</h1>
+  <h1>#{title}</h1>
 
   <p>Further details pending<br>
      This anticipated wedding.<br>
      Next summer, we'll see you<br>
-     At the Calgary Zoooo...
+     At the Calgary Zoo...
   <p>
 
 </header>

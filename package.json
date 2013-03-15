@@ -6,7 +6,7 @@
  "dependencies": {
    "express": "3.x",
    "coffee-script": "1.6.x",
-   "ect": "*",
+   "toffee": "*",
    "less-middleware": "*"
   }
 }

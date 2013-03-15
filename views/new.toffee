@@ -1,4 +1,4 @@
-<% extend 'layout.html' %>
+#{partial 'head.toffee'} 
 
 <!-- Styles & Scripts -->
 <link href=/styles/style.css rel=stylesheet>
