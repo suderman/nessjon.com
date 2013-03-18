@@ -14,8 +14,8 @@
     <a href=# class=menu></a>
     <nav role=navigation>
       <ul>
-        <li><a href=#schedule class=schedule>Schedule</a>
         <li><a href=#zoo class=zoo>Zoo</a>
+        <li><a href=#schedule class=schedule>Schedule</a>
         <li><a href=#maps class=maps>Maps</a>
         <li><a href=#dress class=dress>Dress</a>
         <li><a href=#registry class=registry>Registry</a>
@@ -26,24 +26,16 @@
 </header>
 
 <div role=main>
-  <header>
-    <div class=container>
 
-      <div class=logo>
-        <figure class=bride></figure>
-        <figure class=groom></figure>
-      </div>
-
-      <!-- <div class=logo> -->
-      <!--   <img class=main width=992 height=500 src=/images/nessjon.png> -->
-      <!--   <img class=left width=496 height=500 src=/images/bride.png> -->
-      <!--   <img class=right width=496 height=500 src=/images/groom.png> -->
-      <!-- </div> -->
-    </div>
-  </header>
+  <div class=logo>
+    <header>
+      <figure class=bride></figure>
+      <figure class=groom></figure>
+    </header>
+  </div>
 
   <div class=container>
-    
+
     <div class=hero>
       <div class=tilt>
         <dl class=countdown rel="2013-07-06 14:00">
@@ -61,14 +53,20 @@
           <li><figure><img src="/images/six.jpg"></figure>
         </ul>
       </div>
-      <div class=flourish>
-        <span><i></i><i></i></span>
-      </div>
+      <div class=flourish></div>
     </div>
 
     <blockquote>
       Welcome to our wedding website! We look forward to celebrating our special day with you.
     </blockquote>
+
+    <section id=zoo>
+      <div>
+        <h2><span></span><span>Zoo Entry</span><span></span></h2>
+        <p>Use the July 6 Zoo Pass you received with your invitation. Each pass allows one person to enter the zoo free of charge.  Please keep these with you as you may be asked to show them at the reception. Please note that pets are not permitted entry at the Calgary Zoo.
+        <p><img width=100% src=/images/ticket.png>
+      </div>
+    </section>
 
     <section id=schedule>
       <div>
@@ -81,14 +79,6 @@
           <dt>5 pm:
           <dd>Dinner reception begins at the Safari Lodge.  Dance to follow.
         </dl>
-      </div>
-    </section>
-
-    <section id=zoo>
-      <div>
-        <h2><span></span><span>Zoo Entry</span><span></span></h2>
-        <p>Use the July 6 Zoo Pass you received with your invitation. Each pass allows one person to enter the zoo free of charge.  Please keep these with you as you may be asked to show them at the reception. Please note that pets are not permitted entry at the Calgary Zoo.
-        <p><img width=100% src=/images/ticket.png>
       </div>
     </section>
 
@@ -129,6 +119,12 @@ scrolling="no" height="470" width="100%" frameborder="0" scrolling="no" marginhe
       <div>
         <h2><span></span><span>RSVP</span><span></span></h2>
         <p>Please indicate whether you plan to attend by no later than April 30, 2013.
+        <br><br>
+        <form action=rsvp method=post>
+          <label class=response for=response>Will you be joining us?</label><br>
+          <input type=radio name=response value="Yep!"> Of course&mdash;I wouldn't miss it!<br>
+          <input type=radio name=response value="Nope!"> Sorry, I wish I could make it.
+        </form>
       </div>
     </section>
 

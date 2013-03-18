@@ -310,6 +310,39 @@ section.countdown {
   }
 }
 
+  .flourish {
+    position: absolute;
+
+      left: 0;
+      bottom: 0;
+      // height: 100%;
+      .transform(translate(70px,-370px));
+
+    span {
+      .transform(rotate(90deg));
+      .transform-origin(0 0);
+      .backface-visibility(hidden);
+      text-shadow: -5px 5px 5px fade(@black, 50%);
+      .font-size(180);
+      .font-size(100);
+      display: block;
+      position: relative;
+      // margin-top: 60%;
+      // margin-left: -40%;
+      // background: yellow;
+
+      i:nth-child(1) { 
+        .icon(FloraliaRegular, "s");
+        font-size: 100%;
+        color: #c42ae2;
+      }
+      i:nth-child(2) { 
+        .icon(FloraliaRegular, "X");
+        font-size: 100%;
+        color: #5cbf78;
+      }
+    }
+  }
 
 
 <!-- <header role=banner id=go> -->
