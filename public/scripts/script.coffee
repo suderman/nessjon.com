@@ -113,9 +113,9 @@ app.navigation = ->
     $('html').addClass 'menu' if e.direction is 'left'
     $('html').removeClass 'menu' if e.direction is 'right'
 
-  # Set navigation height to match html height (when in menu mode)
-  $(window).resize -> $('nav[role=navigation]').height $('html').height() * 1.3
-  $(window).resize()
+  # # Set navigation height to match html height (when in menu mode)
+  # $(window).resize -> $('nav[role=navigation]').height $('html').height() * 1.3
+  # $(window).resize()
 
 
 app.countdown = ->

@@ -99,6 +99,16 @@
     content: @fontCharacter; 
   }
 }
+.icon2(@fontFamily, @fontCharacter){
+  &:after {
+    font-family: @fontFamily;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    content: @fontCharacter; 
+  }
+}
 
 // Text-selection colors
 .selection(@background, @color: #000, @img-background: transparent) {
