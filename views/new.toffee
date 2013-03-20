@@ -1,13 +1,5 @@
 #{partial 'head.toffee'} 
 
-<!-- Styles & Scripts -->
-<link href=/styles/style.css rel=stylesheet>
-<script src=/scripts/lib/modernizr.min.js></script>
-<script src=/scripts/script.js></script>
-
-<!-- And so it begins... -->
-<body>
-
 <header role=banner>
   <div class=container>
     <h1><a href=#>Ness &hearts; Jon</a></h1>
@@ -86,18 +78,20 @@
       <div>
         <h2><span></span><span>Zoo&nbsp;Details and&nbsp;Maps</span><span></span></h2>
         <p>For a map of the Calgary zoo, directions, and any other zoo-related inquiries you may have, please visit the Calgary Zoo website at <a href="http://www.calgaryzoo.ca/">http://www.calgaryzoo.ca/</a>
-        <h3>Parking</h3>
-        <p>North Lot:<br>The main zoo parking lot and entrance is located off St. George’s Drive, just north of Memorial Drive with zoo access through the north gate. A $7.00 daily parking fee is in effect. 
-        <h3>Accommodations</h3>
-        <p>Guests are responsible for arranging their own accommodations and transportation. We encourage making these arrangements early.
+        <dl>
+          <dt>Parking (North Lot)
+          <dd>The main zoo parking lot and entrance is located off St. George’s Drive, just north of Memorial Drive with zoo access through the north gate. A $7.00 daily parking fee is in effect.
+          <dt>Accommodations
+          <dd>Guests are responsible for arranging their own accommodations and transportation. We encourage making these arrangements early.
+        </dl>
       </div>
     </section>
 
     <section>
       <div>
-        <iframe
-src="http://www.map-generator.org/82ab8ecf-5227-484a-9b2b-9c99febb614b/iframe-map.aspx"
-scrolling="no" height="470" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <figure class=map>
+          <iframe width=500 height=500 frameborder=0 scrolling=no marginheight=0 marginwidth=0 src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Safari+Lodge+Canada,+Calgary,+Alberta&amp;aq=&amp;sll=51.044362,-114.028078&amp;sspn=0.012358,0.018368&amp;g=Safari+Lodge+Canada,+Calgary,+Alberta&amp;ie=UTF8&amp;hq=&amp;hnear=Safari+Lodge+Canada,+Calgary,+Division+No.+6,+Alberta,+Canada&amp;t=m&amp;ll=51.047816,-114.028301&amp;spn=0.02698,0.04283&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+        </figure>
       </div>
     </section>
 

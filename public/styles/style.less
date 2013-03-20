@@ -38,8 +38,11 @@ html { }
 body { 
   font-family: IM Fell DW Pica SC, serif;
   .selection(darken(@base, 50%), @base);
-  .transition(0.3s);
   overflow-x: hidden;
+
+  // .transition(-webkit-filter 2s ease-out 0s);
+  // -webkit-filter: blur(3px);
+  // html.ready & { -webkit-filter: blur(0px); }
 }
 
 .container {
@@ -88,8 +91,8 @@ p, dd {
   line-height: 1.9; 
   margin-bottom: 10px; 
 }
-a {}
-a:hover {}
+a { color: @blue; }
+a:hover { color: lighten(@blue, 20%); }
 
 // Header
 @navHeight: 45px;
@@ -251,15 +254,13 @@ div[role=main] {
   // .background-size(137px 137px);
 
   &:before { 
-    .pseudo-layer();
-    z-index: 1;
+    .pseudo-layer(1);
     .opacity(0.90);
     background: url("@{images}/main.png") scroll repeat-y 50% 0%;
   }
 
   &:after { 
-    .pseudo-layer();
-    z-index: 2;
+    .pseudo-layer(2);
     background: url("@{images}/main-top.png") scroll repeat-x 0% 540px;
   }
 
@@ -284,23 +285,60 @@ div[role=main] {
   dt {
     display: inline-block;
     padding-bottom: 3px;
+    padding-right: 1em;
+    margin-bottom: 5px;
     color: @pink;
-    text-shadow: 1px 1px 2px fade(@black, 50%);
-    border-bottom: 2px solid @green;
+    // text-shadow: 1px 1px 2px fade(@black, 50%);
+    // text-shadow: 2px 2px 3px fade(@black, 90%);
+    text-shadow: 3px 2px 2px fade(@black, 90%);
+    border-bottom: 3px solid @green;
     .font-size(20);
-    font-weight: bold;
+    // font-weight: bold;
+    font-family: JungleFeverRegular, sans-serif;
   }
 
   // Blocks of info
   section { 
     padding-top: @navHeight;
-    div { 
+    > div { 
+      position: relative;
       padding: 1px 10px 20px;
       border: 3px dashed @transparent; 
       .border-radius(30px);
       .transition(border-color 0.5s ease-in 0s);
     }
-    &:target div { border-color: @brown; }
+    &:target > div { border-color: @brown; }
+
+    figure.map {
+      position: relative;
+      z-index: 20;
+      overflow: hidden;
+      border: 3px solid @brown;
+      .border-radius(30px);
+      .box-shadow(inset 0 0 50px @black);
+
+      &:before {
+        .pseudo-layer(2);
+        top: auto;
+        bottom: 0;
+        height: 35px;
+        background: url("@{images}/tiger.png") scroll repeat-x;
+        .background-size(138px 138px);
+        .box-shadow(0 -2px 20px @black);
+      }
+
+      &:after {
+        .pseudo-layer();
+        .border-radius(20px);
+        .box-shadow(inset 0 0 30px @black);
+        pointer-events: none;
+        .pointerevents & { z-index: 1; }
+      }
+
+      iframe { 
+        -webkit-filter: hue-rotate(-30deg) grayscale(30%); 
+      }
+    }
   }
 }
 
@@ -324,8 +362,7 @@ div.logo {
 
   // Scenery
   &:after { 
-    .pseudo-layer();
-    z-index: 10;
+    .pseudo-layer(10);
     .ie & { background: url("@{images}/hill.png") scroll no-repeat 50% 100%; }
     background: url("@{images}/hill.png") scroll no-repeat 50% 100%,
                 url("@{images}/mountain.png") fixed repeat-x 50% 0%,

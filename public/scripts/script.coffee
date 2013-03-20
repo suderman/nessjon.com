@@ -15,7 +15,7 @@ Modernizr.load load: [
   'scripts/lib/underscore.min.js',
   'scripts/lib/fastclick.min.js',
   'scripts/lib/mousetrap.js',
-  'scripts/dev/fixie.min.js',
+  'scripts/lib/jquery.fitmaps.js',
 ], complete: -> jQuery app.init()
 
 # Google Analytics
@@ -31,6 +31,8 @@ app.init = ->
   app.countdown()
   app.navigation()
   app.slideshow()
+
+  $('figure.map').fitMaps w:'100%', h:'500px'
 
   $('html').addClass 'ready'
 

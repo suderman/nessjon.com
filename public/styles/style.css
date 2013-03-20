@@ -445,11 +445,6 @@ img {
 }
 body {
   font-family: IM Fell DW Pica SC, serif;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
   overflow-x: hidden;
 }
 body ::selection {
@@ -520,6 +515,12 @@ p,
 dd {
   line-height: 1.9;
   margin-bottom: 10px;
+}
+a {
+  color: #224a6d;
+}
+a:hover {
+  color: #3a7fbb;
 }
 header[role=banner] {
   position: fixed;
@@ -761,13 +762,12 @@ div[role=main] {
 }
 div[role=main]:before {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   content: '';
-  z-index: 1;
   -webkit-opacity: 0.9;
   -moz-opacity: 0.9;
   opacity: 0.9;
@@ -777,13 +777,12 @@ div[role=main]:before {
 }
 div[role=main]:after {
   position: absolute;
-  z-index: -1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   content: '';
-  z-index: 2;
   background: url("/images/main-top.png") scroll repeat-x 0% 540px;
 }
 div[role=main] .container {
@@ -812,17 +811,20 @@ div[role=main] blockquote {
 div[role=main] dt {
   display: inline-block;
   padding-bottom: 3px;
+  padding-right: 1em;
+  margin-bottom: 5px;
   color: #ac4ebe;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid #5cbf78;
+  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.9);
+  border-bottom: 3px solid #5cbf78;
   font-size: 20px;
   font-size: 2rem;
-  font-weight: bold;
+  font-family: JungleFeverRegular, sans-serif;
 }
 div[role=main] section {
   padding-top: 45px;
 }
-div[role=main] section div {
+div[role=main] section > div {
+  position: relative;
   padding: 1px 10px 20px;
   border: 3px dashed rgba(0, 0, 0, 0);
   -webkit-border-radius: 30px;
@@ -837,8 +839,70 @@ div[role=main] section div {
   -ms-transition: border-color 0.5s ease-in 0s;
   transition: border-color 0.5s ease-in 0s;
 }
-div[role=main] section:target div {
+div[role=main] section:target > div {
   border-color: #7b4e2f;
+}
+div[role=main] section figure.map {
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+  border: 3px solid #7b4e2f;
+  -webkit-border-radius: 30px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 30px;
+  -moz-background-clip: padding;
+  border-radius: 30px;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 0 50px #000000;
+  -moz-box-shadow: inset 0 0 50px #000000;
+  box-shadow: inset 0 0 50px #000000;
+  color: inset 0 0 50px #000000;
+}
+div[role=main] section figure.map:before {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  top: auto;
+  bottom: 0;
+  height: 35px;
+  background: url("/images/tiger.png") scroll repeat-x;
+  -webkit-background-size: 138px 138px;
+  -moz-background-size: 138px 138px;
+  background-size: 138px 138px;
+  -webkit-box-shadow: 0 -2px 20px #000000;
+  -moz-box-shadow: 0 -2px 20px #000000;
+  box-shadow: 0 -2px 20px #000000;
+  color: 0 -2px 20px #000000;
+}
+div[role=main] section figure.map:after {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-border-radius: 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 20px;
+  -moz-background-clip: padding;
+  border-radius: 20px;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 0 30px #000000;
+  -moz-box-shadow: inset 0 0 30px #000000;
+  box-shadow: inset 0 0 30px #000000;
+  color: inset 0 0 30px #000000;
+  pointer-events: none;
+}
+.pointerevents div[role=main] section figure.map:after {
+  z-index: 1;
+}
+div[role=main] section figure.map iframe {
+  -webkit-filter: hue-rotate(-30deg) grayscale(30%);
 }
 div.logo {
   position: relative;
@@ -865,13 +929,12 @@ div.logo .container {
 }
 div.logo:after {
   position: absolute;
-  z-index: -1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   content: '';
-  z-index: 10;
   background: url("/images/hill.png") scroll no-repeat 50% 100%, url("/images/mountain.png") fixed repeat-x 50% 0%, url("/images/grass.png") scroll repeat-x 50% 100%;
   -webkit-background-size: 380% auto auto;
   -moz-background-size: 380% auto auto;
