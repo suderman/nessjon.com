@@ -513,11 +513,8 @@ div.hero {
         height: 100%;
         max-width: @heroMaxWidth;
         max-height: @heroMaxHeight;
-        opacity: 0;
-        .transition(1.5s); 
-        &.active { opacity: 1; }
-        &.previous { opacity: 0; }
-        .no-js &:first-child { opacity: 1; }
+        .opacity(0);
+        .no-js &:first-child { .opacity(1); }
 
         > figure {
           position: absolute;
@@ -550,6 +547,7 @@ dl.countdown {
   text-shadow: -2px -1px 0 fade(@black, 50%);
   font-family: Times New Roman, serif;
   .font-size(24);
+  .ie8 & { display: none; }
 
   > dd { 
     position: relative;
@@ -716,11 +714,11 @@ footer[role=contentinfo] {
     section { 
       float: left;
       width: 50%;
-      padding-left: 10px;
       .font-size(18);
-      &:nth-of-type(2n+1) {
+      &.right { padding-left: 10px; }
+      // &:nth-of-type(2n+1) {
+      &.left {
         clear: left;
-        padding-left: 0px;
         padding-right: 10px;
       }
       &.wide {

@@ -34,7 +34,7 @@
 
 <!-- Styles & Scripts -->
 <link href=/styles/style.css rel=stylesheet>
-<script src=/scripts/lib/modernizr.custom.js></script>
+<script src=/scripts/lib/modernizr.yepnope.html5shiv.js></script>
 <script src=/scripts/script.js></script>
 
 <!-- And so it begins... -->

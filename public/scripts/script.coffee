@@ -7,7 +7,7 @@
                       _/ |
                      |__/
                                                       ;-)###
-# Depends on yepnope.js (bundled with Modernizr)
+# Depends on Modernizr (bundled with yepnope.js and html5shiv)
 # ----------------------------------------------------------
 
 # Classify IE (https://gist.github.com/padolsey/527683)
@@ -15,25 +15,24 @@ ie=`function(){for(var a=3,b=document.createElement("b"),c=b.all||[];b.innerHTML
 document.documentElement.className += " ie ie#{ie}" if ie
 
 # Stylesheet reset for really old IE
-yepnope test: ie <= 7, yep: 'styles/lib/ie6.1.1.css'
+yepnope test: ie <= 7, yep: '/styles/lib/ie6.1.1.css'
 yepnope test: ie <= 8, yep: [
-  'scripts/lib/html5shiv-printshiv.js', # enable HTML5 in old IE 
-  'scripts/lib/nwmatcher-1.2.5.js',     # fancy selector engine
-  'scripts/lib/selectivizr.min.js',     # CSS3 selector support
+  '/scripts/lib/nwmatcher-1.2.5.js',     # fancy selector engine
+  '/scripts/lib/selectivizr.min.js',     # CSS3 selector support
 ]
 
 # Gentlemen, load your libraries:
 yepnope load: [
-  'scripts/lib/jquery.min.js',       # obviously
-  'scripts/lib/underscore.min.js',   # tasty utility methods
-  'scripts/lib/fastclick.min.js',    # treat tap as click events
-  'scripts/lib/mousetrap.js',        # keyboard shortcuts
-  'scripts/lib/jquery.fitmaps.js',   # responsive Google Maps
+  '/scripts/lib/jquery.min.js',       # obviously
+  '/scripts/lib/underscore.min.js',   # tasty utility methods
+  '/scripts/lib/fastclick.min.js',    # treat tap as click events
+  '/scripts/lib/mousetrap.js',        # keyboard shortcuts
+  '/scripts/lib/jquery.fitmaps.js',   # responsive Google Maps
 ], complete: -> jQuery app.init()
 
 # Google Analytics
 window._gaq = [["_setAccount", "UA-35747031-1"], ["_trackPageview"], ["_trackPageLoadTime"]]
-yepnope load: ((if "https:" is location.protocol then "//ssl" else "//www")) + ".google-analytics.com/ga.js"
+yepnope load: '//www.google-analytics.com/ga.js'
 
 # All site behavior right here folks!
 window.app = {}
@@ -44,10 +43,7 @@ app.init = ->
   app.countdown()
   app.navigation()
   app.slideshow()
-
-  $('figure.map').each -> 
-    height = $(this).closest('section').find('.col:first').height()
-    $(this).fitMaps w: '100%', h: (height - 100) + 'px'
+  app.map()
 
   $('html').addClass 'ready'
 
@@ -175,22 +171,23 @@ app.secretSong = ->
   Mousetrap.bind "z o o", ->
     $("body").append "<embed src=files/secret.mp3 autostart=true loop=false width=2 height=0>"
 
+app.map = ->
+  $('figure.map').each -> 
+    height = $(this).closest('section').find('.col:first').height()
+    $(this).fitMaps w: '100%', h: (height - 100) + 'px'
 
 app.slideshow = ->
 
   $('div.hero').each ->
     $hero = $(this)
-    $hero.find('li:first').addClass 'active'
+    $hero.find('li:first').css opacity: 1
 
     app.slideshow.advance = =>
       $prev = $hero.find 'li:first'
       $curr = $prev.next 'li'
-      $curr.addClass('active')
-      $prev.addClass('previous').on app.transitionEnd, -> 
-        $prev.off()
-             .detach()
-             .removeClass('active previous')
-             .appendTo $curr.parent()
+      $curr.animate opacity: 1, 1500
+      $prev.animate opacity: 0, 1500, ->
+        $prev.off().detach().appendTo $curr.parent()
 
     id = setInterval app.slideshow.advance, 7000
     $('header[role=banner] h1 a').on 'click', (e) -> 
