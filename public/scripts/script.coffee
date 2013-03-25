@@ -10,12 +10,9 @@
 # Depends on base.js (Modernizr, yepnope.js, html5shiv, ie)
 # ----------------------------------------------------------
 
-# Stylesheet reset for really old IE
+# CSS3 selector support & stylesheet reset
+yepnope test: ie <= 8, yep: '/scripts/lib/nwmatcher.selectivizr.js'
 yepnope test: ie <= 7, yep: '/styles/lib/ie6.1.1.css'
-yepnope test: ie <= 8, yep: [
-  '/scripts/lib/nwmatcher-1.2.5.js',     # fancy selector engine
-  '/scripts/lib/selectivizr.min.js',     # CSS3 selector support
-]
 
 # Gentlemen, load your libraries:
 yepnope load: [
