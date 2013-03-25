@@ -66,17 +66,6 @@
       "initialSize" : 8685,
       "fileType" : 8192
     },
-    "\/public\/images\/dark_days_dash.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/dark_days_dash.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/dark_days_dash.png",
-      "initialSize" : 1632,
-      "fileType" : 8192
-    },
     "\/public\/images\/jj.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -99,26 +88,6 @@
       "initialSize" : 1633,
       "fileType" : 8192
     },
-    "\/public\/images\/hill.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/hill.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/hill.png",
-      "initialSize" : 346016,
-      "fileType" : 8192
-    },
-    "\/public\/fonts\/SeasideResortNF\/stylesheet.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/SeasideResortNF\/stylesheet.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/public\/fonts\/im-fell-dw-pica-sc\/specimen_files\/grid_12-825-55-15.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -128,38 +97,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/public\/images\/ticket-original.png" : {
+    "\/public\/fonts\/SeasideResortNF\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/ticket-original.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/ticket-original.png",
-      "initialSize" : 407563,
-      "fileType" : 8192
-    },
-    "\/public\/scripts\/lib\/colorbox\/themes\/1\/border.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/border.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/border.png",
-      "initialSize" : 112,
-      "fileType" : 8192
-    },
-    "\/public\/images\/green-tail.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/green-tail.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/green-tail.png",
-      "initialSize" : 1013,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/public\/fonts\/SeasideResortNF\/stylesheet.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/public\/styles\/lib\/normalize.less" : {
       "ignoreWasSetByUser" : 0,
@@ -174,6 +119,50 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/public\/scripts\/lib\/colorbox\/themes\/1\/border.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/border.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/border.png",
+      "initialSize" : 112,
+      "fileType" : 8192
+    },
+    "\/public\/images\/hill.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/hill.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/hill.png",
+      "initialSize" : 346016,
+      "fileType" : 8192
+    },
+    "\/public\/images\/green-tail.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/green-tail.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/green-tail.png",
+      "initialSize" : 1013,
+      "fileType" : 8192
+    },
+    "\/public\/images\/ticket-original.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/ticket-original.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/ticket-original.png",
+      "initialSize" : 407563,
+      "fileType" : 8192
+    },
     "\/public\/scripts\/lib\/colorbox\/themes\/2\/controls.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -185,14 +174,16 @@
       "initialSize" : 570,
       "fileType" : 8192
     },
-    "\/public\/fonts\/bebas\/stylesheet.css" : {
+    "\/public\/images\/archived\/dark_seconds_dash.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/bebas\/stylesheet.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/public\/images\/archived\/dark_seconds_dash.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/archived\/dark_seconds_dash.png",
+      "initialSize" : 1873,
+      "fileType" : 8192
     },
     "\/public\/images\/grass.png" : {
       "ignoreWasSetByUser" : 0,
@@ -204,6 +195,15 @@
       "outputAbbreviatedPath" : "\/public\/images\/grass.png",
       "initialSize" : 27248,
       "fileType" : 8192
+    },
+    "\/public\/fonts\/bebas\/stylesheet.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/fonts\/bebas\/stylesheet.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/public\/images\/three.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -240,6 +240,17 @@
       "initialSize" : 1011,
       "fileType" : 8192
     },
+    "\/public\/scripts\/lib\/toe.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/toe.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/toe.min-ck.js",
+      "fileType" : 64
+    },
     "\/public\/scripts\/lib\/colorbox\/themes\/1\/controls.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -268,17 +279,6 @@
       "inputAbbreviatedPath" : "\/public\/old\/new.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/public\/scripts\/lib\/toe.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/toe.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/toe.min-ck.js",
-      "fileType" : 64
     },
     "\/public\/scripts\/lib\/respond.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -325,14 +325,16 @@
       "outputAbbreviatedPath" : "\/public\/scripts\/script-ck.js",
       "fileType" : 64
     },
-    "\/public\/fonts\/font-awesome\/font-awesome.css" : {
+    "\/public\/scripts\/dev\/coffee-script.min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/font-awesome\/font-awesome.css",
-      "outputAbbreviatedPath" : "\/No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min-ck.js",
+      "fileType" : 64
     },
     "\/public\/scripts\/splash.js" : {
       "ignoreWasSetByUser" : 0,
@@ -345,16 +347,14 @@
       "outputAbbreviatedPath" : "\/public\/scripts\/splash-ck.js",
       "fileType" : 64
     },
-    "\/public\/scripts\/dev\/coffee-script.min.js" : {
+    "\/public\/fonts\/font-awesome\/font-awesome.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/public\/fonts\/font-awesome\/font-awesome.css",
+      "outputAbbreviatedPath" : "\/No Output Path",
+      "fileType" : 16
     },
     "\/public\/styles\/lib\/print.less" : {
       "ignoreWasSetByUser" : 0,
@@ -391,16 +391,16 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/public\/scripts\/lib\/modernizr-ck.js" : {
+    "\/public\/images\/gradient-tail.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/modernizr-ck.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/modernizr-ck-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/public\/images\/gradient-tail.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/gradient-tail.png",
+      "initialSize" : 1011,
+      "fileType" : 8192
     },
     "\/public\/scripts\/countdown.coffee" : {
       "ignoreWasSetByUser" : 0,
@@ -425,17 +425,6 @@
       "initialSize" : 157,
       "fileType" : 8192
     },
-    "\/public\/images\/dark_minutes_dash.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/dark_minutes_dash.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/dark_minutes_dash.png",
-      "initialSize" : 1782,
-      "fileType" : 8192
-    },
     "\/public\/fonts\/JungleFever\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -454,17 +443,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/public\/images\/dark_hours_dash.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/dark_hours_dash.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/dark_hours_dash.png",
-      "initialSize" : 1723,
-      "fileType" : 8192
-    },
     "\/public\/images\/trees.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -475,17 +453,6 @@
       "outputAbbreviatedPath" : "\/public\/images\/trees.jpg",
       "initialSize" : 38077,
       "fileType" : 4096
-    },
-    "\/public\/images\/gradient-tail.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/gradient-tail.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/gradient-tail.png",
-      "initialSize" : 1011,
-      "fileType" : 8192
     },
     "\/public\/fonts\/im-fell-dw-pica-sc\/specimen_files\/easytabs.js" : {
       "ignoreWasSetByUser" : 0,
@@ -522,17 +489,6 @@
       "initialSize" : 13638,
       "fileType" : 8192
     },
-    "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
-      "initialSize" : 182,
-      "fileType" : 8192
-    },
     "\/app.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -545,16 +501,16 @@
       "outputStyle" : 0,
       "fileType" : 32
     },
-    "\/public\/scripts\/lib\/jquery.fitmaps.js" : {
+    "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.fitmaps.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.fitmaps-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
+      "initialSize" : 182,
+      "fileType" : 8192
     },
     "\/public\/scripts\/lib\/nwmatcher-1.2.5.js" : {
       "ignoreWasSetByUser" : 0,
@@ -567,14 +523,27 @@
       "outputAbbreviatedPath" : "\/public\/scripts\/lib\/nwmatcher-1.2.5-ck.js",
       "fileType" : 64
     },
-    "\/public\/styles\/style.css" : {
+    "\/public\/scripts\/lib\/jquery.fitmaps.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/styles\/style.css",
-      "outputAbbreviatedPath" : "\/No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.fitmaps.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.fitmaps-ck.js",
+      "fileType" : 64
+    },
+    "\/public\/images\/archived\/dark_weeks_dash.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/archived\/dark_weeks_dash.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/archived\/dark_weeks_dash.png",
+      "initialSize" : 1696,
+      "fileType" : 8192
     },
     "\/public\/fonts\/bebas\/demo.html" : {
       "ignoreWasSetByUser" : 0,
@@ -585,16 +554,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/public\/images\/dark_seconds_dash.png" : {
+    "\/public\/styles\/style.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/dark_seconds_dash.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/dark_seconds_dash.png",
-      "initialSize" : 1873,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/public\/styles\/style.css",
+      "outputAbbreviatedPath" : "\/No Output Path",
+      "fileType" : 16
     },
     "\/public\/images\/gradient-head.png" : {
       "ignoreWasSetByUser" : 0,
@@ -607,6 +574,15 @@
       "initialSize" : 1009,
       "fileType" : 8192
     },
+    "\/public\/fonts\/Floralia\/stylesheet.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/fonts\/Floralia\/stylesheet.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/public\/scripts\/lib\/colorbox\/themes\/5\/border.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -617,15 +593,6 @@
       "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/5\/border.png",
       "initialSize" : 163,
       "fileType" : 8192
-    },
-    "\/public\/fonts\/Floralia\/stylesheet.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/Floralia\/stylesheet.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/public\/old\/index.html" : {
       "ignoreWasSetByUser" : 0,
@@ -769,14 +736,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/public\/old\/template.html" : {
+    "\/public\/images\/archived\/dark_days_dash.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/old\/template.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/public\/images\/archived\/dark_days_dash.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/archived\/dark_days_dash.png",
+      "initialSize" : 1632,
+      "fileType" : 8192
     },
     "\/public\/old\/index.php" : {
       "ignoreWasSetByUser" : 0,
@@ -786,6 +755,26 @@
       "inputAbbreviatedPath" : "\/public\/old\/index.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/public\/old\/template.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/old\/template.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/public\/images\/archived\/dark_hours_dash.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/archived\/dark_hours_dash.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/archived\/dark_hours_dash.png",
+      "initialSize" : 1723,
+      "fileType" : 8192
     },
     "\/public\/images\/two.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -820,6 +809,17 @@
       "initialSize" : 12781,
       "fileType" : 8192
     },
+    "\/public\/images\/archived\/dark_minutes_dash.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/archived\/dark_minutes_dash.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/archived\/dark_minutes_dash.png",
+      "initialSize" : 1782,
+      "fileType" : 8192
+    },
     "\/public\/scripts\/lib\/colorbox\/colorbox.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -850,8 +850,8 @@
       "fileType" : 2048
     },
     "\/public\/styles\/scratch.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/public\/styles\/scratch.less",
@@ -861,17 +861,6 @@
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/public\/images\/zebrafade.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
-      "initialSize" : 10026,
-      "fileType" : 8192
     },
     "\/public\/images\/four.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -884,6 +873,17 @@
       "initialSize" : 55969,
       "fileType" : 4096
     },
+    "\/public\/images\/zebrafade.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
+      "initialSize" : 10026,
+      "fileType" : 8192
+    },
     "\/public\/scripts\/lib\/colorbox\/themes\/2\/colorbox.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -892,28 +892,6 @@
       "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/2\/colorbox.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/public\/images\/dark_weeks_dash.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/dark_weeks_dash.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/dark_weeks_dash.png",
-      "initialSize" : 1696,
-      "fileType" : 8192
-    },
-    "\/public\/scripts\/lib\/modernizr.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/modernizr.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/modernizr-ck.js",
-      "fileType" : 64
     },
     "\/public\/scripts\/lib\/mousetrap.js" : {
       "ignoreWasSetByUser" : 0,
@@ -946,17 +924,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/public\/images\/tiger.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/tiger.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/tiger.png",
-      "initialSize" : 13477,
-      "fileType" : 8192
-    },
     "\/public\/images\/main-top.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -966,6 +933,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/public\/images\/main-top.png",
       "initialSize" : 1108,
+      "fileType" : 8192
+    },
+    "\/public\/images\/tiger.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/tiger.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/tiger.png",
+      "initialSize" : 13477,
       "fileType" : 8192
     },
     "\/public\/scripts\/dev\/less.min.js" : {
@@ -1014,16 +992,16 @@
       "initialSize" : 1477,
       "fileType" : 4096
     },
-    "\/public\/images\/giraffegradient.png" : {
+    "\/public\/images\/test.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
+      "inputAbbreviatedPath" : "\/public\/images\/test.jpg",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
-      "initialSize" : 9472,
-      "fileType" : 8192
+      "outputAbbreviatedPath" : "\/public\/images\/test.jpg",
+      "initialSize" : 51947,
+      "fileType" : 4096
     },
     "\/public\/fonts\/SeasideResortNF\/demo.html" : {
       "ignoreWasSetByUser" : 0,
@@ -1045,17 +1023,6 @@
       "initialSize" : 66264,
       "fileType" : 8192
     },
-    "\/public\/images\/test.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/test.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/test.jpg",
-      "initialSize" : 51947,
-      "fileType" : 4096
-    },
     "\/public\/fonts\/grand-hotel\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1075,6 +1042,17 @@
       "outputAbbreviatedPath" : "\/public\/images\/six.jpg",
       "initialSize" : 97846,
       "fileType" : 4096
+    },
+    "\/public\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
+      "initialSize" : 166,
+      "fileType" : 8192
     },
     "\/public\/fonts\/modernpics\/demo.html" : {
       "ignoreWasSetByUser" : 0,
@@ -1096,15 +1074,15 @@
       "initialSize" : 1012,
       "fileType" : 8192
     },
-    "\/public\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png" : {
+    "\/public\/images\/giraffegradient.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
+      "inputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png",
-      "initialSize" : 166,
+      "outputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
+      "initialSize" : 9472,
       "fileType" : 8192
     },
     "\/public\/scripts\/lib\/underscore.min.js" : {
@@ -1280,7 +1258,7 @@
     "sassAutoOutputPathStyle" : 3,
     "stylusAutoOutputPathReplace2" : "css",
     "lessAutoOutputPathStyle" : 3,
-    "genericWebpageFileExtensionsString" : "html, xhtml, htm, shtml, shtm, php, jsp, asp, aspx, erb, ctp",
+    "genericWebpageFileExtensionsString" : "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
     "coffeeMinifyOutput" : 1,
     "javascriptOutputSuffix" : "-ck",
     "jadeOutputStyle" : 0,
@@ -1437,7 +1415,7 @@
     "jadeCompileDebug" : 1,
     "slimRailsCompatible" : 0,
     "kitAutoOutputPathReplace2" : "",
-    "lessDebugStyle" : 0,
+    "lessDebugStyle" : 2,
     "javascriptAutoOutputPathRelativePath" : "",
     "slimAutoOutputPathStyle" : 0
   },

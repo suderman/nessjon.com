@@ -1,27 +1,24 @@
 /*!
-// Base styles and mixins
+// [Base styles and mixins]
 // Jon Suderman 2013
-// 
 // --> another highly recommended mixin library: https://github.com/CSSHat/LESSHat
 //
-// *                                 |>>>                    +
-// +          *                      |                   *       +
-//                     |>>>      _  _|_  _   *     |>>>
-//            *        |        |;| |;| |;|        |                 *
-//      +          _  _|_  _    \\.    .  /    _  _|_  _       +
-//  *             |;|_|;|_|;|    \\: +   /    |;|_|;|_|;|
-//                \\..      /    ||:+++. |    \\.    .  /           *
-//       +         \\.  ,  /     ||:+++  |     \\:  .  /
-//                  ||:+  |_   _ ||_ . _ | _   _||:+  |       *
-//           *      ||+++.|||_|;|_|;|_|;|_|;|_|;||+++ |          +
-//                  ||+++ ||.    .     .      . ||+++.|   *
-// +   *            ||: . ||:.     . .   .  ,   ||:   |               *
-//          *       ||:   ||:  ,     +       .  ||: , |      +
-//   *              ||:   ||:.     +++++      . ||:   |         *
-//      +           ||:   ||.     +++++++  .    ||: . |    +
-//            +     ||: . ||: ,   +++++++ .  .  ||:   |             +
-//                  ||: . ||: ,   +++++++ .  .  ||:   |        *
-//                  ||: . ||: ,   +++++++ .  .  ||:   |
+//                                   ,.=,,==. ,,_
+//                  _ ,====, _    |I|`` ||  `|I `|
+//                 |`I|    || `==,|``   ^^   ``  |
+//                 | ``    ^^    ||_,===TT`==,,_ |
+//                 |,==Y``Y==,,__| \L=_-`'   +J/`
+//                  \|=_  ' -=#J/..-|=_-     =|
+//                   |=_   -;-='`. .|=_-     =|----T--,
+//                   |=/\  -|=_-. . |=_-/^\  =||-|-|::|____
+//                   |=||  -|=_-. . |=_-| |  =|-|-||::\____
+//                   |=LJ  -|=_-. . |=_-|_| =||-|-|:::::::
+//                   |=_   -|=_-_.  |=_-     =|-|-||:::::::
+//                   |=_   -|=//^\. |=_-     =||-|-|:::::::
+//               ,   |/&_,_-|=||  | |=_-     =|-|-||:::::::
+//            ,--``8%,/    ',%||  | |=_-     =||-|-|%::::::
+//        ,---`_,888`  ,.'''''`-.,|,|/!,--,.&\|&\-,|&#:::::
+//       |;:;K`__,...;=\_____,=``           %%%&     %#,---
 ////////////////////////////////////////////////////////////////////////
 */
 
@@ -42,8 +39,8 @@
 
 // Set font size in pixels, get rem instead!
 .font-size(@font-size: 16) {
-  @rem: (@font-size / 10);
-  font-size : @font-size * 1px;
+  @rem: (unit(@font-size) / 10);
+  font-size : (unit(@font-size) * 1px);
   font-size : ~"@{rem}rem"; 
 }
 
@@ -52,7 +49,7 @@
   -webkit-opacity: @opacity;
   -moz-opacity: @opacity;
   opacity: @opacity;
-  @opperc: @opacity * 100;
+  @opperc: (@opacity * 100);
   -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
   filter: ~"alpha(opacity=@{opperc})";
 }
@@ -70,15 +67,11 @@
 
 // Contain floats
 .clearfix {
-  *zoom: 1;
-  &:before,
-  &:after {
+  &:before, &:after {
     display: table;
     content: ""; 
   }
-  &:after {
-    clear: both; 
-  } 
+  &:after { clear: both; } 
 }
 
 // For image replacement
@@ -89,8 +82,10 @@
 }
 
 // Icon font
-.icon(@fontFamily, @fontCharacter){
-  &:before {
+// example: .icon(fontawesome, "\f08e", after);
+.icon(@fontFamily, @fontCharacter, @beforeOrAfter: before) {
+  @pseudoSelector: ~":@{beforeOrAfter}";
+  &@{pseudoSelector} { 
     font-family: @fontFamily;
     font-weight: normal;
     font-style: normal;

@@ -1,7 +1,6 @@
 <!doctype html>
-<!--[if (lt IE 9)&!(IEMobile)]><html lang=en class="no-js ie"><![endif]-->
-<!--[if gte IE 9]><!--> <html lang=en class=no-js>        <!--<![endif]-->
-                        <head><meta charset=utf-8>
+<html class=no-js lang=en>
+<head><meta charset=utf-8>
 <!--
                               (_)
            _ __   ___  ___ ___ _  ___  _ __    ___ ___  _ __ ___
@@ -29,14 +28,13 @@
 
             <title>Janessa Sheppard & Jonathan Suderman</title>
 
-
 <!-- Totally meta -->
 <meta http-equiv=x-ua-compatible content="ie=edge,chrome=1">
 <meta name=viewport content="width=device-width, initial-scale=1.0">
 
 <!-- Styles & Scripts -->
 <link href=/styles/style.css rel=stylesheet>
-<script src=/scripts/lib/modernizr.js></script>
+<script src=/scripts/lib/modernizr.custom.js></script>
 <script src=/scripts/script.js></script>
 
 <!-- And so it begins... -->

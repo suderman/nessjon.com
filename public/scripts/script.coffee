@@ -5,22 +5,35 @@
    | | | |  __/\__ \__ \ | (_) | | | || (_| (_) | | | | | |
    |_| |_|\___||___/___/ |\___/|_| |_(_)___\___/|_| |_| |_|
                       _/ |
-                     |__/                               
-                                                        ;-)###
-# @codekit-prepend 'scripts/lib/modernizr.min.js'
+                     |__/
+                                                      ;-)###
+# Depends on yepnope.js (bundled with Modernizr)
+# ----------------------------------------------------------
+
+# Classify IE (https://gist.github.com/padolsey/527683)
+ie=`function(){for(var a=3,b=document.createElement("b"),c=b.all||[];b.innerHTML="<!--[if gt IE "+ ++a+"]><i><![endif]-->",c[0];);return 4<a?a:document.documentMode}();`
+document.documentElement.className += " ie ie#{ie}" if ie
+
+# Stylesheet reset for really old IE
+yepnope test: ie <= 7, yep: 'styles/lib/ie6.1.1.css'
+yepnope test: ie <= 8, yep: [
+  'scripts/lib/html5shiv-printshiv.js', # enable HTML5 in old IE 
+  'scripts/lib/nwmatcher-1.2.5.js',     # fancy selector engine
+  'scripts/lib/selectivizr.min.js',     # CSS3 selector support
+]
 
 # Gentlemen, load your libraries:
-Modernizr.load load: [
-  'scripts/lib/jquery.min.js',
-  'scripts/lib/underscore.min.js',
-  'scripts/lib/fastclick.min.js',
-  'scripts/lib/mousetrap.js',
-  'scripts/lib/jquery.fitmaps.js',
+yepnope load: [
+  'scripts/lib/jquery.min.js',       # obviously
+  'scripts/lib/underscore.min.js',   # tasty utility methods
+  'scripts/lib/fastclick.min.js',    # treat tap as click events
+  'scripts/lib/mousetrap.js',        # keyboard shortcuts
+  'scripts/lib/jquery.fitmaps.js',   # responsive Google Maps
 ], complete: -> jQuery app.init()
 
 # Google Analytics
-# window._gaq = [["_setAccount", "UA-35747031-1"], ["_trackPageview"], ["_trackPageLoadTime"]]
-# Modernizr.load load: ((if "https:" is location.protocol then "//ssl" else "//www")) + ".google-analytics.com/ga.js"
+window._gaq = [["_setAccount", "UA-35747031-1"], ["_trackPageview"], ["_trackPageLoadTime"]]
+yepnope load: ((if "https:" is location.protocol then "//ssl" else "//www")) + ".google-analytics.com/ga.js"
 
 # All site behavior right here folks!
 window.app = {}
@@ -32,7 +45,9 @@ app.init = ->
   app.navigation()
   app.slideshow()
 
-  $('figure.map').fitMaps w:'100%', h:'500px'
+  $('figure.map').each -> 
+    height = $(this).closest('section').find('.col:first').height()
+    $(this).fitMaps w: '100%', h: (height - 100) + 'px'
 
   $('html').addClass 'ready'
 
