@@ -108,14 +108,18 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/public\/fonts\/im-fell-dw-pica-sc\/specimen_files\/grid_12-825-55-15.css" : {
+    "\/public\/styles\/lib\/normalize.less" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/im-fell-dw-pica-sc\/specimen_files\/grid_12-825-55-15.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/public\/styles\/lib\/normalize.less",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/public\/styles\/lib\/normalize.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/public\/images\/ticket-original.png" : {
       "ignoreWasSetByUser" : 0,
@@ -139,6 +143,15 @@
       "initialSize" : 112,
       "fileType" : 8192
     },
+    "\/public\/fonts\/im-fell-dw-pica-sc\/specimen_files\/grid_12-825-55-15.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/fonts\/im-fell-dw-pica-sc\/specimen_files\/grid_12-825-55-15.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/public\/images\/green-tail.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -149,19 +162,6 @@
       "outputAbbreviatedPath" : "\/public\/images\/green-tail.png",
       "initialSize" : 1013,
       "fileType" : 8192
-    },
-    "\/public\/styles\/lib\/normalize.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/styles\/lib\/normalize.less",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/public\/styles\/lib\/normalize.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
     },
     "\/public\/scripts\/lib\/colorbox\/themes\/2\/controls.png" : {
       "ignoreWasSetByUser" : 0,
@@ -325,17 +325,6 @@
       "outputAbbreviatedPath" : "\/public\/scripts\/script-ck.js",
       "fileType" : 64
     },
-    "\/public\/scripts\/dev\/coffee-script.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min-ck.js",
-      "fileType" : 64
-    },
     "\/public\/fonts\/font-awesome\/font-awesome.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -354,6 +343,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/public\/scripts\/splash-ck.js",
+      "fileType" : 64
+    },
+    "\/public\/scripts\/dev\/coffee-script.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/public\/scripts\/dev\/coffee-script.min-ck.js",
       "fileType" : 64
     },
     "\/public\/styles\/lib\/print.less" : {
@@ -401,18 +401,6 @@
       "outputAbbreviatedPath" : "\/public\/images\/gradient-tail.png",
       "initialSize" : 1011,
       "fileType" : 8192
-    },
-    "\/public\/scripts\/countdown.coffee" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/countdown.coffee",
-      "checkOutputStyle" : 0,
-      "minifyOutput" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/countdown.js",
-      "outputStyle" : 0,
-      "fileType" : 32
     },
     "\/public\/scripts\/lib\/colorbox\/themes\/1\/loading_background.png" : {
       "ignoreWasSetByUser" : 0,
@@ -489,17 +477,6 @@
       "initialSize" : 13638,
       "fileType" : 8192
     },
-    "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
-      "initialSize" : 182,
-      "fileType" : 8192
-    },
     "\/app.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -512,6 +489,28 @@
       "outputStyle" : 0,
       "fileType" : 32
     },
+    "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/1\/overlay.png",
+      "initialSize" : 182,
+      "fileType" : 8192
+    },
+    "\/public\/scripts\/lib\/nwmatcher-1.2.5.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/nwmatcher-1.2.5.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/nwmatcher-1.2.5-ck.js",
+      "fileType" : 64
+    },
     "\/public\/scripts\/lib\/jquery.fitmaps.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -522,15 +521,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.fitmaps-ck.js",
       "fileType" : 64
-    },
-    "\/public\/fonts\/Floralia\/stylesheet.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/Floralia\/stylesheet.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/public\/images\/archived\/dark_weeks_dash.png" : {
       "ignoreWasSetByUser" : 0,
@@ -561,6 +551,15 @@
       "outputAbbreviatedPath" : "\/No Output Path",
       "fileType" : 16
     },
+    "\/public\/fonts\/Floralia\/stylesheet.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/fonts\/Floralia\/stylesheet.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/public\/scripts\/lib\/colorbox\/themes\/5\/border.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -572,6 +571,28 @@
       "initialSize" : 163,
       "fileType" : 8192
     },
+    "\/public\/old\/scratch.less" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/old\/scratch.less",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/public\/old\/scratch.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
+    "\/public\/old\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/old\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/public\/images\/gradient-head.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -582,26 +603,6 @@
       "outputAbbreviatedPath" : "\/public\/images\/gradient-head.png",
       "initialSize" : 1009,
       "fileType" : 8192
-    },
-    "\/public\/scripts\/lib\/nwmatcher-1.2.5.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/nwmatcher-1.2.5.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/nwmatcher-1.2.5-ck.js",
-      "fileType" : 64
-    },
-    "\/public\/old\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/old\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/public\/images\/ticket.png" : {
       "ignoreWasSetByUser" : 0,
@@ -676,17 +677,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/public\/images\/five.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/five.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/five.jpg",
-      "initialSize" : 76168,
-      "fileType" : 4096
-    },
     "\/public\/images\/one.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -696,6 +686,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/public\/images\/one.jpg",
       "initialSize" : 92022,
+      "fileType" : 4096
+    },
+    "\/public\/images\/five.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/five.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/five.jpg",
+      "initialSize" : 76168,
       "fileType" : 4096
     },
     "\/public\/fonts\/im-fell-dw-pica-sc\/specimen_files\/specimen_stylesheet.css" : {
@@ -798,16 +799,14 @@
       "outputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/colorbox.min-ck.js",
       "fileType" : 64
     },
-    "\/public\/images\/grass copy.png" : {
+    "\/public\/scripts\/lib\/colorbox\/themes\/3\/colorbox.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/grass copy.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/grass copy.png",
-      "initialSize" : 12781,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/3\/colorbox.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/public\/images\/archived\/dark_minutes_dash.png" : {
       "ignoreWasSetByUser" : 0,
@@ -820,15 +819,6 @@
       "initialSize" : 1782,
       "fileType" : 8192
     },
-    "\/public\/scripts\/lib\/colorbox\/themes\/3\/colorbox.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/colorbox\/themes\/3\/colorbox.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/public\/images\/flower.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -840,6 +830,17 @@
       "initialSize" : 91763,
       "fileType" : 8192
     },
+    "\/public\/images\/grass copy.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/grass copy.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/grass copy.png",
+      "initialSize" : 12781,
+      "fileType" : 8192
+    },
     "\/public\/fonts\/grand-hotel\/demo.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -848,30 +849,6 @@
       "inputAbbreviatedPath" : "\/public\/fonts\/grand-hotel\/demo.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/public\/styles\/scratch.less" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/styles\/scratch.less",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/public\/styles\/scratch.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/public\/images\/zebrafade.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
-      "initialSize" : 10026,
-      "fileType" : 8192
     },
     "\/public\/images\/four.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -883,6 +860,17 @@
       "outputAbbreviatedPath" : "\/public\/images\/four.jpg",
       "initialSize" : 55969,
       "fileType" : 4096
+    },
+    "\/public\/images\/zebrafade.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/zebrafade.png",
+      "initialSize" : 10026,
+      "fileType" : 8192
     },
     "\/public\/scripts\/lib\/colorbox\/themes\/2\/colorbox.css" : {
       "ignoreWasSetByUser" : 0,
@@ -924,16 +912,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/public\/images\/main-top.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/public\/scripts\/base.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/main-top.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/main-top.png",
-      "initialSize" : 1108,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/public\/scripts\/base.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/public\/scripts\/base-ck.js",
+      "fileType" : 64
     },
     "\/public\/images\/tiger.png" : {
       "ignoreWasSetByUser" : 0,
@@ -946,6 +934,17 @@
       "initialSize" : 13477,
       "fileType" : 8192
     },
+    "\/public\/images\/main-top.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/main-top.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/main-top.png",
+      "initialSize" : 1108,
+      "fileType" : 8192
+    },
     "\/public\/scripts\/dev\/less.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -955,17 +954,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/public\/scripts\/dev\/less.min-ck.js",
-      "fileType" : 64
-    },
-    "\/public\/scripts\/lib\/jquery.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.min-ck.js",
       "fileType" : 64
     },
     "\/public\/styles\/lib\/lesshat.less" : {
@@ -981,6 +969,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/public\/scripts\/lib\/jquery.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/public\/scripts\/lib\/jquery.min-ck.js",
+      "fileType" : 64
+    },
     "\/public\/images\/gradient.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -992,27 +991,23 @@
       "initialSize" : 1477,
       "fileType" : 4096
     },
-    "\/public\/images\/giraffegradient.png" : {
+    "\/public\/fonts\/grand-hotel\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
-      "initialSize" : 9472,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/public\/fonts\/grand-hotel\/stylesheet.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
-    "\/public\/images\/test.jpg" : {
+    "\/public\/fonts\/SeasideResortNF\/demo.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/test.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/test.jpg",
-      "initialSize" : 51947,
-      "fileType" : 4096
+      "inputAbbreviatedPath" : "\/public\/fonts\/SeasideResortNF\/demo.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/public\/images\/archived\/nessjon@2x.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1025,14 +1020,16 @@
       "initialSize" : 66264,
       "fileType" : 8192
     },
-    "\/public\/fonts\/grand-hotel\/stylesheet.css" : {
+    "\/public\/images\/six.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/grand-hotel\/stylesheet.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/public\/images\/six.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/six.jpg",
+      "initialSize" : 97846,
+      "fileType" : 4096
     },
     "\/public\/scripts\/lib\/colorbox\/themes\/5\/loading_background.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1045,15 +1042,15 @@
       "initialSize" : 166,
       "fileType" : 8192
     },
-    "\/public\/images\/six.jpg" : {
+    "\/public\/images\/test.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/six.jpg",
+      "inputAbbreviatedPath" : "\/public\/images\/test.jpg",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/six.jpg",
-      "initialSize" : 97846,
+      "outputAbbreviatedPath" : "\/public\/images\/test.jpg",
+      "initialSize" : 51947,
       "fileType" : 4096
     },
     "\/public\/fonts\/modernpics\/demo.html" : {
@@ -1076,14 +1073,28 @@
       "initialSize" : 1012,
       "fileType" : 8192
     },
-    "\/public\/fonts\/SeasideResortNF\/demo.html" : {
+    "\/public\/images\/giraffegradient.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/fonts\/SeasideResortNF\/demo.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/giraffegradient.png",
+      "initialSize" : 9472,
+      "fileType" : 8192
+    },
+    "\/public\/old\/countdown.coffee" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/old\/countdown.coffee",
+      "checkOutputStyle" : 0,
+      "minifyOutput" : 1,
+      "outputAbbreviatedPath" : "\/public\/old\/countdown.js",
+      "outputStyle" : 0,
+      "fileType" : 32
     },
     "\/public\/scripts\/lib\/underscore.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1153,17 +1164,6 @@
       "initialSize" : 59390,
       "fileType" : 8192
     },
-    "\/public\/images\/leopard.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/public\/images\/leopard.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/public\/images\/leopard.png",
-      "initialSize" : 15824,
-      "fileType" : 8192
-    },
     "\/public\/scripts\/lib\/css3-mediaqueries.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1184,6 +1184,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/public\/images\/nessjon-splash.png",
       "initialSize" : 14612,
+      "fileType" : 8192
+    },
+    "\/public\/images\/leopard.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/public\/images\/leopard.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/public\/images\/leopard.png",
+      "initialSize" : 15824,
       "fileType" : 8192
     },
     "\/public\/scripts\/lib\/colorbox\/themes\/5\/controls.png" : {

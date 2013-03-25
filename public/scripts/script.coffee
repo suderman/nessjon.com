@@ -7,12 +7,8 @@
                       _/ |
                      |__/
                                                       ;-)###
-# Depends on Modernizr (bundled with yepnope.js and html5shiv)
+# Depends on base.js (Modernizr, yepnope.js, html5shiv, ie)
 # ----------------------------------------------------------
-
-# Classify IE (https://gist.github.com/padolsey/527683)
-ie=`function(){for(var a=3,b=document.createElement("b"),c=b.all||[];b.innerHTML="<!--[if gt IE "+ ++a+"]><i><![endif]-->",c[0];);return 4<a?a:document.documentMode}();`
-document.documentElement.className += " ie ie#{ie}" if ie
 
 # Stylesheet reset for really old IE
 yepnope test: ie <= 7, yep: '/styles/lib/ie6.1.1.css'
