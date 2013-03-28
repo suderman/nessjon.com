@@ -36,7 +36,7 @@
 
 <!-- Styles & Scripts -->
 <link href=/styles/splash.css rel=stylesheet>
-<script src=/scripts/lib/modernizr.min.js></script>
+<script src=/scripts/modernizr.js></script>
 <script src=/scripts/splash.js></script>
 
 <!-- And so it begins... -->

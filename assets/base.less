@@ -1,6 +1,6 @@
 /*!
-// [Base styles and mixins]
-// Jon Suderman 2013
+// [base.less]
+// Styles and mixins collected by Jon Suderman 2013
 // --> another highly recommended mixin library: https://github.com/CSSHat/LESSHat
 //
 //                                   ,.=,,==. ,,_
@@ -22,9 +22,9 @@
 ////////////////////////////////////////////////////////////////////////
 */
 
-// Web Fonts (remove similar rule from lesshat to avoid conflicts)
-// example: .font-face('FontAwesome', "/fonts/font-awesome/fontawesome-webfont");
-.font-face(@fontname, @fontfile) {
+// Web Fonts
+// example: .font('FontAwesome', "/fonts/font-awesome/fontawesome-webfont");
+.font(@fontname, @fontfile) {
   @font-face {
     font-family: "@{fontname}";
     src: url("@{fontfile}.eot");

@@ -1,0 +1,772 @@
+/*!
+                       (_)
+    _ __   ___  ___ ___ _  ___  _ __    ___ ___  _ __ ___
+   | '_ \ / _ \/ __/ __| |/ _ \| '_ \  / __/ _ \| '_ ` _ \
+   | | | |  __/\__ \__ \ | (_) | | | || (_| (_) | | | | | |
+   |_| |_|\___||___/___/ |\___/|_| |_(_)___\___/|_| |_| |_|
+                      _/ |
+                     |__/
+
+  Compiled from:
+  http://nessjon.com/styles/style.less
+
+*/
+@import "lib/normalize.less";
+@import "lib/lesshat";
+@import "base";
+
+// Where the fonts & pictures at?!
+@fonts: "http://nessjon.com/fonts";
+@fonts: "../fonts";
+@images: "http://nessjon.com/images";
+@images: "../images";
+
+// Fonts and Icons
+.font('IM Fell DW Pica SC', "@{fonts}/im-fell-dw-pica-sc/imfelldwpicasc-webfont");
+.font('JungleFeverRegular', "@{fonts}/JungleFever/JungleFever-webfont");
+.font('FontAwesome', "@{fonts}/font-awesome/fontawesome-webfont");
+
+// Colors
+@base: rgb(255, 240, 219);
+@pink: rgb(172, 78, 190);
+@brown: rgb(123, 78, 47);
+@green: rgb(92, 191, 120);
+@blue: rgb(34, 74, 109);
+
+// @pink: rgb(235, 218, 255); 
+// @purple: rgb(96, 27, 178);
+// @brown: rgb(178, 147, 104);
+// @base: #fdfcde; 
+
+html { }
+body { 
+  font-family: IM Fell DW Pica SC, serif;
+  .selection(darken(@base, 50%), @base);
+  overflow-x: hidden;
+  .font-size(18);
+
+  // .transition(-webkit-filter 2s ease-out 0s);
+  // -webkit-filter: blur(3px);
+  // html.ready & { -webkit-filter: blur(0px); }
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  padding: 0 15px; 
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+h1 { 
+  .font-size(20); 
+}
+
+h2 { 
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  padding: .5em 80px;
+  font-family: JungleFeverRegular, sans-serif;
+  .font-size(30); 
+  color: @pink;
+  line-height: 1em;
+  text-shadow: 3px 2px 2px fade(@black, 70%);
+  text-align: center;
+  span, b { 
+    display: table-cell; 
+    width: 33%;
+    height: 60px;
+    vertical-align: middle;
+    .transition(width 1s);
+  }
+  b:first-child {
+    background: url("@{images}/left.png") no-repeat 100% 50%;
+    .background-size(100% 100%);
+  }
+  b:last-child {
+    background: url("@{images}/right.png") no-repeat 0% 50%;
+    .background-size(100% 100%);
+  }
+
+  // Simplify for IE8
+  .ie8 & {
+    border-bottom: 4px solid @green;
+    span { width: 100%; }
+    b { display: none; }
+  }
+}
+
+h3 {}
+p, dd { 
+  line-height: 1.9; 
+  margin: 0 0 2em;
+}
+a { 
+  color: @blue; 
+  &:hover { color: lighten(@blue, 20%); }
+  &[href^=http] {
+    .icon(fontawesome, "\f08e", after);
+    &:after {
+      padding-left: 5px;
+      text-decoration: none;
+    }
+  }
+}
+
+// Header
+@navHeight: 45px;
+header[role=banner] {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  background: @black;
+  .box-shadow(0px 10px 20px fade(@black, 50%));
+  .clearfix();
+
+  &:after { 
+    .pseudo-layer();
+    height: @navHeight;
+    background: url("@{images}/giraffegradient.png") scroll repeat 50% 0;
+    .background-size(138px 138px);
+  }
+
+  .container { 
+    position: static;
+    padding: 0; 
+  }
+
+  a { 
+    display: block;
+    outline: 0;
+    color: @white;
+    text-decoration: none;
+  }
+
+  h1 {
+    float: left;
+    width: 50%;
+    margin: 0;
+    text-shadow: 2px 2px 2px @black;
+    a { 
+      padding: 0 10px; 
+      height: @navHeight;
+      line-height: @navHeight;
+    }
+  }
+  a.menu { 
+    display: block;
+    float: right;
+    width: 50%;
+    height: 100%;
+    height: @navHeight;
+    line-height: @navHeight;
+    padding: 0 20px; 
+    text-decoration: none;
+    text-align: right;
+    cursor: pointer;
+    .font-size(25);
+    .icon(fontawesome, "\f0c9");
+  }
+
+  // All Navigation
+  @navColor: lighten(@base, 2%);
+  @navBorderColor: darken(@brown, 5%); 
+  @navBorderSize: 4px;
+  @navArrowSize: 10px;
+  nav[role=navigation] {
+    position: absolute;
+    clear: both;
+    top: (@navHeight + 5px);
+    overflow: visible;
+    width: 50%;
+    height: auto !important;
+    background: @navColor;
+    border: @navBorderSize solid @navBorderColor;
+    .box-shadow(-10px 10px 10px fade(@black, 50%));
+    .border-radius(10px);
+    .transition(opacity 0.2s ease-in 0s);
+
+    .opacity(0);
+    right: -55%;
+    html.menu & { 
+      .opacity(1); 
+      right: 1%;
+    }
+
+    // Nav & arrow
+    &:before, &:after { 
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      right: 26px;
+      height: 0;
+      width: 0;
+      pointer-events: none;
+      border: solid transparent;
+    }
+    &:before { 
+      border-bottom-color: @navBorderColor;
+      border-width: (@navArrowSize + @navBorderSize + 2px);
+      margin-right: ((@navArrowSize + @navBorderSize + 2px) * -1);
+    }
+    &:after {
+      border-bottom-color: @navColor;
+      border-width: @navArrowSize;
+      margin-right: ((@navArrowSize) * -1);
+    }
+
+    // Nav menu
+    ul {
+      display: block; 
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li { 
+        display: block; 
+        list-style-type: none;
+        a { 
+          display: block;
+          padding: 6px 10%;
+          color: darken(@brown, 5%);
+          text-align: left;
+          text-decoration: none;
+          .font-size(18);
+          font-family: JungleFeverRegular, sans-serif;
+          font-weight: bold;
+          .transition(background 0.1s linear);
+        }
+        &:first-child a { padding-top: 15px; }
+        &:last-child a { padding-bottom: 15px; }
+      }
+    }
+  }
+
+  // Level One
+  nav[role=navigation] > ul > li {
+    white-space: nowrap;
+    > a {
+      border-left-width: 0; 
+      &:hover { 
+        color: @base;
+        background: @pink;
+      }
+      &:before  { padding-right: 5px; }
+      &.schedule { .icon(fontawesome, "\f0f3"); }
+      &.zoo      { .icon(fontawesome, "\f02b"); }
+      &.maps     { .icon(fontawesome, "\f041"); }
+      &.dress    { .icon(fontawesome, "\f000"); }
+      &.registry { .icon(fontawesome, "\f06b"); }
+      &.rsvp     { .icon(fontawesome, "\f0e0"); }
+    }
+    &:first-child > a { border-left-width: 1px; }
+  }
+}
+
+
+// Page content
+div[role=main] {
+  position: relative;
+  padding-top: (@navHeight - 5px);
+  padding-bottom: 100px;
+
+  background: @base url("@{images}/zebrafade.png") scroll repeat;
+  // .background-size(137px 137px);
+
+  &:before { 
+    .pseudo-layer(1);
+    .opacity(0.90);
+    background: url("@{images}/main.png") scroll repeat-y 50% 0%;
+  }
+
+  &:after { 
+    .pseudo-layer(2);
+    background: url("@{images}/main-top.png") scroll repeat-x 0% 540px;
+  }
+
+  .container {
+    .clearfix();
+  }
+
+
+  // Welcome text
+  blockquote {
+    display: block;
+    padding: .5em 2em;
+    margin: 4em 0 0 0;
+    color: @brown;
+    border-top: 2px solid @brown;
+    border-bottom: 2px solid @brown;
+    .font-size(20);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  dt {
+    display: inline-block;
+    padding-bottom: 3px;
+    padding-right: 1em;
+    margin-bottom: 5px;
+    color: @pink;
+    // text-shadow: 1px 1px 2px fade(@black, 50%);
+    // text-shadow: 2px 2px 3px fade(@black, 90%);
+    text-shadow: 3px 2px 2px fade(@black, 90%);
+    border-bottom: 3px solid @green;
+    .font-size(20);
+    // font-weight: bold;
+    font-family: JungleFeverRegular, sans-serif;
+  }
+
+  // Blocks of info
+  section { 
+    padding-top: @navHeight;
+    > div { 
+      position: relative;
+      .clearfix();
+      padding: 1px 10px 20px;
+      border: 3px dashed @transparent; 
+      .border-radius(30px);
+      .transition(border-color 0.5s ease-in 0s);
+    }
+    &:target > div { border-color: @brown; }
+
+    figure.map {
+      position: relative;
+      z-index: 20;
+      overflow: hidden;
+      border: 3px solid @brown;
+      .border-radius(30px);
+      .box-shadow(inset 0 0 50px @black);
+
+      &:before {
+        .pseudo-layer(2);
+        top: auto;
+        bottom: 0;
+        height: 35px;
+        background: url("@{images}/tiger.png") scroll repeat-x;
+        .background-size(138px 138px);
+        .box-shadow(0 -2px 20px @black);
+      }
+
+      &:after {
+        .pseudo-layer();
+        .border-radius(20px);
+        .box-shadow(inset 0 0 30px @black);
+        pointer-events: none;
+        .pointerevents & { z-index: 1; }
+      }
+
+      > div { max-height: 350px; }
+      iframe { -webkit-filter: hue-rotate(-30deg) grayscale(30%); }
+    }
+  }
+}
+
+
+// Wedding Logo
+div.logo {
+  position: relative;
+  z-index: 5;
+  .background-image(linear-gradient(top, @pink 0%, @blue 100%));
+
+  // Maintain aspect ratio
+  height: 0px;
+  padding-bottom: percentage((570px/600px));
+  @media @600 { 
+    height: 500px; 
+    padding-bottom: 0%; 
+  }
+
+  .container { padding: 0; }
+
+  // Scenery
+  &:after { 
+    .pseudo-layer(10);
+    background: url("@{images}/hill.png") scroll no-repeat 50% 100%,
+                url("@{images}/mountain.png") fixed repeat-x 50% 0%,
+                url("@{images}/grass.png") scroll repeat-x 50% 100%;
+    .background-size(380%, auto, auto);
+    @media @600 { .background-size(auto); }
+  }
+
+  // Pull up slideshow
+  & + .container { margin-top: -90px; }
+
+  // ...but only pull it up a little bit if on IE8
+  .ie8 & + .container { margin-top: -20px; }
+
+  // Title with animals
+  header {
+    position: relative;
+    z-index: -2;
+    max-width: 992px;
+    margin: 0 auto;
+
+    // Maintain aspect ratio
+    height: 0px;
+    padding-bottom: percentage((470px/600px));
+    @media @480 { padding-bottom: percentage((500px/600px)); }
+    @media @600 { height: 450px; padding-bottom: 0%; }
+
+    background: url("@{images}/nessjon.png") scroll no-repeat 50% 0%;
+    .background-size(contain);
+    @media @600 { 
+      background-position: 50% 30%;
+      .background-size(496px auto); 
+    }
+    @media @992 { 
+      background-position: 50% 90%;
+      .background-size(496px auto); 
+    }
+
+    // Fade-in logo
+    .js & { .opacity(0); }
+    .ready &, & { .opacity(1); }
+    .transition(opacity 1s ease 0s, background-position 1s ease 0s, background-size 1s ease 0s);
+
+    // People and animals
+    figure {
+      position: absolute;
+      top: 0%;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      .background-size(50% auto);
+      @media @600 { .background-size(248px auto); }
+      .transition(background-position 1s ease 0.5s);
+
+      // Nessie
+      &.bride { 
+        background-image: url("@{images}/bride.png");
+        .js & { background-position: -100% 100%; }
+        .ready &, & { background-position: 0% 100%; }
+      }
+
+      // Jonboy
+      &.groom { 
+        background-image: url("@{images}/groom.png");
+        .js & { background-position: 200% 100%; }
+        .ready &, & { background-position: 100% 100%; }
+      }
+    }
+  }
+
+  // Hide the dang thing from IE8
+  .ie8 & { display: none; }
+}
+
+
+// Slideshow
+@heroMaxHeight: 430px;
+@heroMaxWidth: 992px;
+
+div.hero {
+  position: relative;
+  z-index: 30;
+  margin: 40px -15px 0 -15px;
+
+  .js & { .opacity(0); }
+  .ready &, & { .opacity(1); }
+  .transition(opacity 0.5s linear 0s, margin 0.5s);
+
+  // Flower
+  .flourish {
+    position: absolute;
+    z-index: 50;
+    left: -2%;
+    bottom: -10%;
+    width: 50%;
+    height: 117%;
+    background: url("@{images}/flower.png") scroll no-repeat 0% 100%;
+    overflow: visible;
+    .background-size(contain);
+    .transform(rotate(2deg));
+    .backface-visibility(hidden);
+    .ie8 & { display: none; }
+  }
+
+  // Tilt the pictures a couple degrees
+  div.tilt {
+    position: relative;
+    max-width: @heroMaxWidth;
+    max-height: @heroMaxHeight;
+    .backface-visibility(hidden);
+    .transform(rotate(-2deg));
+    .box-shadow(0px 15px 40px fade(@black, 50%), 0px -5px 40px fade(@black, 50%));
+
+    > ul {
+      position: relative;
+      margin: 0;
+      padding: 0;
+
+      // Maintain aspect ratio
+      width: 100%;
+      height: 0;
+      padding-bottom: percentage((@heroMaxHeight/@heroMaxWidth));
+
+      > li {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        max-width: @heroMaxWidth;
+        max-height: @heroMaxHeight;
+        .opacity(0);
+        .no-js &:first-child { .opacity(1); }
+
+        > figure {
+          position: absolute;
+          z-index: 20;
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          > img { width: 100%; }
+        }
+      }
+    }
+  }
+}
+
+
+// Countdown to wedded bliss!
+dl.countdown { 
+  position: absolute; 
+  z-index: 50;
+  right: 0%;
+  top: 100%;
+  display: block; 
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 0; 
+  color: @base;
+  background: url("@{images}/tiger.png") scroll repeat;
+  text-shadow: -2px -1px 0 fade(@black, 50%);
+  font-family: Times New Roman, serif;
+  .font-size(24);
+  .ie8 & { display: none; }
+
+  > dd { 
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0.2em;
+    float: left; 
+    width: 33.33%;
+    height: 100%;
+    line-height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    // Days, Hours, Mins
+    &:nth-child(1) { text-align: right; }
+    &:nth-child(2) { text-align: center; }
+    &:nth-child(3) { text-align: left; }
+
+    // Number
+    > figure { 
+      position: relative; 
+      display: inline; 
+      margin: 0; 
+      padding: 0; 
+      text-transform: uppercase; 
+      text-align: center; 
+      line-height: 1;
+    }
+
+    // Label
+    > figcaption { 
+      display: inline; 
+      margin: 0 0 0 5px;
+      height: 100%;
+      line-height: 100%;
+      font-size: 80%;
+      text-align: center; 
+      text-transform: uppercase; 
+    }
+  }
+}
+
+// Footer
+footer[role=contentinfo] {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px 0 20px; 
+  overflow: hidden;
+  border-top: 5px solid @black;
+  background: url("@{images}/leopard.png") scroll repeat 50% 0;
+  .credits { 
+    float: right;
+    color: @white;
+    .font-size(20);
+    font-weight: bold;
+    text-shadow: 1px 1px 3px @black, -1px -1px 3px @black;
+  }
+}
+
+
+// Magical media queries
+@media print {
+  @import "lib/print.less";
+}
+
+// 480px wide
+.480() { }
+@media @480 { .480; } .ie8 { .480; }
+
+// 600px wide
+.600() { 
+
+  h2 { 
+    span { width: 50%; }
+    b { width: 25%; }
+  }
+
+  div.hero {
+    margin-bottom: 5%;
+    margin-top: 50px;
+  }
+
+  dl.countdown { 
+    top: 0%;
+    width: 15%;
+    height: 100%;
+    .font-size(45);
+    .box-shadow(-10px 0px 40px fade(@black, 80%));
+
+    > dd { 
+      float: none;
+      width: 100%;
+      height: 33.33%;
+      padding: 10% 0 0 0;
+      line-height: 33.33%;
+
+      > figure { 
+        display: block;
+        height: auto;
+        line-height: 1;
+      }
+      > figcaption { 
+        display: block;
+        margin: 0;
+        font-size: 50%;
+      }
+    }
+  }
+}
+@media @600 { .600; } .ie8 { .600; }
+
+// 768px wide
+.768() { 
+
+  dl.countdown { .font-size(60); }
+
+  header[role=banner] {
+    .container { 
+      position: relative; 
+      overflow: visible; 
+    }
+    h1 { width: 25%; }
+    a.menu { display: none; }
+
+    // All Levels
+    nav[role=navigation] {
+      position: absolute;
+      top: 0;
+      right: 0.5%;
+      float: right; 
+      clear: none;
+      width: 80%;
+      .opacity(1);
+      &:before, &:after { display: none; }
+    }
+
+    // Level One
+    nav[role=navigation] > ul > li {
+      display: inline-block; 
+      min-width: 10%;
+      padding: 0 10px;
+      &:nth-of-type(1) { padding: 0; width: 13%; }
+      &:nth-of-type(2) { padding: 0; width: 20%; }
+      &:nth-of-type(3) { padding: 0; width: 14%; }
+      &:nth-of-type(4) { padding: 0; width: 16%; }
+      &:nth-of-type(5) { padding: 0; width: 21%; }
+      &:nth-of-type(6) { padding: 0; width: 16%; }
+      > a { 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: left;
+      }
+    }
+  }
+
+  // Wedding logo
+  div.logo {
+    header + .container { margin-top: -70px; }
+  }
+
+  // Main Content
+  div[role=main] { 
+    section { 
+      float: left;
+      width: 50%;
+      .font-size(18);
+      &.right { padding-left: 10px; }
+      // &:nth-of-type(2n+1) {
+      &.left {
+        clear: left;
+        padding-right: 10px;
+      }
+      &.wide {
+        width: 100%;
+      }
+      > div { 
+        padding: 1px 10px 20px;
+      }
+      .col { 
+        float: left;
+        width: 50%;
+        height: 100%;
+        padding-left: 20px;
+        &:nth-of-type(2n+1) {
+          clear: left;
+          padding-left: 0px;
+          padding-right: 20px;
+        }
+      }
+
+      figure.map > div { max-height: 100%; }
+    }
+  }
+}
+@media @768 { .768; } .ie8 { .768; }
+
+// 992px wide
+.992() { 
+  .container {
+    width: 992px;
+    overflow: visible;
+  }
+  header[role=banner] {
+    h1 { width: 25%; }
+  }
+  dl.countdown { .font-size(70); }
+}
+@media @992 { .992; } .ie8 { .992; }
+
+// 1382px wide
+.1382() { }
+@media @1382 { .1382; } .ie8 { .1382; }
+
+// IE7 and below get the universal stylesheet
+.ie7, .ie6 {
+  header[role=banner] { position: relative; }
+  nav[role=navigation], div.logo, div.hero { display: none; }
+}

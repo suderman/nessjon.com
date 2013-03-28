@@ -7,20 +7,22 @@
                       _/ |
                      |__/
                                                       ;-)###
-# Depends on base.js (Modernizr, yepnope.js, html5shiv, ie)
 # ----------------------------------------------------------
 
-# CSS3 selector support & stylesheet reset
-yepnope test: ie <= 8, yep: '/scripts/lib/nwmatcher.selectivizr.js'
-yepnope test: ie <= 7, yep: '/styles/lib/ie6.1.1.css'
+s = (if (document.location.protocol is "file:") then "scripts/" else "/scripts/")
+c = (if (document.location.protocol is "file:") then "styles/" else "/styles/")
 
-# Gentlemen, load your libraries:
+# CSS3 selector support & stylesheet reset
+yepnope test: Modernizr.ie <= 8, yep: s+ 'ie.js'
+yepnope test: Modernizr.ie <= 7, yep: c+ 'ie.css'
+
+# Gentlemen, load your libraries
 yepnope load: [
-  '/scripts/lib/jquery.min.js',       # obviously
-  '/scripts/lib/underscore.min.js',   # tasty utility methods
-  '/scripts/lib/fastclick.min.js',    # treat tap as click events
-  '/scripts/lib/mousetrap.js',        # keyboard shortcuts
-  '/scripts/lib/jquery.fitmaps.js',   # responsive Google Maps
+  s+ 'jquery.js'         # obviously
+  s+ 'underscore.js'     # tasty utility methods
+  s+ 'fastclick.js'      # treat tap as click events
+  s+ 'mousetrap.js'      # keyboard shortcuts
+  s+ 'jquery.fitmaps.js' # responsive Google Maps
 ], complete: -> jQuery app.init()
 
 # Google Analytics
@@ -55,20 +57,8 @@ app.setup = ->
       string = string.replace /(^|\s)@(\w+)/g, "$1<a target='_blank' href='http://www.twitter.com/$2'>@$2</a>"
       string = string.replace /(^|\s)#(\w+)/g, "$1<a target='_blank' href='http://search.twitter.com/search?q=%23$2'>#$2</a>"
 
-  # Classify iPhones
-  if navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)
-    (jQuery 'html').addClass 'iphone'
-
   # Cross-browser support for CSS transition callback
   app.transitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
-
-# app.doSomething = (arg)->
-#   $('li.active').live 'click', ->
-#     $(this).removeClass('active')
-#     if $(this).next().length > 0
-#       $(this).next().addClass('active')
-#     else
-#       $(this).parent().find('li:first').addClass('active')
 
 
 app.navigation = ->
@@ -161,8 +151,22 @@ app.updateCountdown = ($countdown, futureTime) ->
 
 # We're going to the zoo, zoo, zoo!
 app.secretSong = ->
+  app.foundSecretSong = false
+
+  app.mp3 = $('audio:first').get(0)
+  app.mp3.load()
+
+  $(document).keydown -> 
+    if app.foundSecretSong
+      if app.mp3.paused
+        app.mp3.play()
+      else
+        app.mp3.pause()
+
   Mousetrap.bind "z o o", ->
-    $("body").append "<embed src=files/secret.mp3 autostart=true loop=false width=2 height=0>"
+    app.foundSecretSong = true
+    app.mp3.play()
+    # $("body").append "<embed src=files/secret.mp3 autostart=true loop=false width=2 height=0>"
 
 app.map = ->
   $('figure.map').each -> 

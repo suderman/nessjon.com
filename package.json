@@ -1,12 +1,25 @@
 {
- "name": "nessjon.com",
- "description": "Janessa and Jonathan's Wedding Website",
- "version": "0.0.1",
- "private": true,
- "dependencies": {
-   "express": "3.x",
-   "coffee-script": "1.6.x",
-   "toffee": "*",
-   "less-middleware": "*"
-  }
+    "name": "nessjon.com",
+    "description": "Janessa and Jonathan's Wedding Website",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "3.x",
+        "coffee-script": "1.6.x",
+        "toffee": "*",
+        "less-middleware": "*",
+        "mongoose": "3.6.x",
+        "mysql": "2.x"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-bower": "~0.5.1",
+        "grunt-modernizr": "~0.2.1",
+        "grunt-contrib-less": "~0.5.0",
+        "grunt-contrib-coffee": "~0.6.4",
+        "grunt-contrib-uglify": "~0.2.0",
+        "grunt-contrib-concat": "~0.1.3",
+        "grunt-contrib-watch": "~0.3.1",
+        "grunt-notify": "~0.1.4"
+    }
 }
