@@ -58,6 +58,7 @@
 #     collection.insert {'mykey': 'myvalue'}, {safe: true}, (er,rs) ->
 
 express = require 'express'
+path = require 'path'
 app = express()
 
 # All environments
@@ -74,8 +75,8 @@ app.configure ->
   # app.use express.cookieParser('your secret here')
   # app.use express.session()
   app.use app.router
-  app.use require("less-middleware")(src: __dirname + "/public")
-  app.use express.static(__dirname + '/public')
+  # app.use require("less-middleware")(src: __dirname + "/public")
+  app.use express.static path.resolve(__dirname + '/../public')
 
 # Dev environment
 app.configure 'development', ->

@@ -15,19 +15,16 @@
   },
   "concat": {
     "ie": {
-      "dest": "public/scripts/ie.js",
-      "src": [
-        "public/scripts/nwmatcher.js",
-        "public/scripts/selectivizr.js"
-      ]
+      "dest": "ie",
+      "src": [ "nwmatcher", "selectivizr" ]
     },
     "script": {
-      "dest": "public/scripts/script.js",
+      "dest": "script",
       "src": [
-        "public/scripts/modernizr.js",
-        "public/scripts/modernizr-pointerevents.js",
-        "public/scripts/modernizr-ie.js",
-        "public/scripts/script.js"
+        "modernizr",
+        "modernizr-pointerevents",
+        "modernizr-ie",
+        "script"
       ]
     }
   }

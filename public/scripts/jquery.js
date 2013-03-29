@@ -1,17 +1,8 @@
 /*!
-                     (_)                                 
- _ __   ___  ___ ___ _  ___  _ __    ___ ___  _ __ ___  
-| '_ \ / _ \/ __/ __| |/ _ \| '_ \  / __/ _ \| '_ ' _ \ 
-| | | |  __/\__ \__ \ | (_) | | | || (_| (_) | | | | | |
-|_| |_|\___||___/___/ |\___/|_| |_(_)___\___/|_| |_| |_|
-                   _/ |                                 
-                  |__/                                  
+nessjon.com (2013-03-29)
+Janessa and Jonathan's Wedding Website
 
-nessjon.com (2013-03-28)
-Janessa and Jonathan's Wedding Website 
-
-*/
-/*!
+*//*!
  * jQuery JavaScript Library v1.9.1
  * http://jquery.com/
  *

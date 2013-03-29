@@ -330,6 +330,11 @@ div[role=main] {
     }
     &:target > div { border-color: @brown; }
 
+    p.secret {
+      display: none;
+      .audio & { display: block; }
+    }
+
     figure.map {
       position: relative;
       z-index: 20;

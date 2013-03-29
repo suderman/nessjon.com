@@ -1,34 +1,49 @@
 module.exports = (grunt) ->
 
-  # package.json 
-  pkg = grunt.file.readJSON "package.json"
+  # Add custom utilities to grunt.util
 
-  # Read bower components
+  # Wrap all strings within object with prefix/suffix
+  grunt.util.wrap = (prefix='', input, suffix='') ->
+    _ = grunt.util._
+    @process = (obj) ->
+      _.forEach obj, (val, key) =>
+        if _.isObject(val) then @process(val)
+        else obj[key] = ((if _(val).startsWith(prefix) then '' else prefix)) + val + ((if _(val).endsWith(suffix) then '' else suffix))
+    @process input
+
+
+  # On with the show!
+  pkg = grunt.file.readJSON "package.json"
   cmp = grunt.file.readJSON "component.json"
 
-  # Build banner from banner.txt and package info
-  banner = [ 
-    grunt.file.read('banner.txt'),
-    pkg.name + ' (' + grunt.template.today('yyyy-mm-dd') + ')',
-    pkg.description 
-  ].join "\n"
+  asset = 
+    coffee: src: 'app/scripts', dest: 'public/scripts'
+    js:     src: 'app/scripts', dest: 'public/scripts'
+    less:   src: 'app/styles',  dest: 'public/styles'
+    css:    src: 'app/styles',  dest: 'public/styles'
+  grunt.util.wrap '', asset, '/'
+
 
   # Project configuration.
   grunt.initConfig
     pkg: pkg
     cmp: cmp
-    banner: banner
+    banner: [ "/*!",
+              pkg.name + ' (' + grunt.template.today('yyyy-mm-dd') + ')',
+              pkg.description,
+              "\n*/"
+            ].join "\n"
 
-    # Copy components/**/*.js to public/scripts/*.js
+    # Copy bower components/**/*.js to asset.js.dest
     bower:
       install:
-        dest: 'public/scripts'
+        dest: asset.js.dest
         options: stripJsAffix: true
 
     # Build modernizr
     modernizr:
       devFile: "remote"
-      outputFile: "public/scripts/modernizr.js"
+      outputFile: asset.js.dest + 'modernizr.js'
       extra:
         printshiv: true  # html5shiv
         load: true       # yepnope
@@ -37,61 +52,93 @@ module.exports = (grunt) ->
       extensibility: 
         addtest: true 
       uglify: false
-      files: ['public/styles/**/*.css', 'public/scripts/**/*.js']
+      files: [
+        asset.css.dest + '**/*.css'
+        asset.js.dest + '**/*.js'
+      ]
 
-    # Compile less to css and move to public/styles/*.css
+    # Copy assets to public dir
+    copy:
+      css:
+        files: [ 
+          expand: true
+          cwd: asset.css.src
+          src: ['**/*.css']
+          dest: asset.css.dest
+        ]
+      js:
+        files: [ 
+          expand: true
+          cwd: asset.js.src
+          src: ['**/*.js']
+          dest: asset.js.dest
+        ]
+
+    # Compile less to css and move to public dir
     less: 
       compile:
         options:
-          yuicompress: true
+          dumpLineNumbers: false # commments / mediaquery
         files: [
           expand: true
-          cwd: 'assets/'
+          cwd: asset.less.src
           src: ['*.less']
-          dest: 'public/styles/'
+          dest: asset.less.dest
           ext: '.css'
         ]
 
-    # Compile coffee to js and move to public/scripts/*.js
+    # Minify & bannerize css in public dir
+    cssmin:
+      scripts:
+        options: 
+          keepSpecialComments: '*'
+          banner: "<%= banner %>"
+        files: [
+          expand: true
+          cwd: asset.css.dest
+          src: ['**/*.css']
+          dest: asset.css.dest
+        ]
+
+    # Compile coffee to js and move to asset.coffee.dest/*.js
     coffee:
       compile:
         options:
           sourceMap: false
         files: [
           expand: true
-          cwd: 'assets/'
+          cwd: asset.coffee.src
           src: ['*.coffee']
-          dest: 'public/scripts/'
+          dest: asset.coffee.dest
           ext: '.js'
         ]
 
 
-    # Minify & bannerize everything in public/scripts/*.js
+    # Minify & bannerize everything in asset.js.dest/*.js
     uglify:
       scripts:
         options: 
           mangle: true
           preserveComments: 'some'
-          banner: "/*!\n <%= banner %> \n\n*/\n"
+          banner: "<%= banner %>"
         files: [
           expand: true
-          cwd: 'public/scripts/'
+          cwd: asset.js.dest
           src: ['**/*.js']
-          dest: 'public/scripts/'
+          dest: asset.js.dest
         ]
 
     # Script concatenation set in bower's component.json
-    concat: 
-      cmp.concat
+    concat: grunt.util.wrap asset.js.dest, cmp.concat, '.js'
 
     # Watch task.
     watch:
       styles:
-        files: ['assets/**/*.less']
+        files: [asset.less.src + '**/*.less']
         tasks: ['styles', 'notify:less']
       scripts:
-        files: ['assets/**/*.coffee']
-        tasks: ['scripts', 'uglify', 'notify:coffee']
+        files: [asset.coffee.src + '**/*.coffee']
+        tasks: ['scripts', 'notify:coffee']
 
     # Growl notifications
     notify:
@@ -104,9 +151,12 @@ module.exports = (grunt) ->
           title: 'Task Complete'
           message: 'Compiled less'
 
+
   grunt.loadNpmTasks 'grunt-bower'
   grunt.loadNpmTasks 'grunt-modernizr'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-cssmin'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-concat'
@@ -114,6 +164,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-notify'
 
   # Default task(s).
-  grunt.registerTask 'styles',  ['less']
+  grunt.registerTask 'styles',  ['less', 'concat']
   grunt.registerTask 'scripts', ['coffee', 'concat']
-  grunt.registerTask 'default', ['bower', 'modernizr', 'styles', 'scripts', 'uglify']
+
+  grunt.registerTask 'default', 'Do it all.', (n) ->
+    grunt.task.run 'bower', 'less', 'coffee', 'copy', 'modernizr', 'concat', 'cssmin', 'uglify'
