@@ -22,6 +22,7 @@ yepnope load: [
   s+ 'jquery.js'         # obviously
   s+ 'underscore.js'     # tasty utility methods
   s+ 'fastclick.js'      # treat tap as click events
+  s+ 'jquery-placeholder.js'
   s+ 'mousetrap.js'      # keyboard shortcuts
   s+ 'jquery.fitmaps.js' # responsive Google Maps
 ], complete: -> jQuery app.init()
@@ -47,6 +48,9 @@ app.setup = ->
 
   # Treat clicks as taps on touch devices
   new FastClick document.body
+
+  # Enable form placeholder on lazy browsers
+  $('input, textarea').placeholder()
 
   # Ruby-style string interpolation #{...}
   _.templateSettings = interpolate: /\#\{(.+?)\}/g

@@ -112,11 +112,32 @@
       <div>
         <h2><b></b><span>RSVP</span><b></b></h2>
         <p>Please indicate whether you plan to attend by no later than April 30, 2013.
-        <br><br>
-        <form action=rsvp method=post>
-          <label class=response for=response>Will you be joining us?</label><br>
-          <input type=radio name=response value="Yep!"> Of course&mdash;I wouldn't miss it!<br>
-          <input type=radio name=response value="Nope!"> Sorry, I wish I could make it.
+        <form class=rsvp action=rsvp.html method=post>
+          <div class=col>
+            <label class=response>
+              <input type=radio name=response value="Yep!" required>
+              <span><strong>I'm coming</strong>&mdash;of course!</span>
+            </label>
+            <label class=response>
+              <input type=radio name=response value="Nope!" required>
+              <span><strong>Sorry</strong>&mdash;I wish I could make it.<span>
+            </label>
+            <div class=name>
+              <span>Your name & email address:</span>
+              <input name=name placeholder="Your name" required>
+              <input name=email type=email placeholder="Your email address">
+            </div>
+          </div>
+          <div class=col>
+            <label class=comments for=comments>
+              <span>Did you receive more than one zoo ticket? Please
+list anyone else attending:</span>
+              <textarea name=comments></textarea>
+            </label>
+          </div>
+          <div class=submit>
+            <input type=submit value="Submit">
+          </div>
         </form>
       </div>
     </section>

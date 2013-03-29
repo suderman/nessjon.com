@@ -1,7 +1,5 @@
-# MONGOHQ_URL: mongodb://heroku:a4e5a6379821107bb228816cd5d8aba5@linus.mongohq.com:10031/app13413347
-
 # mongoose = require 'mongoose'
-# mongoose.connect 'mongodb://localhost/test'
+# mongoose.connect process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/test'
 # db = mongoose.connection
 # db.on 'error', console.error.bind(console, 'connection error:')
 # db.once 'open', ->
@@ -17,38 +15,22 @@
 # 
 #   Kitten = mongoose.model 'Kitten', kittySchema
 #   silence = new Kitten name: 'Silence'
-#   # console.log(silence.name)
 # 
 #   fluffy = new Kitten name: 'fluffy'
 #   fluffy.save (err, fluffy) ->
 #     fluffy.speak() unless (err)
 # 
-#   # Kitten.find (err, kittens) ->
-#   #   console.log(kittens) unless (err)
-# 
 #   Kitten.find name: /^fluff/, (err, cats) ->
 #     console.log(cats)
+#
+#
+#     -----
+#
 
   # rsvpSchema = new mongoose.Schema name: String, comments: String
   # Rsvp = db.model 'Rsvp', rsvpSchema
 
   # Rsvp.find 
-
-# mysql = require 'mysql'
-# connection = mysql.createConnection
-#   host: 'localhost',
-#   user: 'root',
-#   password: '',
-#   database: 'nessjon.com'
-# 
-# connection.connect()
-# # connection.query 'SELECT 1 + 1 AS solution', (err, rows, fields) ->
-# connection.query 'SELECT * from rsvp', (err, rows, fields) ->
-#   throw err if (err)
-#   console.log(rows[0])
-#   # console.log('The solution is: ', rows[0].solution)
-# 
-# connection.end()
 
 # mongo = require 'mongodb'
 # mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/mydb' 
@@ -57,8 +39,11 @@
 #   db.collection 'mydocs', (er, collection) ->
 #     collection.insert {'mykey': 'myvalue'}, {safe: true}, (er,rs) ->
 
-express = require 'express'
+sendgrid = require 'sendgrid'
+sender = new sendgrid.SendGrid process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD
+
 path = require 'path'
+express = require 'express'
 app = express()
 
 # All environments
@@ -87,6 +72,23 @@ app.get '/', (req, res) ->
   res.render "index", title: 'Janessa Sheppard & Jonathan Suderman - July 6, 2013'
 app.get '/new.html', (req, res) ->
   res.render "new"
+app.get '/rsvp.html', (req, res) ->
+  res.render "rsvp"
+
+app.post '/rsvp.html', (req, res) ->
+  console.log(req.body)
+
+  mail = new sendgrid.Email
+    to: 'suderman@gmail.com',
+    from: 'mailer@nessjon.com',
+    subject: 'RSVP received!',
+    text: JSON.stringify(req.body)
+
+  sender.send mail, (success, err) ->
+    if success then console.log 'Email sent'
+    else console.log err
+
+  res.render "rsvp", form:'' 
 
 # Start up the server!
 app.listen app.get('port'), ->

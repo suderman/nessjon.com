@@ -1,10 +1,10 @@
 module.exports = (grunt) ->
 
-  # Add custom utilities to grunt.util
+  # Add custom utilities to grunt.util._
+  _ = grunt.util._
 
   # Wrap all strings within object with prefix/suffix
-  grunt.util.wrap = (prefix='', input, suffix='') ->
-    _ = grunt.util._
+  _.wrap = (prefix='', input, suffix='') ->
     @process = (obj) ->
       _.forEach obj, (val, key) =>
         if _.isObject(val) then @process(val)
@@ -21,7 +21,7 @@ module.exports = (grunt) ->
     js:     src: 'app/scripts', dest: 'public/scripts'
     less:   src: 'app/styles',  dest: 'public/styles'
     css:    src: 'app/styles',  dest: 'public/styles'
-  grunt.util.wrap '', asset, '/'
+  _.wrap '', asset, '/'
 
 
   # Project configuration.
@@ -129,7 +129,7 @@ module.exports = (grunt) ->
         ]
 
     # Script concatenation set in bower's component.json
-    concat: grunt.util.wrap asset.js.dest, cmp.concat, '.js'
+    concat: _.wrap asset.js.dest, cmp.concat, '.js'
 
     # Watch task.
     watch:
