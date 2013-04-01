@@ -28,10 +28,45 @@
 
   <div class=container>
 
-    <blockquote>
-      #{form}
-      Thank you for RSVPing. We look forward to seeing you on our special day!
-    </blockquote>
+    <section class=wide id=rsvp>
+      <div>
+        <div class=col>
+          <h2><b></b><span>RSVP: Yes</span><b></b></h2>
+          <ul class=rsvp>
+          {#
+            if yays.length
+              for yay in yays
+                {:<li><h3>:}
+                if yay.email
+                  {:<a href="mailto:#{yay.email}">:}
+                print yay.name
+                if yay.email
+                  {:</a>:}
+                {:</h3><p>#{yay.comments}<span>#{yay.timestamp()}</span></p>
+              :}
+          #}
+          </ul>
+        </div>
+
+        <div class=col>
+          <h2><b></b><span>RSVP: No</span><b></b></h2>
+          <ul class=rsvp>
+          {#
+            if nays.length
+              for nay in nays
+                {:<li><h3>:}
+                if nay.email
+                  {:<a href="mailto:#{nay.email}">:}
+                print nay.name
+                if nay.email
+                  {:</a>:}
+                {:</h3><p>#{nay.comments}<span>#{nay.timestamp()}</span></p>
+              :}
+          #}
+          </ul>
+        </div>
+      </div>
+    </section>
 
   </div>
 </div>

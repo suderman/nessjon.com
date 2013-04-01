@@ -115,11 +115,11 @@
         <form class=rsvp action=rsvp.html method=post>
           <div class=col>
             <label class=response>
-              <input type=radio name=response value="Yep!" required>
+              <input type=radio name=response value="Yes" required>
               <span><strong>I'm coming</strong>&mdash;of course!</span>
             </label>
             <label class=response>
-              <input type=radio name=response value="Nope!" required>
+              <input type=radio name=response value="No" required>
               <span><strong>Sorry</strong>&mdash;I wish I could make it.<span>
             </label>
             <div class=name>

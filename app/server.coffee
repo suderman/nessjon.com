@@ -1,43 +1,38 @@
-# mongoose = require 'mongoose'
-# mongoose.connect process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/test'
-# db = mongoose.connection
-# db.on 'error', console.error.bind(console, 'connection error:')
-# db.once 'open', ->
-# 
-#   kittySchema = mongoose.Schema 
-#     name: String,
-#     date: type: Date, default: Date.now
-# 
-#   kittySchema.methods.speak = ->
-#     greeting = "I don't have a name"
-#     greeting = "Meow name is #{@name}" if @name
-#     console.log(greeting)
-# 
-#   Kitten = mongoose.model 'Kitten', kittySchema
-#   silence = new Kitten name: 'Silence'
-# 
-#   fluffy = new Kitten name: 'fluffy'
-#   fluffy.save (err, fluffy) ->
-#     fluffy.speak() unless (err)
-# 
-#   Kitten.find name: /^fluff/, (err, cats) ->
-#     console.log(cats)
-#
-#
-#     -----
-#
+mongoose = require 'mongoose'
+mongoose.connect process.env.MONGOHQ_URL # || 'mongodb://localhost/test'
+db = mongoose.connection
+db.on 'error', console.error.bind(console, 'connection error:')
 
-  # rsvpSchema = new mongoose.Schema name: String, comments: String
-  # Rsvp = db.model 'Rsvp', rsvpSchema
+rsvpSchema = mongoose.Schema 
+  response: type: String
+  name:     type: String
+  email:    type: String
+  comments: type: String
+  date:     type: Date, default: Date.now
 
-  # Rsvp.find 
+rsvpSchema.methods.timestamp = ->
+  date = new Date(@date)
+  date.toLocaleDateString() + " at " + date.toLocaleTimeString()
 
-# mongo = require 'mongodb'
-# mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/mydb' 
-# 
-# mongo.Db.connect mongoUri, (err, db) ->
-#   db.collection 'mydocs', (er, collection) ->
-#     collection.insert {'mykey': 'myvalue'}, {safe: true}, (er,rs) ->
+rsvpSchema.methods.notify = ->
+
+  mail = new sendgrid.Email
+    to: 'suderman@gmail.com',
+    from: 'mailer@nessjon.com',
+    subject: 'RSVP received!',
+    text: [
+      "Response: #{@response}"
+      "Name: #{@name}"
+      "Email: #{@email}"
+      "Comments: #{@comments}"
+      "Date: #{@date}"
+    ].join "\n\r"
+
+  sender.send mail, (success, err) ->
+    if success then console.log 'Email sent'
+    else console.log err
+
+Rsvp = mongoose.model 'Rsvp', rsvpSchema
 
 sendgrid = require 'sendgrid'
 sender = new sendgrid.SendGrid process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD
@@ -53,14 +48,10 @@ app.configure ->
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'toffee'
 
-  # app.use express.favicon()
   app.use express.logger('dev')
   app.use express.bodyParser()
   app.use express.methodOverride()
-  # app.use express.cookieParser('your secret here')
-  # app.use express.session()
   app.use app.router
-  # app.use require("less-middleware")(src: __dirname + "/public")
   app.use express.static path.resolve(__dirname + '/../public')
 
 # Dev environment
@@ -70,25 +61,30 @@ app.configure 'development', ->
 # Routes
 app.get '/', (req, res) ->
   res.render "index", title: 'Janessa Sheppard & Jonathan Suderman - July 6, 2013'
+
 app.get '/new.html', (req, res) ->
   res.render "new"
+
 app.get '/rsvp.html', (req, res) ->
-  res.render "rsvp"
+  Rsvp.find().where('response').equals('Yes').sort('-date').exec (err, yays)  ->
+    Rsvp.find().where('response').equals('No').sort('-date').exec (err, nays)  ->
+      res.render "rsvp", yays: yays, nays: nays
 
 app.post '/rsvp.html', (req, res) ->
-  console.log(req.body)
+  # if req.body.response? and req.body.name?
 
-  mail = new sendgrid.Email
-    to: 'suderman@gmail.com',
-    from: 'mailer@nessjon.com',
-    subject: 'RSVP received!',
-    text: JSON.stringify(req.body)
+  rsvp = new Rsvp 
+    response: req.body.response
+    name:     req.body.name
+    email:    req.body.email
+    comments: req.body.comments
 
-  sender.send mail, (success, err) ->
-    if success then console.log 'Email sent'
-    else console.log err
-
-  res.render "rsvp", form:'' 
+  rsvp.save (err, rsvp) ->
+    rsvp.notify() unless (err)
+    if req.body.response is "Yes"
+      res.send "Thank you for RSVPing, #{rsvp.name}. We look forward to seeing you on our special day!"
+    else
+      res.send "So sorry you can't join us, #{rsvp.name}. We really appreciate you letting us know!"
 
 # Start up the server!
 app.listen app.get('port'), ->

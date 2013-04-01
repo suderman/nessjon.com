@@ -12,6 +12,7 @@
 
 s = (if (document.location.protocol is "file:") then "scripts/" else "/scripts/")
 c = (if (document.location.protocol is "file:") then "styles/" else "/styles/")
+# root = window.location.href.substring 0, window.location.href.lastIndexOf('/') + 1
 
 # CSS3 selector support & stylesheet reset
 yepnope test: Modernizr.ie <= 8, yep: s+ 'ie.js'
@@ -41,6 +42,7 @@ app.init = ->
   app.navigation()
   app.slideshow()
   app.map()
+  app.rsvp()
 
   $('html').addClass 'ready'
 
@@ -195,3 +197,14 @@ app.slideshow = ->
     $('header[role=banner] h1 a').on 'click', (e) -> 
       e.preventDefault()
       app.slideshow.advance()
+
+app.rsvp = ->
+  $('form.rsvp').each ->
+    $(this).submit (e) ->
+      e.preventDefault()
+      $.post $(this).attr('action'), $(this).serialize(), (message) =>
+        $(this).html "<blockquote>#{message}</blockquote>"
+
+        
+
+
