@@ -1,7 +1,8 @@
 nessjon.com
 ===========
 
-Wedding Website
+Wedding Website for Jonathan Suderman & Janessa Sheppard  
+<http://nessjon.com>
 
 Installation
 ------------
