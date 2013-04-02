@@ -6,19 +6,13 @@
    |_| |_|\___||___/___/ |\___/|_| |_(_)___\___/|_| |_| |_|
                       _/ |
                      |__/
-
-  Compiled from:
-  http://nessjon.com/styles/style.less
-
 */
 @import "lib/normalize.less";
 @import "lib/lesshat";
 @import "base";
 
 // Where the fonts & pictures at?!
-// @fonts: "http://nessjon.com/fonts";
 @fonts: "../fonts";
-// @images: "http://nessjon.com/images";
 @images: "../images";
 
 // Fonts and Icons
@@ -32,11 +26,6 @@
 @brown: rgb(123, 78, 47);
 @green: rgb(92, 191, 120);
 @blue: rgb(34, 74, 109);
-
-// @pink: rgb(235, 218, 255); 
-// @purple: rgb(96, 27, 178);
-// @brown: rgb(178, 147, 104);
-// @base: #fdfcde; 
 
 html { }
 body { 
@@ -127,7 +116,7 @@ header[role=banner] {
   &:after { 
     .pseudo-layer();
     height: @navHeight;
-    background: url("@{images}/giraffegradient.png") scroll repeat 50% 0;
+    background: url("@{images}/giraffe.png") scroll repeat 50% 0;
     .background-size(138px 138px);
   }
 
@@ -270,7 +259,7 @@ div[role=main] {
   padding-top: (@navHeight - 5px);
   padding-bottom: 100px;
 
-  background: @base url("@{images}/zebrafade.png") scroll repeat;
+  background: @base url("@{images}/zebra.png") scroll repeat;
   // .background-size(137px 137px);
 
   &:before { 
@@ -399,6 +388,15 @@ div[role=main] {
       }
     }
 
+    a.shop { 
+      display: block; 
+      text-align: right;
+      img { 
+        height: 75px;
+        border: 2px solid @brown;
+      }
+    }
+
     figure.map {
       position: relative;
       z-index: 20;
@@ -451,11 +449,15 @@ div.logo {
   // Scenery
   &:after { 
     .pseudo-layer(10);
-    background: url("@{images}/hill.png") scroll no-repeat 50% 100%,
-                url("@{images}/mountain.png") fixed repeat-x 50% 0%,
-                url("@{images}/grass.png") scroll repeat-x 50% 100%;
-    .background-size(380%, auto, auto);
-    @media @600 { .background-size(auto); }
+    background: url("@{images}/hill.png") scroll repeat-x 50% 100%,
+                url("@{images}/mountain.png") fixed repeat-x 50% 0%;
+    .background-size(1640px 810px, auto); 
+    @media @600 { 
+      background: url("@{images}/hill.png") scroll no-repeat 50% 100%,
+                  url("@{images}/mountain.png") fixed repeat-x 50% 0%,
+                  url("@{images}/grass.png") scroll repeat-x 50% 100%;
+      .background-size(1640px 810px, auto, 310px 131px); 
+    }
   }
 
   // Pull up slideshow
@@ -480,11 +482,11 @@ div.logo {
     background: url("@{images}/nessjon.png") scroll no-repeat 50% 0%;
     .background-size(contain);
     @media @600 { 
-      background-position: 50% 30%;
+      background-position: 50% 32%;
       .background-size(496px auto); 
     }
     @media @992 { 
-      background-position: 50% 90%;
+      background-position: 50% 75%;
       .background-size(496px auto); 
     }
 

@@ -1,54 +1,162 @@
-<!doctype html>
-<!--[if (lt IE 9)&!(IEMobile)]><html lang=en class="no-js ie"><![endif]-->
-<!--[if gte IE 9]><!--> <html lang=en class=no-js>        <!--<![endif]-->
-                        <head><meta charset=utf-8>
-<!--
-                              (_)
-           _ __   ___  ___ ___ _  ___  _ __    ___ ___  _ __ ___
-          | '_ \ / _ \/ __/ __| |/ _ \| '_ \  / __/ _ \| '_ ` _ \
-          | | | |  __/\__ \__ \ | (_) | | | || (_| (_) | | | | | |
-          |_| |_|\___||___/___/ |\___/|_| |_(_)___\___/|_| |_| |_|
-                             _/ |
-                            |__/
-
-               @@@                                      /  ))
-              (( }                                      7_ /
-              ``)                                         / \
-             ``( \  @@@                                  |<| |
-            ```\`.\_`|/                                 /|/| |
-           ```` )|-~-~                                 / | | |
-          ~~~~~/ \`                                 o_)\/| |_|
-              / ' \`                                     |__>)
-             /  '  \`                                    || |
-            /   '    `                                   |\ \
-           /   _!__.-._`                                 | \ \
-          /_.-'    ( \                                   | |\ \
-          /,        ` \                                  |_| \_\
-          |`_         |`_                              __'_)__.-'
-    <-=================================================================-->
-
-            <title>Janessa Sheppard & Jonathan Suderman</title>
-
-
-<!-- Totally meta -->
-<meta http-equiv=x-ua-compatible content="ie=edge,chrome=1">
-<meta name=viewport content="width=device-width, initial-scale=1.0">
-
-<!-- Styles & Scripts -->
-<link href=/styles/splash.css rel=stylesheet>
-<script src=/scripts/modernizr.js></script>
-<script src=/scripts/splash.js></script>
-
-<!-- And so it begins... -->
-<body>
+#{partial 'head.toffee'} 
 
 <header role=banner>
-  <h1>#{title}</h1>
-
-  <p>Further details pending<br>
-     This anticipated wedding.<br>
-     Next summer, we'll see you<br>
-     At the Calgary Zoo...
-  <p>
-
+  <div class=container>
+    <h1><a href=#>Ness &hearts; Jon</a></h1>
+    <a href=# class=menu></a>
+    <nav role=navigation>
+      <ul>
+        <li><a href=#zoo class=zoo>Zoo</a>
+        <li><a href=#schedule class=schedule>Schedule</a>
+        <li><a href=#maps class=maps>Maps</a>
+        <li><a href=#dress class=dress>Dress</a>
+        <li><a href=#registry class=registry>Registry</a>
+        <li><a href=#rsvp class=rsvp>RSVP</a>
+      </ul>
+    </nav>
+  </div>
 </header>
+
+<div role=main>
+
+  <div class=logo>
+    <header>
+      <figure class=bride></figure>
+      <figure class=groom></figure>
+    </header>
+  </div>
+
+  <div class=container>
+
+    <div class=hero>
+      <div class=tilt>
+        <dl class=countdown rel="2013-07-06 14:00">
+          <dd><figure></figure><figcaption>Days</figcaption>
+          <dd><figure></figure><figcaption>Hours</figcaption>
+          <dd><figure></figure><figcaption>Mins</figcaption>
+        </dl>
+        <ul>
+          <li><figure><img src="/images/one.jpg"></figure>
+          <li><figure><img src="/images/two.jpg"></figure>
+          <li><figure><img src="/images/three.jpg"></figure>
+          <li><figure><img src="/images/four.jpg"></figure>
+          <li><figure><img src="/images/five.jpg"></figure>
+          <li><figure><img src="/images/six.jpg"></figure>
+        </ul>
+      </div>
+      <div class=flourish></div>
+    </div>
+
+    <blockquote>
+      Welcome to our wedding website! We look forward to celebrating our special day with you.
+    </blockquote>
+
+    <section class=left id=zoo>
+      <div>
+        <h2><b></b><span>Zoo Entry</span><b></b></h2>
+        <p>Use the <em>July 6 zoo pass</em> you received with your invitation. Each pass allows one person to enter the zoo&mdash;free of charge!  Keep these with you after the ceremony as you may be asked to show them at the reception. Please note that pets are not permitted entry at the Calgary Zoo.
+        <p><img width=100% src=/images/ticket.png>
+      </div>
+    </section>
+
+    <section class=right id=schedule>
+      <div>
+        <h2><b></b><span>Schedule of&nbsp;Events</span><b></b></h2>
+        <dl>
+          <dt>2:00 pm:
+          <dd>Wedding ceremony begins. This formal service is held outdoors in the Zoo Gardens north of the Enmax Conservatory. Please arrive 15&ndash;20 minutes prior. If it is raining, the ceremony will be held inside the Safari Lodge.
+          <dt>3:00&ndash;5:00 pm: 
+          <dd>Zoo-time! While the wedding party has photos taken, the guests have two hours to enjoy the zoo.
+          <dt>5:00 pm:
+          <dd>Dinner reception begins at the Safari Lodge.  Dance to follow.
+        </dl>
+      </div>
+    </section>
+
+    <section class=wide id=maps>
+      <div>
+        <h2><b></b><span>Zoo&nbsp;Details and&nbsp;Maps</span><b></b></h2>
+        <div class=col>
+          <p>For a map of the Calgary Zoo, directions, and any other zoo-related inquiries you may have, please visit the website of the <a href="http://www.calgaryzoo.ca/">Calgary Zoo</a>
+          <dl>
+            <dt>Parking (North Lot)
+            <dd>The main zoo parking lot and entrance is located off St. George’s Drive, just north of Memorial Drive with zoo access through the north gate. A $7.00 daily parking fee is in effect.
+            <dt>Accommodations
+            <dd>Guests are responsible for arranging their own accommodations and transportation. We encourage making these arrangements early.
+          </dl>
+        </div>
+        <div class=col>
+          <figure class=map>
+            <iframe width=500 height=500 frameborder=0 scrolling=no marginheight=0 marginwidth=0 src="//maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Safari+Lodge+Canada,+Calgary,+Alberta&amp;aq=&amp;sll=51.044362,-114.028078&amp;sspn=0.012358,0.018368&amp;g=Safari+Lodge+Canada,+Calgary,+Alberta&amp;ie=UTF8&amp;hq=&amp;hnear=Safari+Lodge+Canada,+Calgary,+Division+No.+6,+Alberta,+Canada&amp;t=m&amp;ll=51.047816,-114.028301&amp;spn=0.02698,0.04283&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+          </figure>
+          <p><a href="http://maps.google.com/maps?f=d&source=s_q&hl=en&geocode=%3BCSpFVrom2hFdFQrgCgMd0hE0-Sm1v0oQsXpxUzEwxH4bUlMwig&q=Safari+Lodge+Canada,+Calgary,+Alberta&aq=&sll=51.044362,-114.028078&sspn=0.012358,0.018368&g=Safari+Lodge+Canada,+Calgary,+Alberta&ie=UTF8&hq=&hnear=Safari+Lodge+Canada,+Calgary,+Division+No.+6,+Alberta,+Canada&t=m&ll=51.04992,-114.033966&spn=0.016511,0.027723&z=14&vpsrc=6&iwloc=A&daddr=Safari+Lodge+Canada,+Calgary,+AB+T2E,+Canada">Get directions in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class=left id=dress>
+      <div> 
+        <h2><b></b><span>Dress Considerations</span><b></b></h2>
+        <p>The wedding is formal, and we invite you to dress in style! Zoo-themed clothing welcomed! However, as this is an outdoor wedding, we do encourage guests to bring comfortable footwear for walking, and to bring extra clothing in case of rain.
+      </div>
+    </section>
+
+    <section class=right id=registry>
+      <div>
+        <h2><b></b><span>Registry</span><b></b></h2>
+        <p>We are registered for wedding gifts at Home Outfitters. Registry gifts can be purchased in stores, or online. Follow the links below to view registry items under Jonathan and Janessa Suderman. <!-- Alternately, we are pleased to accept monetary gifts. -->
+        <a class=shop href="http://giftregistry.hbc.com/grworks/prj/generic_online/jsp/common/grbookmark.jsp?retailerid=5&registryid=400111235856"><img src="/images/homeoutfitters.jpg"></a>
+      </div>
+    </section>
+
+    <section class=wide id=rsvp>
+      <div>
+        <h2><b></b><span>RSVP</span><b></b></h2>
+        <p>Please indicate whether you plan to attend by no later than <strong>May 15, 2013</strong>.</p>
+        <form class=rsvp action="/rsvp.html" method=post>
+          <div class=col>
+            <label class=response>
+              <input type=radio name=response value="Yes" required>
+              <span><strong>I'm coming</strong>&mdash;of course!</span>
+            </label>
+            <label class=response>
+              <input type=radio name=response value="No" required>
+              <span><strong>Sorry</strong>&mdash;I wish I could make it.<span>
+            </label>
+            <div class=name>
+              <span>Your name & email address:</span>
+              <input name=name placeholder="Your name" required>
+              <input name=email type=email placeholder="Your email address">
+            </div>
+          </div>
+          <div class=col>
+            <label class=comments for=comments>
+              <span>Did you receive more than one zoo ticket? Please
+list anyone else attending:</span>
+              <textarea name=comments></textarea>
+            </label>
+          </div>
+          <div class=submit>
+            <input type=submit value="Submit">
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer role=contentinfo>
+  <div class=container>
+    <!-- <nav> -->
+    <!--   <a href="#">Sitemap</a> / <a href="#">Contact Information</a> -->
+    <!-- </nav> -->
+    <div class=credits>  
+      © 2013 duct-taped together by jon suderman
+    </div>
+  </div>
+</footer>
+
+<audio>
+   <source src=https://dl.dropbox.com/s/xu3fhw9p2dp8dtt/secret.mp3 type=audio/mp3 preload=auto>
+</audio>

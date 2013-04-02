@@ -23,7 +23,7 @@ yepnope load: [
   s+ 'jquery.js'         # obviously
   s+ 'underscore.js'     # tasty utility methods
   s+ 'fastclick.js'      # treat tap as click events
-  s+ 'jquery-placeholder.js'
+  s+ 'H5F.js'
   s+ 'mousetrap.js'      # keyboard shortcuts
   s+ 'jquery.fitmaps.js' # responsive Google Maps
 ], complete: -> jQuery app.init()
@@ -52,7 +52,8 @@ app.setup = ->
   new FastClick document.body
 
   # Enable form placeholder on lazy browsers
-  $('input, textarea').placeholder()
+  $('form').each -> H5F.setup(this)
+  # $('input, textarea').placeholder()
 
   # Ruby-style string interpolation #{...}
   _.templateSettings = interpolate: /\#\{(.+?)\}/g
@@ -158,22 +159,23 @@ app.updateCountdown = ($countdown, futureTime) ->
 
 # We're going to the zoo, zoo, zoo!
 app.secretSong = ->
-  app.foundSecretSong = false
+  if Modernizr.audio
+    app.foundSecretSong = false
 
-  app.mp3 = $('audio:first').get(0)
-  app.mp3.load()
+    app.mp3 = $('audio:first').get(0)
+    app.mp3.load()
 
-  $(document).keydown -> 
-    if app.foundSecretSong
-      if app.mp3.paused
-        app.mp3.play()
-      else
-        app.mp3.pause()
+    $(document).keydown -> 
+      if app.foundSecretSong
+        if app.mp3.paused
+          app.mp3.play()
+        else
+          app.mp3.pause()
 
-  Mousetrap.bind "z o o", ->
-    app.foundSecretSong = true
-    app.mp3.play()
-    # $("body").append "<embed src=files/secret.mp3 autostart=true loop=false width=2 height=0>"
+    Mousetrap.bind "z o o", ->
+      app.foundSecretSong = true
+      app.mp3.play()
+      # $("body").append "<embed src=files/secret.mp3 autostart=true loop=false width=2 height=0>"
 
 app.map = ->
   $('figure.map').each -> 
@@ -202,8 +204,9 @@ app.rsvp = ->
   $('form.rsvp').each ->
     $(this).submit (e) ->
       e.preventDefault()
-      $.post $(this).attr('action'), $(this).serialize(), (message) =>
-        $(this).html "<blockquote>#{message}</blockquote>"
+      if $('input.valid').length >= 3
+        $.post $(this).attr('action'), $(this).serialize(), (message) =>
+          $(this).html "<blockquote>#{message}</blockquote>"
 
         
 
