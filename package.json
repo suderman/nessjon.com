@@ -10,7 +10,8 @@
     "less-middleware": "*",
     "mongoose": "3.6.x",
     "mysql": "2.x",
-    "sendgrid": "~0.2.6"
+    "sendgrid": "~0.2.6",
+    "grunt-s3": "git://github.com/pifantastic/grunt-s3.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -23,6 +24,11 @@
     "grunt-contrib-cssmin": "~0.5.0",
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.3.1",
-    "grunt-notify": "~0.1.4"
+    "grunt-notify": "~0.1.4",
+    "grunt-s3": "~0.1.0"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
   }
 }

@@ -1,0 +1,7 @@
+# Private environment variables
+# Rename to .env and DON'T commit to your public repo
+MONGOHQ_URL=mongodb://user:password@host:27017/database
+SENDGRID_PASSWORD=password
+SENDGRID_USERNAME=username
+AWS_ACCESS_KEY_ID=key
+AWS_SECRET_ACCESS_KEY=secret

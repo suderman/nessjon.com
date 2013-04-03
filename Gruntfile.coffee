@@ -1,5 +1,6 @@
 module.exports = (grunt) ->
 
+  # UTILITIES
   # Add custom utilities to grunt.util._
   _ = grunt.util._
 
@@ -12,38 +13,63 @@ module.exports = (grunt) ->
     @process input
 
 
-  # On with the show!
+  # PACKAGE.JSON, ENV VARIABLES, & OTHER CONFIGURATION
   pkg = grunt.file.readJSON "package.json"
-  cmp = grunt.file.readJSON "component.json"
+  cfg = grunt.file.readJSON "config.json"
 
-  asset = 
-    coffee: src: 'app/scripts', dest: 'public/scripts'
-    js:     src: 'app/scripts', dest: 'public/scripts'
-    less:   src: 'app/styles',  dest: 'public/styles'
-    css:    src: 'app/styles',  dest: 'public/styles'
-  _.wrap '', asset, '/'
+  # Where to look for assets, where to put them, & their public dir
+  assets =
+    coffee: src: 'app/assets/scripts', dest: 'public/scripts', dir: 'scripts'
+    js:     src: 'app/assets/scripts', dest: 'public/scripts', dir: 'scripts'
+    less:   src: 'app/assets/styles',  dest: 'public/styles',  dir: 'styles'
+    css:    src: 'app/assets/styles',  dest: 'public/styles',  dir: 'styles'
+    img:    src: 'app/assets/images',  dest: 'public/images',  dir: 'images'
+    font:   src: 'app/assets/fonts',   dest: 'public/fonts',   dir: 'fonts'
+  _.wrap '', assets, '/'
+
+  # Load environment variables from .env if it exists
+  if grunt.file.exists ".env"
+    _.forEach grunt.file.read(".env").split("\n"), (line) ->
+      process.env[_.first(line.split("="))] = _.last(line.split("="))
+
+  # Prepare cfg.concat from assets.js.src, assets.css.src for concat task
+  cfg.concat = {}
+  _.forEach [ 'js', 'css' ], (type) ->
+    _.forEach grunt.file.expand(assets[type].src + "*.json"), (file) ->
+      name = _.first(file.replace(/^.*[\/\\]/g, '').split('.json'))
+      key = "#{name}.#{type}"
+      cfg.concat[key] =
+        dest: name
+        src: grunt.file.readJSON file
+      cfg.concat[key] = _.wrap(assets[type].dest, cfg.concat[key], '.' + type)
+
+  # Ensure the CDN is set to something
+  cfg.bucket = pkg.name unless cfg.bucket?
+  cfg.cdn = "http://#{cfg.bucket}.s3.amazonaws.com" unless cfg.cdn?
 
 
-  # Project configuration.
+  # GRUNT CONFIGURATION
   grunt.initConfig
     pkg: pkg
-    cmp: cmp
+    cfg: cfg
+
+    # Time-stamped banner for all minified assets
     banner: [ "/*!",
               pkg.name + ' (' + grunt.template.today('yyyy-mm-dd') + ')',
               pkg.description,
               "\n*/"
             ].join "\n"
 
-    # Copy bower components/**/*.js to asset.js.dest
+    # Copy bower components/**/*.js to assets.js.dest
     bower:
       install:
-        dest: asset.js.dest
+        dest: assets.js.dest
         options: stripJsAffix: true
 
     # Build modernizr
     modernizr:
-      devFile: "remote"
-      outputFile: asset.js.dest + 'modernizr.js'
+      devFile: 'remote'
+      outputFile: assets.js.dest + 'modernizr.js'
       extra:
         printshiv: true  # html5shiv
         load: true       # yepnope
@@ -53,8 +79,8 @@ module.exports = (grunt) ->
         addtest: true 
       uglify: false
       files: [
-        asset.css.dest + '**/*.css'
-        asset.js.dest + '**/*.js'
+        assets.css.dest + '**/*.css'
+        assets.js.dest + '**/*.js'
       ]
 
     # Copy assets to public dir
@@ -62,16 +88,34 @@ module.exports = (grunt) ->
       css:
         files: [ 
           expand: true
-          cwd: asset.css.src
+          flatten: true
+          cwd: assets.css.src
           src: ['**/*.css']
-          dest: asset.css.dest
+          dest: assets.css.dest
         ]
       js:
         files: [ 
           expand: true
-          cwd: asset.js.src
+          flatten: true
+          cwd: assets.js.src
           src: ['**/*.js']
-          dest: asset.js.dest
+          dest: assets.js.dest
+        ]
+      img:
+        files: [ 
+          expand: true
+          flatten: true
+          cwd: assets.img.src
+          src: ['**/*.jpg','**/*.png','**/*.gif']
+          dest: assets.img.dest
+        ]
+      font:
+        files: [ 
+          expand: true
+          flatten: true
+          cwd: assets.font.src
+          src: ['**/*.eot','**/*.svg','**/*.ttf','**/*.woff']
+          dest: assets.font.dest
         ]
 
     # Compile less to css and move to public dir
@@ -81,9 +125,9 @@ module.exports = (grunt) ->
           dumpLineNumbers: false # commments / mediaquery
         files: [
           expand: true
-          cwd: asset.less.src
-          src: ['*.less']
-          dest: asset.less.dest
+          cwd: assets.less.src
+          src: ['*.less', '!_*.less']
+          dest: assets.less.dest
           ext: '.css'
         ]
 
@@ -95,26 +139,26 @@ module.exports = (grunt) ->
           banner: "<%= banner %>"
         files: [
           expand: true
-          cwd: asset.css.dest
+          cwd: assets.css.dest
           src: ['**/*.css']
-          dest: asset.css.dest
+          dest: assets.css.dest
         ]
 
-    # Compile coffee to js and move to asset.coffee.dest/*.js
+    # Compile coffee to js and move to assets.coffee.dest/*.js
     coffee:
       compile:
         options:
           sourceMap: false
         files: [
           expand: true
-          cwd: asset.coffee.src
+          cwd: assets.coffee.src
           src: ['*.coffee']
-          dest: asset.coffee.dest
+          dest: assets.coffee.dest
           ext: '.js'
         ]
 
 
-    # Minify & bannerize everything in asset.js.dest/*.js
+    # Minify & bannerize everything in assets.js.dest/*.js
     uglify:
       scripts:
         options: 
@@ -123,21 +167,21 @@ module.exports = (grunt) ->
           banner: "<%= banner %>"
         files: [
           expand: true
-          cwd: asset.js.dest
+          cwd: assets.js.dest
           src: ['**/*.js']
-          dest: asset.js.dest
+          dest: assets.js.dest
         ]
 
-    # Script concatenation set in bower's component.json
-    concat: _.wrap asset.js.dest, cmp.concat, '.js'
+    # Script & style concatenation
+    concat: cfg.concat
 
     # Watch task.
     watch:
       styles:
-        files: [asset.less.src + '**/*.less']
+        files: [assets.less.src + '**/*.less']
         tasks: ['styles', 'notify:less']
       scripts:
-        files: [asset.coffee.src + '**/*.coffee']
+        files: [assets.coffee.src + '**/*.coffee']
         tasks: ['scripts', 'notify:coffee']
 
     # Growl notifications
@@ -151,6 +195,29 @@ module.exports = (grunt) ->
           title: 'Task Complete'
           message: 'Compiled less'
 
+    # Amazon S3
+    s3:
+      options:
+        bucket: cfg.bucket
+        access: 'public-read'
+        debug: false
+        # key and secret in env variables
+      cdn:
+        upload: [
+            src: assets.css.dest + '*.*'
+            dest: assets.css.dir
+            gzip: false
+          ,
+            src: assets.js.dest + '*.*'
+            dest: assets.js.dir
+            gzip: false
+          ,
+            src: assets.font.dest + '*.*'
+            dest: assets.font.dir
+          ,
+            src: assets.img.dest + '*.*'
+            dest: assets.img.dir
+        ]
 
   grunt.loadNpmTasks 'grunt-bower'
   grunt.loadNpmTasks 'grunt-modernizr'
@@ -162,10 +229,59 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-notify'
+  grunt.loadNpmTasks 'grunt-s3'
+
+
+  # Write coffee & less file with variables
+  grunt.registerTask 'variables', 'Set asset variables', (n) ->
+
+    # Define paths
+    host    = cfg.cdn
+    scripts = cfg.cdn + '/' + assets.js.dir.replace(/\/$/,'')
+    styles  = cfg.cdn + '/' + assets.css.dir.replace(/\/$/,'')
+    images  = cfg.cdn + '/' + assets.img.dir.replace(/\/$/,'')
+    fonts   = cfg.cdn + '/' + assets.font.dir.replace(/\/$/,'')
+
+    # Variables for scripts
+    contents = [
+      '# Generated by Gruntfile.coffee'
+      'window.assets ='
+      '  host:    "' + host + '"'
+      '  scripts: "' + scripts + '"'
+      '  styles:  "' + styles + '"'
+      '  images:  "' + images + '"'
+      '  fonts:   "' + fonts + '"'
+    ]
+    dest = assets.coffee.src + "_variables.coffee"
+    grunt.file.write dest, contents.join "\n"
+    grunt.log.writeln "File #{dest.cyan} created."
+
+    # Variables for styles
+    contents = [
+      '// Generated by Gruntfile.coffee'
+      '@host:   "' + host + '";'
+      '@fonts:  "' + fonts + '";'
+      '@images: "' + images + '";'
+    ]
+    dest = assets.less.src + "_variables.less"
+    grunt.file.write dest, contents.join "\n"
+    grunt.log.writeln "File #{dest.cyan} created."
 
   # Default task(s).
-  grunt.registerTask 'styles',  ['less', 'concat']
-  grunt.registerTask 'scripts', ['coffee', 'concat']
+  grunt.registerTask 'styles',  ['variables', 'less', 'concat']
+  grunt.registerTask 'scripts', ['variables', 'coffee', 'concat']
 
-  grunt.registerTask 'default', 'Do it all.', (n) ->
-    grunt.task.run 'bower', 'less', 'coffee', 'copy', 'modernizr', 'concat', 'cssmin', 'uglify'
+  # grunt.registerTask 'default', 'Do it all.', (n) ->
+  #   grunt.task.run 'bower', 'variables', 'less', 'coffee', 'copy', 'modernizr', 'concat', 'cssmin', 'uglify', 's3'
+  grunt.registerTask 'default', [
+    'bower'
+    'variables'
+    'less'
+    'coffee'
+    'copy'
+    'modernizr'
+    'concat'
+    'cssmin'
+    'uglify'
+    's3'
+  ]

@@ -54,24 +54,31 @@ app.configure ->
   app.use app.router
   app.use express.static path.resolve(__dirname + '/../public')
 
+  app.assets = {}
+  app.assets.styles = '/styles/'
+  app.assets.styles = 'http://nessjon.com.s3.amazonaws.com/styles/'
+  app.assets.scripts = '/scripts/'
+  app.assets.scripts = 'http://nessjon.com.s3.amazonaws.com/scripts/'
+  app.assets.images = '/images/'
+  app.assets.images = 'http://nessjon.com.s3.amazonaws.com/images/'
+
 # Dev environment
 app.configure 'development', ->
   app.use express.errorHandler()
 
 # Routes
 app.get '/', (req, res) ->
-  res.render "index", title: 'Janessa Sheppard & Jonathan Suderman - July 6, 2013'
+  res.render "index", assets: app.assets
 
-app.get '/new.html', (req, res) ->
-  res.render "new"
+app.get '/splash.html', (req, res) ->
+  res.render "splash", assets: app.assets
 
 app.get '/rsvp.html', (req, res) ->
   Rsvp.find().where('response').equals('Yes').sort('-date').exec (err, yays)  ->
     Rsvp.find().where('response').equals('No').sort('-date').exec (err, nays)  ->
-      res.render "rsvp", yays: yays, nays: nays
+      res.render "rsvp", yays: yays, nays: nays, assets: app.assets
 
 app.post '/rsvp.html', (req, res) ->
-  # if req.body.response? and req.body.name?
 
   rsvp = new Rsvp 
     response: req.body.response
