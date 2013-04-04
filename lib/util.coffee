@@ -48,7 +48,8 @@ module.exports = (grunt) ->
 
   # Time-stamped banner for all minified assets
   _.config.banner = [ "/*!",
-                      _.config.pkg.name + ' (' + grunt.template.today('yyyy-mm-dd') + ')',
+                      _.config.pkg.name + ' (' + grunt.template.today('yyyy') + ')',
+                      # _.config.pkg.name + ' (' + grunt.template.today('yyyy-mm-dd') + ')',
                       _.config.pkg.description,
                       "\n*/"
                     ].join "\n"

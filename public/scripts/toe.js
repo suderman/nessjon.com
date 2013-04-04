@@ -1,5 +1,5 @@
 /*!
-nessjon.com (2013-04-03)
+nessjon.com (2013)
 Janessa and Jonathan's Wedding Website
 
 *//*!

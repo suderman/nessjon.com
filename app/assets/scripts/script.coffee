@@ -26,7 +26,7 @@ yepnope load: [
   'scripts/fastclick.js'      # treat tap as click events
   'scripts/H5F.js'            # HTML5 forms polyfill
   'scripts/mousetrap.js'      # keyboard shortcuts
-  'scripts/jquery.fitmaps.js' # responsive Google Maps
+  'scripts/jquery-fitmaps.js' # responsive Google Maps
 ], complete: -> jQuery app.init()
 
 # Google Analytics
