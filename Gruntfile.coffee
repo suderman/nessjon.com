@@ -1,64 +1,13 @@
 module.exports = (grunt) ->
 
-  # UTILITIES
-  # Add custom utilities to grunt.util._
-  _ = grunt.util._
-
-  # Wrap all strings within object with prefix/suffix
-  _.wrap = (prefix='', input, suffix='') ->
-    @process = (obj) ->
-      _.forEach obj, (val, key) =>
-        if _.isObject(val) then @process(val)
-        else obj[key] = ((if _(val).startsWith(prefix) then '' else prefix)) + val + ((if _(val).endsWith(suffix) then '' else suffix))
-    @process input
-
-
   # PACKAGE.JSON, ENV VARIABLES, & OTHER CONFIGURATION
-  pkg = grunt.file.readJSON "package.json"
-  cfg = grunt.file.readJSON "config.json"
-
-  # Where to look for assets, where to put them, & their public dir
-  assets =
-    coffee: src: 'app/assets/scripts', dest: 'public/scripts', dir: 'scripts'
-    js:     src: 'app/assets/scripts', dest: 'public/scripts', dir: 'scripts'
-    less:   src: 'app/assets/styles',  dest: 'public/styles',  dir: 'styles'
-    css:    src: 'app/assets/styles',  dest: 'public/styles',  dir: 'styles'
-    img:    src: 'app/assets/images',  dest: 'public/images',  dir: 'images'
-    font:   src: 'app/assets/fonts',   dest: 'public/fonts',   dir: 'fonts'
-  _.wrap '', assets, '/'
-
-  # Load environment variables from .env if it exists
-  if grunt.file.exists ".env"
-    _.forEach grunt.file.read(".env").split("\n"), (line) ->
-      process.env[_.first(line.split("="))] = _.last(line.split("="))
-
-  # Prepare cfg.concat from assets.js.src, assets.css.src for concat task
-  cfg.concat = {}
-  _.forEach [ 'js', 'css' ], (type) ->
-    _.forEach grunt.file.expand(assets[type].src + "*.json"), (file) ->
-      name = _.first(file.replace(/^.*[\/\\]/g, '').split('.json'))
-      key = "#{name}.#{type}"
-      cfg.concat[key] =
-        dest: name
-        src: grunt.file.readJSON file
-      cfg.concat[key] = _.wrap(assets[type].dest, cfg.concat[key], '.' + type)
-
-  # Ensure the CDN is set to something
-  cfg.bucket = pkg.name unless cfg.bucket?
-  cfg.cdn = "http://#{cfg.bucket}.s3.amazonaws.com" unless cfg.cdn?
-
+  _ = require("./lib/util")(grunt)
+  config = _.config
+  assets = _.config.assets
 
   # GRUNT CONFIGURATION
   grunt.initConfig
-    pkg: pkg
-    cfg: cfg
-
-    # Time-stamped banner for all minified assets
-    banner: [ "/*!",
-              pkg.name + ' (' + grunt.template.today('yyyy-mm-dd') + ')',
-              pkg.description,
-              "\n*/"
-            ].join "\n"
+    banner: config.banner
 
     # Copy bower components/**/*.js to assets.js.dest
     bower:
@@ -173,7 +122,7 @@ module.exports = (grunt) ->
         ]
 
     # Script & style concatenation
-    concat: cfg.concat
+    concat: config.concat
 
     # Watch task.
     watch:
@@ -198,7 +147,7 @@ module.exports = (grunt) ->
     # Amazon S3
     s3:
       options:
-        bucket: cfg.bucket
+        bucket: config.bucket
         access: 'public-read'
         debug: false
         # key and secret in env variables
@@ -231,16 +180,15 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-notify'
   grunt.loadNpmTasks 'grunt-s3'
 
-
   # Write coffee & less file with variables
   grunt.registerTask 'variables', 'Set asset variables', (n) ->
 
     # Define paths
-    host    = cfg.cdn
-    scripts = cfg.cdn + '/' + assets.js.dir.replace(/\/$/,'')
-    styles  = cfg.cdn + '/' + assets.css.dir.replace(/\/$/,'')
-    images  = cfg.cdn + '/' + assets.img.dir.replace(/\/$/,'')
-    fonts   = cfg.cdn + '/' + assets.font.dir.replace(/\/$/,'')
+    host    = config.cdn
+    scripts = config.cdn + '/' + assets.js.dir.replace(/\/$/,'')
+    styles  = config.cdn + '/' + assets.css.dir.replace(/\/$/,'')
+    images  = config.cdn + '/' + assets.img.dir.replace(/\/$/,'')
+    fonts   = config.cdn + '/' + assets.font.dir.replace(/\/$/,'')
 
     # Variables for scripts
     contents = [
