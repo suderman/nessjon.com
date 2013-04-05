@@ -55,7 +55,7 @@ app.configure ->
   app.use express.static path.resolve(__dirname + '/../public')
 
   app.assets = {}
-  app.assets.host = "http://nessjon.s3.amazonaws.com"
+  app.assets.host = "//assets.nessjon.com"
   app.assets.styles = "#{app.assets.host}/styles"
   app.assets.scripts = "#{app.assets.host}/scripts"
   app.assets.images = "#{app.assets.host}/images"

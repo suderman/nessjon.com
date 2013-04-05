@@ -1,3 +1,4 @@
 {
-  "bucket": "nessjon"
+  "bucket": "assets.nessjon.com",
+  "cdn": "//assets.nessjon.com"
 }

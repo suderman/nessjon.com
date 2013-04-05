@@ -44,7 +44,7 @@ module.exports = (grunt) ->
 
   # Ensure the CDN is set to something
   _.config.bucket = _.config.pkg.name unless _.config.bucket?
-  _.config.cdn = "http://#{_.config.bucket}.s3.amazonaws.com" unless _.config.cdn?
+  _.config.cdn = "//#{_.config.bucket}.s3.amazonaws.com" unless _.config.cdn?
 
   # Time-stamped banner for all minified assets
   _.config.banner = [ "/*!",

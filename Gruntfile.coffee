@@ -149,6 +149,7 @@ module.exports = (grunt) ->
       options:
         bucket: config.bucket
         access: 'public-read'
+        secure: false # allow periods in bucket names
         debug: false
         # key and secret in env variables
       cdn:
