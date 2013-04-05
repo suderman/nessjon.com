@@ -7,7 +7,10 @@ Wedding Website for Jonathan Suderman & Janessa Sheppard
 Installation
 ------------
 
-1. node `brew install node`
-2. npm `curl http://npmjs.org/install.sh | sh`
-3. grunt, bower & foreman `npm install -g grunt-cli bower foreman`
-4. `cd nessjon.com && grunt && foreman start`
+1. `brew install node`
+2. `npm install -g grunt-cli bower foreman`
+3. `git clone git@github.com:suderman/nessjon.com.git && cd nessjon.com`
+4. `npm install`
+5. `bower install`
+6. `grunt`
+7. `foreman start`
