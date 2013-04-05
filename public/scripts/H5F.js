@@ -1,5 +1,5 @@
 /*!
-nessjon.com (2013)
+nessjon.com
 Janessa and Jonathan's Wedding Website
 
 *//*! H5F - v1.0.0 - 2012-07-18

@@ -42,14 +42,13 @@ module.exports = (grunt) ->
         src: grunt.file.readJSON file
       _.config.concat[key] = _.wrap(_.config.assets[type].dest, _.config.concat[key], '.' + type)
 
-  # Ensure the CDN is set to something
+  # Amazon S3 bucket and CDN host
+  _.config.cdn = "" unless _.config.cdn?
   _.config.bucket = _.config.pkg.name unless _.config.bucket?
-  _.config.cdn = "//#{_.config.bucket}.s3.amazonaws.com" unless _.config.cdn?
 
   # Time-stamped banner for all minified assets
   _.config.banner = [ "/*!",
-                      _.config.pkg.name + ' (' + grunt.template.today('yyyy') + ')',
-                      # _.config.pkg.name + ' (' + grunt.template.today('yyyy-mm-dd') + ')',
+                      _.config.pkg.name,
                       _.config.pkg.description,
                       "\n*/"
                     ].join "\n"

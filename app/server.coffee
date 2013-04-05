@@ -43,6 +43,9 @@ app = express()
 
 # All environments
 app.configure ->
+  root = path.resolve(__dirname + '/..')
+  app.config = require "#{root}/config.json"
+
   app.set 'port', process.env.PORT or 3000
 
   app.set 'views', __dirname + '/views'
@@ -52,10 +55,10 @@ app.configure ->
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use app.router
-  app.use express.static path.resolve(__dirname + '/../public')
+  app.use express.static "#{root}/public"
 
   app.assets = {}
-  app.assets.host = "//assets.nessjon.com"
+  app.assets.host = app.config.cdn or ""
   app.assets.styles = "#{app.assets.host}/styles"
   app.assets.scripts = "#{app.assets.host}/scripts"
   app.assets.images = "#{app.assets.host}/images"
