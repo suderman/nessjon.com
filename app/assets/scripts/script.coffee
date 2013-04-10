@@ -16,6 +16,7 @@ yepnope.paths =
   'styles':  window.assets.styles
 
 # CSS3 selector support & stylesheet reset
+yepnope test: Modernizr.ie == 9, yep: 'scripts/text-shadow.js'
 yepnope test: Modernizr.ie <= 8, yep: [ '/styles/style.css', '/scripts/ie.js' ]
 yepnope test: Modernizr.ie <= 7, yep: 'styles/ie.css'
 
