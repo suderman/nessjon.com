@@ -123,6 +123,9 @@ module.exports = (grunt) ->
     # Script & style concatenation
     concat: config.concat
 
+    # Script & style deletion (including individual parts of concatenated scripts)
+    clean: config.clean
+
     # Watch task.
     watch:
       styles:
@@ -176,6 +179,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-notify'
   grunt.loadNpmTasks 'grunt-s3'
@@ -216,8 +220,8 @@ module.exports = (grunt) ->
     grunt.log.writeln "File #{dest.cyan} created."
 
   # Default task(s).
-  grunt.registerTask 'styles',  ['variables', 'less', 'concat']
-  grunt.registerTask 'scripts', ['variables', 'coffee', 'concat']
+  grunt.registerTask 'styles',  ['variables', 'less', 'concat', 'clean']
+  grunt.registerTask 'scripts', ['variables', 'coffee', 'concat', 'clean']
 
   # grunt.registerTask 'default', 'Do it all.', (n) ->
   #   grunt.task.run 'bower', 'variables', 'less', 'coffee', 'copy', 'modernizr', 'concat', 'cssmin', 'uglify', 's3'
@@ -229,6 +233,7 @@ module.exports = (grunt) ->
     'copy'
     'modernizr'
     'concat'
+    'clean'
     'cssmin'
     'uglify'
     's3'

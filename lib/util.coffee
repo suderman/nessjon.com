@@ -20,6 +20,7 @@ module.exports = (grunt) ->
   if grunt.file.exists ".env"
     _.forEach grunt.file.read(".env").split("\n"), (line) ->
       process.env[_.first(line.split("="))] = _.last(line.split("="))
+  process.env.NODE_ENV = 'development' unless process.env.NODE_ENV?
 
   # Where to look for assets, where to put them, & their public dir
   _.config.assets =
@@ -31,20 +32,37 @@ module.exports = (grunt) ->
     font:   src: 'app/assets/fonts',   dest: 'public/fonts',   dir: 'fonts'
   _.wrap '', _.config.assets, '/'
 
-  # Prepare cfg.concat from assets.js.src, assets.css.src for concat task
+  # Prepare config.concat, config.clean from assets.js.src, assets.css.src
   _.config.concat = {}
+  _.config.clean = []
+
+  # Look for json files where js/css source files are kept
   _.forEach [ 'js', 'css' ], (type) ->
     _.forEach grunt.file.expand(_.config.assets[type].src + "*.json"), (file) ->
+
+      # The filename (without the json ext) will be the concatenated destination name
       name = _.first(file.replace(/^.*[\/\\]/g, '').split('.json'))
       ext = '.' + type
+
+      # Keep a list of concatenated files for the banner
       list = _.wrap('', grunt.file.readJSON(file), ext).join(', ')
+
+      # Assemble a valid object for the grunt concat task
       _.config.concat[name+ext] =
         dest: name
         src: grunt.file.readJSON(file)
+
+      # Include the path and extension in each filename; also throw in a banner
       _.config.concat[name+ext] = _.wrap(_.config.assets[type].dest, _.config.concat[name+ext], ext)
       _.config.concat[name+ext]['options'] = banner: [
                                           '/*! Concatenated:', list, '', '*/'
                                         ].join "\n"
+
+      # Assemble a valid object for the grunt clean task
+      # Delete all concatenation source files, excluding any destination files
+      _.config.clean = _.union(_.config.clean, _.config.concat[name+ext].src)
+      _.config.clean = _.without(_.config.clean, _.config.concat[name+ext].dest)
+
 
   # Amazon S3 bucket and CDN host
   _.config.cdn = "" unless _.config.cdn?
