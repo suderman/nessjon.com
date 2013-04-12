@@ -7,7 +7,6 @@ module.exports = (grunt) ->
 
   # GRUNT CONFIGURATION
   grunt.initConfig
-    banner: config.banner
 
     # Copy bower components/**/*.js to assets.js.dest
     bower:
@@ -85,7 +84,7 @@ module.exports = (grunt) ->
       scripts:
         options: 
           keepSpecialComments: '*'
-          banner: "<%= banner %>"
+          banner: config.banner
         files: [
           expand: true
           cwd: assets.css.dest
@@ -113,7 +112,7 @@ module.exports = (grunt) ->
         options: 
           mangle: true
           preserveComments: 'some'
-          banner: "<%= banner %>"
+          banner: config.banner
         files: [
           expand: true
           cwd: assets.js.dest

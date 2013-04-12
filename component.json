@@ -13,7 +13,7 @@
     "mousetrap": "~1.2.2",
     "H5F": "suderman/H5F",
     "nwmatcher": "~1.3.1",
-    "selectivizr": "~1.0.2",
+    "selectivizr": "suderman/selectivizr",
     "text-shadow": "~1.0.0"
   }
 }

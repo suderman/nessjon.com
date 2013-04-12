@@ -11,14 +11,16 @@
 # ----------------------------------------------------------
 
 # window.assets set by variables.coffee
+# Loads assets from CDN if enabled
+# use /scripts or /styles to force loading local asset
 yepnope.paths =
   'scripts': window.assets.scripts
   'styles':  window.assets.styles
 
 # CSS3 selector support & stylesheet reset
-yepnope test: Modernizr.ie == 9, yep: 'scripts/text-shadow.js'
-yepnope test: Modernizr.ie <= 8, yep: [ '/styles/style.css', '/scripts/ie.js' ]
-yepnope test: Modernizr.ie <= 7, yep: 'styles/ie.css'
+yepnope test: Modernizr.ie == 9, yep: [ 'scripts/ie9.js' ]
+yepnope test: Modernizr.ie <= 8, yep: [ '/styles/style.css', 'scripts/ie8.js' ]
+yepnope test: Modernizr.ie <= 7, yep: [ 'styles/ie.css' ]
 
 # Gentlemen, load your libraries
 yepnope load: [

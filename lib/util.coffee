@@ -36,11 +36,15 @@ module.exports = (grunt) ->
   _.forEach [ 'js', 'css' ], (type) ->
     _.forEach grunt.file.expand(_.config.assets[type].src + "*.json"), (file) ->
       name = _.first(file.replace(/^.*[\/\\]/g, '').split('.json'))
-      key = "#{name}.#{type}"
-      _.config.concat[key] =
+      ext = '.' + type
+      list = _.wrap('', grunt.file.readJSON(file), ext).join(', ')
+      _.config.concat[name+ext] =
         dest: name
-        src: grunt.file.readJSON file
-      _.config.concat[key] = _.wrap(_.config.assets[type].dest, _.config.concat[key], '.' + type)
+        src: grunt.file.readJSON(file)
+      _.config.concat[name+ext] = _.wrap(_.config.assets[type].dest, _.config.concat[name+ext], ext)
+      _.config.concat[name+ext]['options'] = banner: [
+                                          '/*! Concatenated:', list, '', '*/'
+                                        ].join "\n"
 
   # Amazon S3 bucket and CDN host
   _.config.cdn = "" unless _.config.cdn?
