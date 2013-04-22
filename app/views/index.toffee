@@ -131,8 +131,8 @@
           </div>
           <div class=col>
             <label class=comments for=comments>
-              <span>Did you receive more than one zoo ticket? Please
-list anyone else attending:</span>
+              <span>Did you receive more than one zoo ticket? If so, please
+list anyone else attending. Also, please list any food allergies we should be aware of:</span>
               <textarea name=comments></textarea>
             </label>
           </div>

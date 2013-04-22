@@ -77,6 +77,7 @@ app.get '/splash.html', (req, res) ->
 app.get '/dinner(\.html)?', (req, res) -> res.redirect 'http://goo.gl/maps/b0zb6'
 app.get '/lunch(\.html)?', (req, res) -> res.redirect 'http://goo.gl/maps/oIIUk'
 
+app.get '/rsvp', (req, res) -> res.redirect '/rsvp.html'
 app.get '/rsvp.html', (req, res) ->
   Rsvp.find().where('response').equals('Yes').sort('-date').exec (err, yays)  ->
     Rsvp.find().where('response').equals('No').sort('-date').exec (err, nays)  ->
