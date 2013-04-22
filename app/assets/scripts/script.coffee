@@ -212,6 +212,10 @@ app.rsvp = ->
         $.post $(this).attr('action'), $(this).serialize(), (message) =>
           $(this).html "<blockquote>#{message}</blockquote>"
 
+          # Play secret song
+          app.foundSecretSong = true
+          app.mp3.play()
+
         
 
 

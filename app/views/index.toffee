@@ -112,7 +112,7 @@
     <section class=wide id=rsvp>
       <div>
         <h2><b></b><span>RSVP</span><b></b></h2>
-        <p>Please indicate whether you plan to attend by no later than <strong>May 15, 2013</strong>.</p>
+        <p>Please indicate whether you plan to attend by no later than <strong>May 31, 2013</strong>.</p>
         <form class=rsvp action="/rsvp.html" method=post>
           <div class=col>
             <label class=response>
@@ -148,9 +148,6 @@ list anyone else attending. Also, please list any food allergies we should be aw
 
 <footer role=contentinfo>
   <div class=container>
-    <!-- <nav> -->
-    <!--   <a href="#">Sitemap</a> / <a href="#">Contact Information</a> -->
-    <!-- </nav> -->
     <div class=credits>  
       © 2013 duct-taped together by jon suderman
     </div>
