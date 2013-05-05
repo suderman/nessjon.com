@@ -1,0 +1,61 @@
+#{partial 'head.toffee'} 
+
+<header role=banner>
+  <div class=container>
+    <h1><a href=#>Ness &hearts; Jon</a></h1>
+    <a href=# class=menu></a>
+    <nav role=navigation>
+      <ul>
+        <li><a href=/#zoo class=zoo>Zoo</a>
+        <li><a href=/#schedule class=schedule>Schedule</a>
+        <li><a href=/#maps class=maps>Maps</a>
+        <li><a href=/#dress class=dress>Dress</a>
+        <li><a href=/#registry class=registry>Registry</a>
+        <li><a href=/#rsvp class=rsvp>RSVP</a>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div role=main>
+
+  <div class=logo>
+    <header>
+      <figure class=bride></figure>
+      <figure class=groom></figure>
+    </header>
+  </div>
+
+  <div class=container>
+
+    <section class=wide id=maps>
+      <div>
+        <h2><b></b><span>Gift-Opening</span><b></b></h2>
+        <div class=col>
+          <p>We invite you to attend an open-house hosted by Connie and Kevin Sheppard at their home in Bergen, Alberta.</p>
+          <p>The event starts at 2 pm, July 7, 2013. We will open gifts, share a meal together, and continue the celebration!</p>
+          <p>When you <a href="/#rsvp">RSVP for the wedding</a>, please note in the comments box if you'll be attending this event as well.</p>
+        </div>
+        <div class=col>
+          <figure class=map>            
+            <iframe width=500 height=500 frameborder=0 scrolling=no marginheight=0 marginwidth=0 src="//maps.google.com/maps?saddr=Calgary+Zoo&amp;daddr=51.636696,-114.688600&amp;hl=en&amp;sll=51.526154,-114.524746&amp;sspn=0.186687,0.119991&amp;geocode=FQzmCgMdBiM0-SH3dXXH9rgnYikFL7earXpxUzH3dXXH9rgnYg%3BFdjpEwMdqP0p-Q&amp;mra=ls&amp;t=m&amp;ie=UTF8&amp;ll=51.349485,-114.356689&amp;spn=0.857719,1.370544&amp;z=9&amp;output=embed"></iframe>
+          </figure>
+          <p><a href="http://goo.gl/maps/oIIUk">Get directions in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer role=contentinfo>
+  <div class=container>
+    <div class=credits>  
+      © 2013 duct-taped together by jon suderman
+    </div>
+  </div>
+</footer>
+
+<audio>
+   <source src=https://dl.dropbox.com/s/xu3fhw9p2dp8dtt/secret.mp3 type=audio/mp3 preload=auto>
+</audio>

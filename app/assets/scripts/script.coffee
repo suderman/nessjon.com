@@ -97,24 +97,25 @@ app.navigation = ->
 
 
   # Open/close behaviour in side menu
-  $('nav[role=navigation] > ul > li > a').on 'click', (e)->
-    e.preventDefault()
+  if location.pathname is '/' or location.pathname is '/index.html'
+    $('nav[role=navigation] > ul > li > a').on 'click', (e)->
+      e.preventDefault()
 
-    # On first click, expand the submenu
-    $nav = $(this).next 'nav'
-    if $nav.height() is 0
-      $nav.closest('ul').find('> li > nav').height 0
-      $nav.height $nav.find('ul:first').height()
-      $nav.hide().show()
+      # On first click, expand the submenu
+      $nav = $(this).next 'nav'
+      if $nav.height() is 0
+        $nav.closest('ul').find('> li > nav').height 0
+        $nav.height $nav.find('ul:first').height()
+        $nav.hide().show()
 
-    # On second click, follow the link
-    else 
-      # location.href = this.href
-      $('html').removeClass 'menu'
-      href = $(this).attr('href')
-      $('html, body').animate 
-        scrollTop: $(href).offset().top
-        , 500, -> window.location.hash = href
+      # On second click, follow the link
+      else
+        # location.href = this.href
+        $('html').removeClass 'menu'
+        href = $(this).attr('href')
+        $('html, body').animate 
+          scrollTop: $(href).offset().top
+          , 500, -> window.location.hash = href
 
   # Swipe to/from menu
   $(document).on 'swipe', (e)-> 

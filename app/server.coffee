@@ -74,8 +74,16 @@ app.get '/', (req, res) ->
 app.get '/splash.html', (req, res) ->
   res.render "splash", assets: app.assets
 
-app.get '/dinner(\.html)?', (req, res) -> res.redirect 'http://goo.gl/maps/b0zb6'
-app.get '/lunch(\.html)?', (req, res) -> res.redirect 'http://goo.gl/maps/oIIUk'
+# app.get '/dinner(\.html)?', (req, res) -> res.redirect 'http://goo.gl/maps/b0zb6'
+# app.get '/lunch(\.html)?', (req, res) -> res.redirect 'http://goo.gl/maps/oIIUk'
+
+app.get '/dinner', (req, res) -> res.redirect '/dinner.html'
+app.get '/dinner.html', (req, res) ->
+  res.render "dinner", assets: app.assets
+
+app.get '/lunch', (req, res) -> res.redirect '/lunch.html'
+app.get '/lunch.html', (req, res) ->
+  res.render "lunch", assets: app.assets
 
 app.get '/rsvp', (req, res) -> res.redirect '/rsvp.html'
 app.get '/rsvp.html', (req, res) ->
