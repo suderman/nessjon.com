@@ -2,16 +2,16 @@
 
 <header role=banner>
   <div class=container>
-    <h1><a href=#>Ness &hearts; Jon</a></h1>
+    <h1><a href=/>Ness &hearts; Jon</a></h1>
     <a href=# class=menu></a>
     <nav role=navigation>
       <ul>
-        <li><a href=#zoo class=zoo>Zoo</a>
-        <li><a href=#schedule class=schedule>Schedule</a>
-        <li><a href=#maps class=maps>Maps</a>
-        <li><a href=#dress class=dress>Dress</a>
-        <li><a href=#registry class=registry>Registry</a>
-        <li><a href=#rsvp class=rsvp>RSVP</a>
+        <li><a href=/#zoo class=zoo>Zoo</a>
+        <li><a href=/#schedule class=schedule>Schedule</a>
+        <li><a href=/#maps class=maps>Maps</a>
+        <li><a href=/#dress class=dress>Dress</a>
+        <li><a href=/#registry class=registry>Registry</a>
+        <li><a href=/#rsvp class=rsvp>RSVP</a>
       </ul>
     </nav>
   </div>
