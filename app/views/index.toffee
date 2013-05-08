@@ -104,8 +104,10 @@
     <section class=right id=registry>
       <div>
         <h2><b></b><span>Registry</span><b></b></h2>
-        <p>We are registered for wedding gifts at Home Outfitters. Registry gifts can be purchased in stores, or online. Follow the links below to view registry items under Jonathan and Janessa Suderman. <!-- Alternately, we are pleased to accept monetary gifts. -->
-        <a class=shop href="http://giftregistry.hbc.com/grworks/prj/generic_online/jsp/common/grbookmark.jsp?retailerid=5&registryid=400111235856"><img src="#{assets.images}/homeoutfitters.jpg"></a>
+        <p>We are registered for wedding gifts at Home Outfitters and on MyRegistry. Registry gifts can be purchased in stores, or online. Follow the links below to view registry items under Jonathan and Janessa Suderman. <!-- Alternately, we are pleased to accept monetary gifts. -->
+        <p>
+          <a class=shop href="http://giftregistry.hbc.com/grworks/prj/generic_online/jsp/common/grbookmark.jsp?retailerid=5&registryid=400111235856"><img src="#{assets.images}/homeoutfitters.jpg"></a>
+          <a class=shop href="http://www.myregistry.com/public/nessjon"><img src="#{assets.images}/myregistry.jpg"></a>
       </div>
     </section>
 
