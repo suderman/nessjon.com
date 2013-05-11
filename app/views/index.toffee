@@ -106,15 +106,21 @@
         <h2><b></b><span>Registry</span><b></b></h2>
         <p>We are registered for wedding gifts at Home Outfitters and on MyRegistry. Registry gifts can be purchased in stores, or online. Follow the links below to view registry items under Jonathan and Janessa Suderman. <!-- Alternately, we are pleased to accept monetary gifts. -->
         <p>
-          <a class=shop href="http://giftregistry.hbc.com/grworks/prj/generic_online/jsp/common/grbookmark.jsp?retailerid=5&registryid=400111235856"><img src="#{assets.images}/homeoutfitters.jpg"></a>
-          <a class=shop href="http://www.myregistry.com/public/nessjon"><img src="#{assets.images}/myregistry.jpg"></a>
+          <a class=shop href="http://giftregistry.hbc.com/grworks/prj/generic_online/jsp/common/grbookmark.jsp?retailerid=5&registryid=400111235856"><img width=160 height=75 src="#{assets.images}/homeoutfitters.jpg"></a>
+          <a class=shop href="http://www.myregistry.com/public/nessjon"><img width=160 height=75 src="#{assets.images}/myregistry.jpg"></a>
       </div>
     </section>
 
     <section class=wide id=rsvp>
       <div>
         <h2><b></b><span>RSVP</span><b></b></h2>
-        <p>Please indicate whether you plan to attend by no later than <strong>May 31, 2013</strong>.</p>
+        <p style="max-width:700px;margin:0 auto;text-align:center;">
+          We can only accomodate a limited number of guests.<br>
+          Those whose names were specifically printed on their invitation envelope are welcome to attend!<br>
+          At this time, we cannot accomodate additional guests, such as dates and children.<br>
+          Thank you for understanding!
+          <br><br>
+        </p>
         <form class=rsvp action="/rsvp.html" method=post>
           <div class=col>
             <label class=response>
@@ -126,21 +132,22 @@
               <span><strong>Sorry</strong>&mdash;I wish I could make it.<span>
             </label>
             <div class=name>
-              <span>Your name & email address:</span>
-              <input name=name placeholder="Your name" required>
+              <span>Your name(s) & email address:</span>
+              <input name=name placeholder="Your name(s)" required>
               <input name=email type=email placeholder="Your email address">
             </div>
           </div>
           <div class=col>
             <label class=comments for=comments>
-              <span>Did you receive more than one zoo ticket? If so, please
-list anyone else attending. Also, please list any food allergies we should be aware of:</span>
-              <textarea name=comments placeholder="Comments"></textarea>
+              <span>Please list any food allergies we should be aware of and any other comments you wish to share:</span>
+              <textarea style="height: 110px;" name=comments placeholder="Comments"></textarea>
             </label>
           </div>
           <div class=submit>
             <input type=submit value="Submit">
-            <p style="max-width:400px;margin:0 auto;text-align:center;"><br>Note: You received a specific number of wedding tickets in your invitation and every person RSVPing needs their own ticket. Sorry we can't accomodate everybody!
+            <p style="max-width:300px;margin:0 auto;text-align:center;"><br>
+              Please indicate whether you plan to attend by no later than <strong>May 31, 2013</strong>.
+            </p>
           </div>
         </form>
       </div>
