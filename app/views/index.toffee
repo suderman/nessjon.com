@@ -42,6 +42,8 @@
           <li><figure><img src="#{assets.images}/four.jpg"></figure>
           <li><figure><img src="#{assets.images}/five.jpg"></figure>
           <li><figure><img src="#{assets.images}/six.jpg"></figure>
+          <li><figure><img src="#{assets.images}/seven.jpg"></figure>
+          <li><figure><img src="#{assets.images}/eight.jpg"></figure>
         </ul>
       </div>
       <div class=flourish></div>
