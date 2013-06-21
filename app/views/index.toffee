@@ -36,14 +36,14 @@
           <dd><figure></figure><figcaption>Mins</figcaption>
         </dl>
         <ul>
-          <li><figure><img src="#{assets.images}/one.jpg"></figure>
-          <li><figure><img src="#{assets.images}/two.jpg"></figure>
-          <li><figure><img src="#{assets.images}/three.jpg"></figure>
-          <li><figure><img src="#{assets.images}/four.jpg"></figure>
-          <li><figure><img src="#{assets.images}/five.jpg"></figure>
-          <li><figure><img src="#{assets.images}/six.jpg"></figure>
-          <li><figure><img src="#{assets.images}/seven.jpg"></figure>
-          <li><figure><img src="#{assets.images}/eight.jpg"></figure>
+          <li><figure><img src="#{assets.images}/one.jpg?cp"></figure>
+          <li><figure><img src="#{assets.images}/two.jpg?cp"></figure>
+          <li><figure><img src="#{assets.images}/three.jpg?cp"></figure>
+          <li><figure><img src="#{assets.images}/four.jpg?cp"></figure>
+          <li><figure><img src="#{assets.images}/five.jpg?cp"></figure>
+          <li><figure><img src="#{assets.images}/six.jpg?cp"></figure>
+          <li><figure><img src="#{assets.images}/seven.jpg?cp"></figure>
+          <li><figure><img src="#{assets.images}/eight.jpg?cp"></figure>
         </ul>
       </div>
       <div class=flourish></div>
