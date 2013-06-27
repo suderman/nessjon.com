@@ -6,9 +6,9 @@
     <a href=# class=menu></a>
     <nav role=navigation>
       <ul>
-        <li><a href=#lake class=lake>Lake</a>
-        <li><a href=#church class=church>Church</a>
-        <li><a href=#park class=park>Park</a>
+        <li><a href=#zoo class=zoo>Zoo</a>
+        <li><a href=#schedule class=schedule>Schedule</a>
+        <li><a href=#maps class=maps>Maps</a>
         <li><a href=#dress class=dress>Dress</a>
         <li><a href=#registry class=registry>Registry</a>
         <li><a href=#rsvp class=rsvp>RSVP</a>
@@ -50,73 +50,49 @@
     </div>
 
     <blockquote>
-      Notice to all guests: Due to flooding at the Calgary Zoo, our wedding venue<br>and details have changed! We are goin’ with the flow! (get it??)
-      <br><br>
-      Please refer to the new details listed below. 
+      Welcome to our wedding website! We look forward to celebrating our special day with you.
     </blockquote>
 
-    <section class=wide id=lake>
+    <section class=left id=zoo>
       <div>
-        <h2><b></b><span>Outdoor&nbsp;Wedding&nbsp;Ceremony</span><b></b></h2>
-        <div class=col>
-          <dl>
-            <dt>Time: 2:00 pm
-            <dd>Ceremony begins at 2:00 pm. Please arrive early.
-            <dt>Location:
-            <dd>Lake Sundance, 63 Suncrest Way SE Calgary AB, in the green-space in the far north-west corner of the property.
-            <dt>Details:
-            <dd>Lake Sundance staff at either gate will permit entrance to guests whose names are on our guest-list.
-          </dl>
-        </div>
-        <div class=col>
-          <figure class=map>
-            <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=63+Suncrest+Way+SE+Calgary+AB&amp;aq=&amp;sll=50.968806,-113.860245&amp;sspn=0.376197,1.056747&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=63+Suncrest+Way+SE,+Calgary,+Division+No.+6,+Alberta+T2X+1V1,+Canada&amp;ll=50.904981,-114.043794&amp;spn=0.013531,0.021415&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-          </figure>
-          <p><a href="http://goo.gl/maps/uLScU">Get directions in Google Maps</a>
-        </div>
+        <h2><b></b><span>Zoo Entry</span><b></b></h2>
+        <p>Use the <em>July 6 zoo pass</em> you received with your invitation. Each pass allows one person to enter the zoo&mdash;free of charge!  Keep these with you after the ceremony as you may be asked to show them at the reception. Please note that pets are not permitted entry at the Calgary Zoo.
+        <p>Please keep gifts in your car until the reception as there will not be any place to store them during the ceremony. 
+        <p><img width=100% src="#{assets.images}/ticket.png">
       </div>
     </section>
 
-    <section class=wide id=church>
+    <section class=right id=schedule>
       <div>
-        <h2><b></b><span>Backup&nbsp;Wedding&nbsp;Ceremony</span><b></b></h2>
-        <div class=col>
-          <figure class=map>
-            <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1509+Lake+Ontario+Drive+Southeast,+Calgary,+AB,+Canada&amp;aq=&amp;sll=50.942161,-114.032641&amp;sspn=0.002941,0.008256&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=1509+Lake+Ontario+Dr+SE,+Calgary,+Alberta+T2J+3G6,+Canada&amp;ll=50.943232,-114.03358&amp;spn=0.00676,0.010707&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
-          </figure>
-          <p><a href="http://goo.gl/maps/LNUAW">Get directions in Google Maps</a>
-        </div>
-        <div class=col>
-          <dl>
-            <dt>Time: 2:00 pm
-            <dd>If it is raining, we may have an indoor ceremony at 2:00 pm at Jon's parents' church in Calgary.
-            <dt>Location:
-            <dd>Bonavista Evangelical Missionary Church, 1509 Lake Ontario Dr SE, Calgary AB.
-            <dt>Details:
-            <dd>In the event of poor-weather on the wedding day, we will indicate on this website which location we will use by 11 am, July 6, 2013.
-          </dl>
-        </div>
+        <h2><b></b><span>Schedule of&nbsp;Events</span><b></b></h2>
+        <dl>
+          <dt>2:00 pm:
+          <dd>Wedding ceremony begins. This formal service is held outdoors in Cupid's Garden south of the Enmax Conservatory. Please arrive 15&ndash;20 minutes prior. If it is raining, the ceremony will be held inside the Safari Lodge.
+          <dt>3:00&ndash;5:00 pm: 
+          <dd>Zoo-time! While the wedding party has photos taken, the guests have two hours to enjoy the zoo.
+          <dt>5:00 pm:
+          <dd>Dinner reception begins at the Safari Lodge.  Dance to follow.
+        </dl>
       </div>
     </section>
 
-    <section class=wide id=park>
+    <section class=wide id=maps>
       <div>
-        <h2><b></b><span>Wedding&nbsp;Reception</span><b></b></h2>
+        <h2><b></b><span>Zoo&nbsp;Details and&nbsp;Maps</span><b></b></h2>
         <div class=col>
+          <p>For a map of the Calgary Zoo, directions, and any other zoo-related inquiries you may have, please visit the website of the <a href="http://www.calgaryzoo.ca/">Calgary Zoo</a>
           <dl>
-            <dt>Time: 6:00 pm
-            <dd>Doors will be opened at 6:00 pm, and dinner will be served at 6:30 pm with a dance to follow.
-            <dt>Location:
-            <dd>The Wainwright Hotel, Heritage Park, 1900 Heritage Dr. S.W. Calgary AB
-            <dt>Details:
-            <dd>Guests may park in the main parking lot free of charge. Alternately guests may drive on-site and park in front of the Wainwright Hotel after 6 pm. Dinner will be served at 6:30 pm, with a dance to follow. A cash-bar will be open for the evening.
+            <dt>Parking (North Lot)
+            <dd>The main zoo parking lot and entrance is located off St. George’s Drive, just north of Memorial Drive with zoo access through the north gate. A $7.00 daily parking fee is in effect.
+            <dt>Accommodations
+            <dd>Guests are responsible for arranging their own accommodations and transportation. We encourage making these arrangements early.
           </dl>
         </div>
         <div class=col>
           <figure class=map>
-            <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Wainwright+Hotel&amp;aq=&amp;sll=50.981844,-114.099323&amp;sspn=0.094023,0.12085&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Wainwright+Hotel,+Calgary,+Alberta+T2V+1R1,+Canada&amp;ll=50.985613,-114.108639&amp;spn=0.003377,0.005354&amp;z=17&amp;iwloc=A&amp;output=embed"></iframe>
+            <iframe width=500 height=500 frameborder=0 scrolling=no marginheight=0 marginwidth=0 src="//maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Safari+Lodge+Canada,+Calgary,+Alberta&amp;aq=&amp;sll=51.044362,-114.028078&amp;sspn=0.012358,0.018368&amp;g=Safari+Lodge+Canada,+Calgary,+Alberta&amp;ie=UTF8&amp;hq=&amp;hnear=Safari+Lodge+Canada,+Calgary,+Division+No.+6,+Alberta,+Canada&amp;t=m&amp;ll=51.047816,-114.028301&amp;spn=0.02698,0.04283&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
           </figure>
-          <p><a href="http://goo.gl/maps/B1pfj">Get directions in Google Maps</a>
+          <p><a href="http://goo.gl/maps/b0zb6">Get directions in Google Maps</a>
         </div>
       </div>
     </section>
@@ -124,7 +100,7 @@
     <section class=left id=dress>
       <div> 
         <h2><b></b><span>Dress Considerations</span><b></b></h2>
-        <p>The wedding is formal, and we invite you to dress in style! However, as this is an outdoor wedding, we do encourage guests to bring comfortable footwear for walking, and to bring extra clothing in case of rain.
+        <p>The wedding is formal, and we invite you to dress in style! Zoo-themed clothing welcomed! However, as this is an outdoor wedding, we do encourage guests to bring comfortable footwear for walking, and to bring extra clothing in case of rain.
       </div>
     </section>
 

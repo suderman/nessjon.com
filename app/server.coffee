@@ -106,6 +106,10 @@ app.post '/rsvp.html', (req, res) ->
     else
       res.send "So sorry you can't join us, #{rsvp.name}. We really appreciate you letting us know!"
 
+app.get '/zoo', (req, res) -> res.redirect '/zoo.html'
+app.get '/zoo.html', (req, res) ->
+  res.render "zoo", assets: app.assets
+
 # Start up the server!
 app.listen app.get('port'), ->
   console.log "Express server listening on port #{app.get('port')}"
