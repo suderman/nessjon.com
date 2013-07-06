@@ -28,6 +28,20 @@
 
   <div class=container>
 
+    <blockquote class=announcement>
+      UPDATE: The wedding ceremony will take place at <a href="#lake">Lake Sundance at 2pm</a>!
+      <br>
+      The forecast says 1 mm of rain, so please bring an umbrella. We'll see you there!
+    </blockquote>
+
+    <!--
+    <blockquote class=announcement>
+      UPDATE: The wedding ceremony will be indoors and will take place
+      <br>
+      at <a href="#church">Bonavista Evangelical Missionary Church</a> at 2pm! We'll see you there!
+    </blockquote>
+    -->
+
     <div class=hero>
       <div class=tilt>
         <dl class=countdown rel="2013-07-06 14:00">
