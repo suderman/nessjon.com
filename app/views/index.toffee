@@ -187,11 +187,9 @@
           </div>
           <div class=submit>
             <input type=submit value="Submit">
-            <!--
             <p style="max-width:300px;margin:0 auto;text-align:center;"><br>
               Please indicate whether you plan to attend by no later than <strong>May 31, 2013</strong>.
             </p>
-            -->
           </div>
         </form>
       </div>
