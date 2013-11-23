@@ -91,20 +91,20 @@ app.get '/rsvp.html', (req, res) ->
     Rsvp.find().where('response').equals('No').sort('-date').exec (err, nays)  ->
       res.render "rsvp", yays: yays, nays: nays, assets: app.assets
 
-app.post '/rsvp.html', (req, res) ->
-
-  rsvp = new Rsvp 
-    response: req.body.response
-    name:     req.body.name
-    email:    req.body.email
-    comments: req.body.comments
-
-  rsvp.save (err, rsvp) ->
-    rsvp.notify() unless (err)
-    if req.body.response is "Yes"
-      res.send "Thank you for RSVPing, #{rsvp.name}. We look forward to seeing you on our special day!"
-    else
-      res.send "So sorry you can't join us, #{rsvp.name}. We really appreciate you letting us know!"
+# app.post '/rsvp.html', (req, res) ->
+# 
+#   rsvp = new Rsvp 
+#     response: req.body.response
+#     name:     req.body.name
+#     email:    req.body.email
+#     comments: req.body.comments
+# 
+#   rsvp.save (err, rsvp) ->
+#     rsvp.notify() unless (err)
+#     if req.body.response is "Yes"
+#       res.send "Thank you for RSVPing, #{rsvp.name}. We look forward to seeing you on our special day!"
+#     else
+#       res.send "So sorry you can't join us, #{rsvp.name}. We really appreciate you letting us know!"
 
 app.get '/zoo', (req, res) -> res.redirect '/zoo.html'
 app.get '/zoo.html', (req, res) ->

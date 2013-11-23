@@ -28,13 +28,13 @@
 
   <div class=container>
 
+    <!--
     <blockquote class=announcement>
       UPDATE: The wedding ceremony will take place at <a href="#lake">Lake Sundance at 2pm</a>!
       <br>
       The forecast says 1 mm of rain, so please bring an umbrella. We'll see you there!
     </blockquote>
 
-    <!--
     <blockquote class=announcement>
       UPDATE: The wedding ceremony will be indoors and will take place
       <br>
@@ -152,6 +152,7 @@
       </div>
     </section>
 
+    <!--
     <section class=wide id=rsvp>
       <div>
         <h2><b></b><span>RSVP</span><b></b></h2>
@@ -195,6 +196,7 @@
         </form>
       </div>
     </section>
+    -->
 
   </div>
 </div>
